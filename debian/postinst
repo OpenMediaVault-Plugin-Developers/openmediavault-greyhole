@@ -1,0 +1,169 @@
+#!/bin/sh
+#
+# This file is part of OpenMediaVault-greyhole.
+#
+# @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
+# @author    Marcel Beck <marcel.beck@mbeck.org>
+# @author    Stéphane Bocquet <stephane_bocquet@hotmail.com>
+# @copyright Copyright (c) 2011 Marcel Beck
+# @copyright Copyright (c) 2011 Stéphane Bocquet
+#
+# OpenMediaVault is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# OpenMediaVault is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with OpenMediaVault. If not, see <http://www.gnu.org/licenses/>.
+
+set -e
+
+. /etc/default/openmediavault
+. /usr/share/openmediavault/scripts/helper-functions
+
+
+case "$1" in
+	configure)
+	if [ -z "$2" ]; then
+		echo "Updating init script links and actions"
+		invoke-rc.d --force greyhole stop &>/dev/null
+		update-rc.d greyhole disable &>/dev/null
+	fi
+
+	# Check for XML config
+	if ! omv_config_exists "//services/greyhole"; then
+		echo "Creating Initial Configuration"
+		object="<enable>0</enable>"
+		object="${object}<email_to>root</email_to>"
+		object="${object}<log_level>INFO</log_level>"
+
+		object="${object}<greyhole_log_file>/var/log/greyhole.log</greyhole_log_file>"
+
+		object="${object}<delete_moves_to_trash>1</delete_moves_to_trash>"
+		object="${object}<balance_modified_files>0</balance_modified_files>"
+
+		object="${object}<df_cache_time>15</df_cache_time>"
+
+		object="${object}<log_memory_usage>0</log_memory_usage>"
+		object="${object}<check_for_open_files>1</check_for_open_files>"
+
+		omv_config_add_element "//services" "greyhole" "${object}" true
+	fi
+
+	if ! omv_config_exists "//services/greyhole/db"; then
+		PASSWORD=$(</dev/urandom tr -dc A-Za-z0-9 | head -c8)
+
+		echo "Adding DB Section"
+		object="<db_engine>mysql</db_engine>"
+		object="${object}<db_host>localhost</db_host>"
+		object="${object}<db_user>greyhole</db_user>"
+
+		object="${object}<db_pass>${PASSWORD}</db_pass>"
+		object="${object}<db_name>greyhole</db_name>"
+
+		omv_config_add_element "//services/greyhole" "db" "${object}" true
+
+		MYSQLROOTPW=$(omv_config_get "//services/mysql/password" | sed -e "s/'/\\\'/g")
+
+		# Create Database/Table
+		TMPFILE="$(mktemp)"
+
+		cat <<EOF >> "${TMPFILE}"
+CREATE DATABASE IF NOT EXISTS greyhole;
+
+GRANT USAGE ON * . * TO  'greyhole'@'localhost' IDENTIFIED BY  '${PASSWORD}' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0 ;
+
+GRANT ALL PRIVILEGES ON  greyhole . * TO  'greyhole'@'localhost';
+
+CREATE TABLE IF NOT EXISTS  greyhole.settings (
+name TINYTEXT NOT NULL,
+value TEXT NOT NULL,
+PRIMARY KEY ( name(255) )
+) ENGINE = MYISAM;
+
+INSERT IGNORE INTO greyhole.settings (name, value) VALUES ('last_read_log_smbd_line', '0');
+INSERT IGNORE INTO greyhole.settings (name, value) VALUES ('last_OOS_notification', '0');
+
+CREATE TABLE IF NOT EXISTS greyhole.tasks (
+	id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+	action varchar(10) NOT NULL,
+	share tinytext NOT NULL,
+	full_path tinytext,
+	additional_info tinytext,
+	complete enum('yes','no','frozen','thawed','idle') NOT NULL,
+	event_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (id),
+	KEY find_next_task (complete,share(64),id)
+) ENGINE=MyISAM;
+
+CREATE TABLE IF NOT EXISTS greyhole.tasks_completed (
+id BIGINT UNSIGNED NOT NULL,
+action VARCHAR( 10 ) NOT NULL,
+share TINYTEXT NOT NULL,
+full_path TINYTEXT NULL,
+additional_info TINYTEXT NULL,
+complete ENUM( 'yes',  'no' ) NOT NULL,
+event_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE = MYISAM;
+EOF
+
+		mysql --user=root --password=${MYSQLROOTPW} < ${TMPFILE}
+	fi
+
+	if ! omv_config_exists "//services/greyhole/pool_disks"; then
+		echo "Adding Pool Disks Section"
+		omv_config_add_element "//services/greyhole" "pool_disks" "" true
+	fi
+
+	if ! omv_config_exists "//services/greyhole/smb_shares"; then
+		echo "Adding SMB Shares Section"
+		omv_config_add_element "//services/greyhole" "smb_shares" "" true
+	fi
+
+	if ! omv_config_exists "//services/greyhole/extraoptions"; then
+		echo "Adding extra options"
+		omv_config_add_element "//services/greyhole" "extraoptions" "" true
+	fi
+
+	if ! omv_config_exists "//services/greyhole/local_smb_mount"; then
+		echo "Adding extra options"
+		omv_config_add_element "//services/greyhole" "local_smb_mount" "" true
+	fi
+
+	if ! omv_config_exists "//services/greyhole/local_smb_mount/enable"; then
+		echo "Adding extra options"
+		omv_config_add_element "//services/greyhole/local_smb_mount" "enable" "false" true
+	fi
+
+	if ! omv_config_exists "//services/greyhole/local_smb_mount/username"; then
+		echo "Adding extra options"
+		omv_config_add_element "//services/greyhole/local_smb_mount" "username" "" true
+	fi
+
+	if ! omv_config_exists "//services/greyhole/local_smb_mount/password"; then
+		echo "Adding extra options"
+		omv_config_add_element "//services/greyhole/local_smb_mount" "password" "" true
+	fi
+
+	echo "Creating Config Files"
+	omv-mkconf greyhole 1>/dev/null 2>&1
+
+	update-rc.d mount_shares_locally defaults
+
+	;;
+
+	abort-upgrade|abort-remove|abort-deconfigure)
+	;;
+
+	*)
+		echo "postinst called with unknown argument \`$1'" >&2
+		exit 1
+	;;
+esac
+
+exit 0
