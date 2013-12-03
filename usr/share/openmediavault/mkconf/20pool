@@ -1,0 +1,55 @@
+#!/bin/sh
+#
+# @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
+# @author    Marcel Beck <marcel.beck@mbeck.org>
+# @copyright Copyright (c) 2012 Marcel Beck
+#
+# This file is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This file is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this file. If not, see <http://www.gnu.org/licenses/>.
+
+set -e
+
+. /etc/default/openmediavault
+. /usr/share/openmediavault/scripts/helper-functions
+
+
+# void omv_get_sharedfolder_path (char *uuid)
+# Get the path of the given shared folder
+# @param The UUID of the shared folder
+# @return The shared folder path, e.g /media/85732966-949a-4d8b-87d7-d7e6681f787e/data.
+omv_get_greyhole_pooldisk_path() {
+	xmlstarlet sel -t -m "//system/storage/greyhole/pool_disks/disk[uuid='$1']" \
+	  -v "//system/fstab/mntent[uuid=current()/mntentref]/dir" \
+	  -v "concat('/','.greyhole')" \
+	  ${OMV_CONFIG_FILE} | xmlstarlet unesc
+}
+
+GREYHOLE_CONFIG="/etc/greyhole.conf"
+
+echo "#======================= Pool Definitions =======================" >> ${GREYHOLE_CONFIG}
+index=$(omv_config_get_count "//system/storage/greyhole/pool_disks/disk")
+while [ ${index} -gt 0 ]
+do
+	# Get the shared folder reference and path
+	greyhole_pool_disk_ref=$(omv_config_get "//system/storage/greyhole/pool_disks/disk[position()=${index}]/uuid")
+	greyhole_pool_disk_path=$(omv_get_greyhole_pooldisk_path "${greyhole_pool_disk_ref}")
+	greyhole_pool_disk_min_free=$(omv_config_get "//system/storage/greyhole/pool_disks/disk[position()=${index}]/min_free")
+
+	mkdir -p ${greyhole_pool_disk_path}
+
+	xmlstarlet sel -t -m "//system/storage/greyhole/pool_disks/disk[position()=${index}]" \
+	  -o "storage_pool_drive = ${greyhole_pool_disk_path}, min_free: ${greyhole_pool_disk_min_free}gb" -n \
+	  ${OMV_CONFIG_FILE} | xmlstarlet unesc >> ${GREYHOLE_CONFIG}
+
+	index=$(( ${index} - 1 ))
+done

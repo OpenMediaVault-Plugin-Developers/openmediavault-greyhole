@@ -1,0 +1,65 @@
+#!/bin/sh
+#
+# @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
+# @author    Stephane Bocquet <stephane_bocquet@hotmail.com>
+# @author    Marcel Beck <marcel.beck@mbeck.org>
+# @copyright Copyright (c) 2011 Stephane Bocquet
+# @copyright Copyright (c) 2012 Marcel Beck
+#
+# This file is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This file is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this file. If not, see <http://www.gnu.org/licenses/>.
+
+set -e
+
+. /etc/default/openmediavault
+. /usr/share/openmediavault/scripts/helper-functions
+
+GREYHOLE_EXTENSIONSDIR=${GREYHOLE_EXTENSIONSDIR:-"${OMV_SCRIPTS_DIR}/greyhole.d"}
+GREYHOLE_CONFIG="/etc/greyhole.conf"
+GREYHOLE_INIT="greyhole"
+
+# Enable/disable service
+if [ "$(omv_config_get "//system/storage/greyhole/enable")" != "1" ]; then
+	echo "# Stop/Disable Greyhole disabled"
+	invoke-rc.d ${GREYHOLE_INIT} stop 1>/dev/null 2>&1 || true
+	update-rc.d ${GREYHOLE_INIT} disable
+	exit 0
+fi
+
+pool_disk_count=$(omv_config_get_count "//system/storage/greyhole/pool_disks/disk")
+if [ ${pool_disk_count} -eq 0 ]; then
+	echo "# Stop/Disable Greyhole: No Pool Disks"
+	invoke-rc.d ${GREYHOLE_INIT} stop 1>/dev/null 2>&1 || true
+	update-rc.d ${GREYHOLE_INIT} disable
+	exit 0
+fi
+
+# smb_share_count=$(omv_config_get_count "//system/storage/greyhole/smb_shares/share")
+# if [ ${smb_share_count} -eq 0 ]; then
+# 	echo "# Stop/Disable Greyhole: No SMB Shares"
+# 	invoke-rc.d ${GREYHOLE_INIT} stop 1>/dev/null 2>&1 || true
+# 	update-rc.d ${GREYHOLE_INIT} disable
+# 	exit 0
+# fi
+
+echo "# Stop Greyhole"
+invoke-rc.d ${GREYHOLE_INIT} stop 1>/dev/null 2>&1 || true
+
+cat /dev/null > ${GREYHOLE_CONFIG}
+run-parts ${GREYHOLE_EXTENSIONSDIR}
+
+omv-mkconf samba
+
+echo "# Start/Enable Greyhole"
+update-rc.d ${GREYHOLE_INIT} enable
+service ${GREYHOLE_INIT} start
