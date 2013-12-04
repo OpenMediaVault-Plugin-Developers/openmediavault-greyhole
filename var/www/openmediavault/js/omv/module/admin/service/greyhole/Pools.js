@@ -192,8 +192,7 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
             icon     : "images/greyhole-poolmngt.png",
             iconCls  : Ext.baseCSSPrefix + "btn-icon-16x16",
             handler  : Ext.Function.bind(me.onPoolMngtButton, me, [ me ]),
-            scope    : me,
-            disabled : true
+            scope    : me
         },{
             id       : me.getId() + "-balance",
             xtype    : "button",
@@ -201,8 +200,7 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
             icon     : "images/greyhole-balance.png",
             iconCls  : Ext.baseCSSPrefix + "btn-icon-16x16",
             handler  : Ext.Function.bind(me.onBalanceButton, me, [ me ]),
-            scope    : me,
-            disabled : true
+            scope    : me
         },{
             id       : me.getId() + "-fsck",
             xtype    : "button",
@@ -210,8 +208,7 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
             icon     : "images/greyhole-fsck.png",
             iconCls  : Ext.baseCSSPrefix + "btn-icon-16x16",
             handler  : Ext.Function.bind(me.onFsckButton, me, [ me ]),
-            scope    : me,
-            disabled : true
+            scope    : me
         },{
             id       : me.getId() + "-unfsck",
             xtype    : "button",
@@ -219,8 +216,7 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
             icon     : "images/greyhole-unfsck.png",
             iconCls  : Ext.baseCSSPrefix + "btn-icon-16x16",
             handler  : Ext.Function.bind(me.onUnfsckButton, me, [ me ]),
-            scope    : me,
-            disabled : true
+            scope    : me
         },{
             id       : me.getId() + "-emptytrash",
             xtype    : "button",
@@ -228,53 +224,9 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
             icon     : "images/greyhole-emptytrash.png",
             iconCls  : Ext.baseCSSPrefix + "btn-icon-16x16",
             handler  : Ext.Function.bind(me.onEmptyTrashButton, me, [ me ]),
-            scope    : me,
-            disabled : true
+            scope    : me
         }]);
         return items;
-    },
-
-    onSelectionChange: function(model, records) {
-        var me = this;
-        me.callParent(arguments);
-        // Process additional buttons.
-        var tbarBtnName = [ "poolmngt", "balance", "fsck", "unfsck", "emptytrash" ];
-        var tbarBtnDisabled = {
-            "poolmngt": true,
-            "balance": true,
-            "fsck": true,
-            "unfsck": true,
-            "emptytrash": true
-        };
-        if(records.length <= 0) {
-            tbarBtnDisabled["poolmngt"] = true;
-            tbarBtnDisabled["balance"] = true;
-            tbarBtnDisabled["fsck"] = true;
-            tbarBtnDisabled["unfsck"] = true;
-            tbarBtnDisabled["emptytrash"] = true;
-        } else if(records.length == 1) {
-            tbarBtnDisabled["poolmngt"] = false;
-            tbarBtnDisabled["balance"] = false;
-            tbarBtnDisabled["fsck"] = false;
-            tbarBtnDisabled["unfsck"] = false;
-            tbarBtnDisabled["emptytrash"] = false;
-        } else {
-            tbarBtnDisabled["poolmngt"] = true;
-            tbarBtnDisabled["balance"] = true;
-            tbarBtnDisabled["fsck"] = true;
-            tbarBtnDisabled["unfsck"] = true;
-            tbarBtnDisabled["emptytrash"] = true;
-        }
-        for(var i = 0; i < tbarBtnName.length; i++) {
-            var tbarBtnCtrl = me.queryById(me.getId() + "-" + tbarBtnName[i]);
-            if(!Ext.isEmpty(tbarBtnCtrl)) {
-                if(true == tbarBtnDisabled[tbarBtnName[i]]) {
-                    tbarBtnCtrl.disable();
-                } else {
-                    tbarBtnCtrl.enable();
-                }
-            }
-        }
     },
 
     onAddButton: function() {
