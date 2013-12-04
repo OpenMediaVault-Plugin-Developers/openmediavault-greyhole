@@ -25,7 +25,7 @@ set -e
 . /usr/share/openmediavault/scripts/helper-functions
 
 # Only if enabled
-if [ "$(omv_config_get "//system/storage/greyhole/enable")" != "1" ]; then
+if [ "$(omv_config_get "//services/greyhole/enable")" != "1" ]; then
 	exit 0
 fi
 
@@ -33,14 +33,14 @@ OMV_SAMBA_CONFIG=${OMV_SAMBA_CONFIG:-"/etc/samba/smb.conf"}
 
 echo "#======================= Greyhole Shares =======================" >> ${OMV_SAMBA_CONFIG}
 
-index=$(omv_config_get_count "//system/storage/greyhole/smb_shares/share")
+index=$(omv_config_get_count "//services/greyhole/smb_shares/share")
 while [ ${index} -gt 0 ]
 do
 	# Get the shared folder reference and path
-	smb_share_ref=$(omv_config_get "//system/storage/greyhole/smb_shares/share[position()=${index}]/smbref")
+	smb_share_ref=$(omv_config_get "//services/greyhole/smb_shares/share[position()=${index}]/smbref")
 	smb_share_name=$(omv_config_get "//services/smb/shares/share[uuid='${smb_share_ref}']/name")
 
-	xmlstarlet sel -t -m "//system/storage/greyhole/smb_shares/share[position()=${index}]" \
+	xmlstarlet sel -t -m "//services/greyhole/smb_shares/share[position()=${index}]" \
 	  -o "[${smb_share_name}]" -n \
 	  -o "dfree command = /usr/bin/greyhole-dfree" -n \
 	  -o "vfs objects = greyhole" -n \

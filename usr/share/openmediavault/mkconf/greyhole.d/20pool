@@ -28,7 +28,7 @@ set -e
 # @param The UUID of the shared folder
 # @return The shared folder path, e.g /media/85732966-949a-4d8b-87d7-d7e6681f787e/data.
 omv_get_greyhole_pooldisk_path() {
-	xmlstarlet sel -t -m "//system/storage/greyhole/pool_disks/disk[uuid='$1']" \
+	xmlstarlet sel -t -m "//services/greyhole/pool_disks/disk[uuid='$1']" \
 	  -v "//system/fstab/mntent[uuid=current()/mntentref]/dir" \
 	  -v "concat('/','.greyhole')" \
 	  ${OMV_CONFIG_FILE} | xmlstarlet unesc
@@ -37,17 +37,17 @@ omv_get_greyhole_pooldisk_path() {
 GREYHOLE_CONFIG="/etc/greyhole.conf"
 
 echo "#======================= Pool Definitions =======================" >> ${GREYHOLE_CONFIG}
-index=$(omv_config_get_count "//system/storage/greyhole/pool_disks/disk")
+index=$(omv_config_get_count "//services/greyhole/pool_disks/disk")
 while [ ${index} -gt 0 ]
 do
 	# Get the shared folder reference and path
-	greyhole_pool_disk_ref=$(omv_config_get "//system/storage/greyhole/pool_disks/disk[position()=${index}]/uuid")
+	greyhole_pool_disk_ref=$(omv_config_get "//services/greyhole/pool_disks/disk[position()=${index}]/uuid")
 	greyhole_pool_disk_path=$(omv_get_greyhole_pooldisk_path "${greyhole_pool_disk_ref}")
-	greyhole_pool_disk_min_free=$(omv_config_get "//system/storage/greyhole/pool_disks/disk[position()=${index}]/min_free")
+	greyhole_pool_disk_min_free=$(omv_config_get "//services/greyhole/pool_disks/disk[position()=${index}]/min_free")
 
 	mkdir -p ${greyhole_pool_disk_path}
 
-	xmlstarlet sel -t -m "//system/storage/greyhole/pool_disks/disk[position()=${index}]" \
+	xmlstarlet sel -t -m "//services/greyhole/pool_disks/disk[position()=${index}]" \
 	  -o "storage_pool_drive = ${greyhole_pool_disk_path}, min_free: ${greyhole_pool_disk_min_free}gb" -n \
 	  ${OMV_CONFIG_FILE} | xmlstarlet unesc >> ${GREYHOLE_CONFIG}
 

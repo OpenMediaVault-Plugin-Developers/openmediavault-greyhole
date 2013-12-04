@@ -24,7 +24,7 @@ set -e
 
 GREYHOLE_CONFIG="/etc/greyhole.conf"
 
-xmlstarlet sel -t -m "//system/storage/greyhole" \
+xmlstarlet sel -t -m "//services/greyhole" \
 	-v "concat('db_engine = ',db/db_engine)" -n \
 	-v "concat('db_host = ',db/db_host)" -n \
 	-v "concat('db_user = ',db/db_user)" -n \
