@@ -212,32 +212,6 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
         me.callParent(arguments);
     },
 
-    getTopToolbarItems: function() {
-        var me = this;
-        var items = me.callParent(arguments);
-
-        Ext.Array.insert(items, 3, [{
-            id       : me.getId() + "-fsck",
-            xtype    : "button",
-            text     : _("Files Check"),
-            icon     : "images/greyhole-fsck.png",
-            iconCls  : Ext.baseCSSPrefix + "btn-icon-16x16",
-            handler  : Ext.Function.bind(me.onFsckButton, me, [ me ]),
-            scope    : me,
-            disabled : true
-        },{
-            id       : me.getId() + "-unfsck",
-            xtype    : "button",
-            text     : _("Cancel All Checks"),
-            icon     : "images/greyhole-unfsck.png",
-            iconCls  : Ext.baseCSSPrefix + "btn-icon-16x16",
-            handler  : Ext.Function.bind(me.onUnfsckButton, me, [ me ]),
-            scope    : me,
-            disabled : true
-        }]);
-        return items;
-    },
-
     onAddButton: function() {
         var me = this;
         Ext.create("OMV.module.admin.service.greyhole.SambaShare", {

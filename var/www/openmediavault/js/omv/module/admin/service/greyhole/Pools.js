@@ -30,6 +30,103 @@
 // require("js/omv/data/proxy/Rpc.js")
 // require("js/omv/form/field/SharedFolderComboBox.js")
 
+Ext.define("OMV.module.admin.service.greyhole.Fsck", {
+    extend   : "OMV.workspace.window.Form",
+    requires : [
+        "OMV.workspace.window.plugin.ConfigObject",
+        "OMV.form.field.SharedFolderComboBox"
+    ],
+
+    rpcService   : "Greyhole",
+    rpcSetMethod : "doFsck",
+    plugins      : [{
+        ptype : "configobject"
+    }],
+
+    getFormItems: function() {
+        var me = this;
+        return [{
+            xtype         : "combo",
+            name          : "path",
+            fieldLabel    : _("Path"),
+            emptyText     : _("Select a path ..."),
+            allowBlank    : false,
+            allowNone     : false,
+            editable      : false,
+            triggerAction : "all",
+            displayField  : "show",
+            valueField    : "path",
+            store         : Ext.create("OMV.data.Store", {
+                autoLoad : true,
+                model    : OMV.data.Model.createImplicit({
+                    idProperty : "path",
+                    fields     : [
+                        { name: "show", type: "string" },
+                        { name: "path", type: "string" }
+                    ]
+                }),
+                proxy    : {
+                    type    : "rpc",
+                    rpcData : {
+                        service : "Greyhole",
+                        method  : "getFsckCandidates"
+                    },
+                    appendSortParams : false
+                },
+                sorters  : [{
+                    direction : "ASC",
+                    property  : "show"
+                }]
+            })
+        },{
+            xtype     :"checkbox",
+            name      :"email_report",
+            fieldLabel:_("Email report"),
+            checked   :false,
+            plugins    : [{
+                ptype : "fieldinfo",
+                text  : _("Send an email when fsck completes, to report on what was checked, and any error that was found.")
+            }]
+        },{
+            xtype     :"checkbox",
+            name      :"checksums",
+            fieldLabel:_("Checksums"),
+            checked   :false,
+            plugins    : [{
+                ptype : "fieldinfo",
+                text  : _("Read ALL files in your storage pool, and check that file copies are identical. This will identify any problem you might have with your file-systems. NOTE: this can take a LONG time to complete, since it will read everything from all your drives!")
+            }]
+        },{
+            xtype     :"checkbox",
+            name      :"dont_walk_metadata_store",
+            fieldLabel:_("Don't walk metadata store"),
+            checked   :false,
+            plugins    : [{
+                ptype : "fieldinfo",
+                text  : _("Speed up fsck by skipping the scan of the metadata store directories. Scanning the metadata stores is only required to re-create symbolic links that might be missing from your shared directories.")
+            }]
+        },{
+            xtype     :"checkbox",
+            name      :"find_orphaned_files",
+            fieldLabel:_("Find orphaned files"),
+            checked   :false,
+            plugins    : [{
+                ptype : "fieldinfo",
+                text  : _("Scan for files with no metadata in the storage pool drives. This will allow you to include existing files on a drive in your storage pool without having to copy them manually.")
+            }]
+        },{
+            xtype     :"checkbox",
+            name      :"delete_orphaned_metadata",
+            fieldLabel:_("Delete orphaned metadata"),
+            checked   :false,
+            plugins    : [{
+                ptype : "fieldinfo",
+                text  : _("When fsck find metadata files with no file copies, delete those metadata files. If the file copies re-appear later, you'll need to run fsck with --find-orphaned-files to have them reappear in your shares.")
+            }]
+        }];
+    }
+});
+
 Ext.define("OMV.module.admin.service.greyhole.PoolDisk", {
     extend   : "OMV.workspace.window.Form",
     requires : [
@@ -93,6 +190,110 @@ Ext.define("OMV.module.admin.service.greyhole.PoolDisk", {
     }
 });
 
+Ext.define("OMV.module.admin.service.greyhole.PoolManagement", {
+    extend   : "OMV.workspace.window.Form",
+    requires : [
+        "OMV.workspace.window.plugin.ConfigObject",
+        "OMV.form.field.SharedFolderComboBox"
+    ],
+
+    rpcService   : "Greyhole",
+    rpcSetMethod : "doPoolManagement",
+    plugins      : [{
+        ptype : "configobject"
+    }],
+
+    getFormItems: function() {
+        var me = this;
+        return [{
+            xtype         : "combo",
+            name          : "path",
+            fieldLabel    : _("Pool Disk"),
+            emptyText     : _("Select a pool disk ..."),
+            allowBlank    : false,
+            allowNone     : false,
+            editable      : false,
+            triggerAction : "all",
+            displayField  : "show",
+            valueField    : "path",
+            store         : Ext.create("OMV.data.Store", {
+                autoLoad : true,
+                model    : OMV.data.Model.createImplicit({
+                    idProperty : "path",
+                    fields     : [
+                        { name: "show", type: "string" },
+                        { name: "path", type: "string" }
+                    ]
+                }),
+                proxy    : {
+                    type    : "rpc",
+                    rpcData : {
+                        service : "Greyhole",
+                        method  : "getPoolMngtCandidates"
+                    },
+                    appendSortParams : false
+                },
+                sorters  : [{
+                    direction : "ASC",
+                    property  : "show"
+                }]
+            })
+        },{
+            xtype      : "radiogroup",
+            fieldLabel : _("Pool Managment"),
+            columns    : 1,
+            vertical   : true,
+            id         : "diskmngt",
+            items      : [{
+                xtype      : "radio",
+                name       : "diskmngt",
+                id         : "wait_for",
+                hideLabel  : true,
+                boxLabel   : _("Wait for"),
+                checked    : true,
+                inputValue : "wait_for",
+                plugins    : [{
+                    ptype : "fieldinfo",
+                    text  : _("Tell Greyhole that the missing drive will return soon, and that it shouldn't re-create additional file copies to replace it.")
+                }]
+            },{
+                xtype      : "radio",
+                name       : "diskmngt",
+                id         : "going",
+                hideLabel  : true,
+                boxLabel   : _("Going"),
+                inputValue : "going",
+                plugins    : [{
+                    ptype : "fieldinfo",
+                    text  : _("Tell Greyhole that you want to remove a drive. Greyhole will then make sure you don't loose any files, and that the correct number of file copies are created to replace the missing drive.")
+                }]
+            },{
+                xtype      : "radio",
+                name       : "diskmngt",
+                id         : "gone",
+                hideLabel  : true,
+                boxLabel   : _("Gone"),
+                inputValue : "gone",
+                plugins    : [{
+                    ptype : "fieldinfo",
+                    text  : _("Tell Greyhole that the missing drive at is gone for good. Greyhole will start replacing the missing file copies instantly.")
+                }]
+            },{
+                xtype      : "radio",
+                name       : "diskmngt",
+                id         : "replaced",
+                hideLabel  : true,
+                boxLabel   : _("Replaced"),
+                inputValue : "replaced",
+                plugins    : [{
+                    ptype : "fieldinfo",
+                    text  : _("Tell Greyhole that you replaced the drive.")
+                }]
+            }]
+        }];
+    }
+});
+
 Ext.define("OMV.module.admin.service.greyhole.Pools", {
     extend   : "OMV.workspace.grid.Panel",
     requires : [
@@ -103,7 +304,7 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
     ],
     uses     : [
         "OMV.module.admin.service.greyhole.PoolDisk",
-        "OMV.module.admin.service.greyhole.PoolMgmt",
+        "OMV.module.admin.service.greyhole.PoolManagement",
         "OMV.module.admin.service.greyhole.Fsck"
     ],
 
@@ -191,7 +392,7 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
             text     : _("Pool Management"),
             icon     : "images/greyhole-poolmngt.png",
             iconCls  : Ext.baseCSSPrefix + "btn-icon-16x16",
-            handler  : Ext.Function.bind(me.onPoolMngtButton, me, [ me ]),
+            handler  : Ext.Function.bind(me.onPoolManagementButton, me, [ me ]),
             scope    : me
         },{
             id       : me.getId() + "-balance",
@@ -322,6 +523,73 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
         me.callParent(arguments);
         // Delete private variable which is not required anymore.
         delete me.deleteRecursive;
+    },
+
+    onBalanceButton: function() {
+        var me = this;
+        Ext.create("OMV.window.Execute", {
+            title      : _("Greyhole - Balance"),
+            rpcService : "Greyhole",
+            rpcMethod  : "doBalance",
+            listeners  : {
+                scope     : me,
+                exception : function(wnd, error) {
+                    OMV.MessageBox.error(null, error);
+                }
+            }
+        }).show();
+    },
+
+    onEmtpyTrashButton: function() {
+        var me = this;
+        Ext.create("OMV.window.Execute", {
+            title      : _("Greyhole - Empty Trash"),
+            rpcService : "Greyhole",
+            rpcMethod  : "doEmptyTrash",
+            listeners  : {
+                scope     : me,
+                exception : function(wnd, error) {
+                    OMV.MessageBox.error(null, error);
+                }
+            }
+        }).show();
+    },
+
+    onPoolManagementButton: function() {
+        var me = this;
+        Ext.create("OMV.module.admin.service.greyhole.PoolManagement", {
+            title     : _("Disk Pool Management"),
+            listeners : {
+                scope  : me,
+                submit : function() {
+                    this.doReload();
+                }
+            }
+        }).show();
+    },
+
+    onFsckButton: function() {
+        var me = this;
+        Ext.create("OMV.module.admin.service.greyhole.Fsck", {
+            title     : _("Files Check"),
+            listeners : {
+                scope  : me,
+                submit : function() {
+                    this.doReload();
+                }
+            }
+        }).show();
+    },
+
+    onUnfsckButton: function() {
+        var me = this;
+        OMV.Rpc.request({
+            scope    : me,
+            rpcData  : {
+                service : "Greyhole",
+                method  : "doUnfsck"
+            }
+        });
     },
 
     min_free_renderer:function (val, cell, record, row, col, store) {

@@ -53,63 +53,8 @@ class OMVModuleGreyhole extends OMVModuleServiceAbstract
 
     public function applyConfig() {
         $cmd = "omv-mkconf greyhole 2>&1";
-        if(0 !== $this->exec($cmd, $output)) {
-            throw new OMVException(OMVErrorMsg::E_EXEC_FAILED,
-              $cmd, implode("\n", $output));
-        }
-    }
-
-    //shouldn't need
-    public function create_pool_disk() {
-        global $xmlConfig;
-
-        // Get the configuration object
-        $xpath  = "//services/greyhole";
-        $object = $xmlConfig->get($xpath);
-
-        if (is_null($object))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
-        $this->mkConf();
-    }
-
-    //shouldn't need
-    public function modify_pool_disk() {
-        global $xmlConfig;
-
-        // Get the configuration object
-        $xpath  = "//services/greyhole";
-        $object = $xmlConfig->get($xpath);
-
-        if (is_null($object))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
-        $this->mkConf();
-    }
-
-    //shouldn't need
-    public function delete_pool_disk() {
-        global $xmlConfig;
-
-        // Get the configuration object
-        $xpath  = "//services/greyhole";
-        $object = $xmlConfig->get($xpath);
-
-        if (is_null($object))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
-        $this->mkConf();
-    }
-
-    //shouldn't need
-    public function create_smb_share() {
-        global $xmlConfig;
-
-        // Get the configuration object
-        $xpath  = "//services/greyhole";
-        $object = $xmlConfig->get($xpath);
-
-        if (is_null($object))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
-        // Create greyhole.conf file
-        $this->mkConf();
+        if(0 !== $this->exec($cmd, $output))
+            throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
     }
 
     public function modify_smb_share($object) {
@@ -119,7 +64,7 @@ class OMVModuleGreyhole extends OMVModuleServiceAbstract
             throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED);
 
         // Create greyhole.conf file
-        $this->mkConf();
+        $this->applyConfig();
 
         $xpath_smb_share = "//services/smb/shares/share[uuid='{$object['smbref']}']";
         $smb_share       = $xmlConfig->get($xpath_smb_share);
@@ -145,12 +90,6 @@ class OMVModuleGreyhole extends OMVModuleServiceAbstract
         OMVUtil::exec($cmd, $output, $result);
         if ($result !== 0)
             throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
-    }
-
-    //shouldn't need
-    public function delete_smb_share() {
-        // Create greyhole.conf file
-        $this->mkConf();
     }
 
     /**

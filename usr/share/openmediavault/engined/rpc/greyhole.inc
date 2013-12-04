@@ -56,7 +56,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         $this->registerMethod("getFsckCandidates");
         $this->registerMethod("getPoolMngtCandidates");
 
-        $this->registerMethod("doPoolMngt");
+        $this->registerMethod("doPoolManagement");
         $this->registerMethod("doBalance");
         $this->registerMethod("doFsck");
         $this->registerMethod("doUnfsck");
@@ -717,7 +717,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         return $result;
     }
 
-    public function doPoolMngt($params, $context) {
+    public function doPoolManagement($params, $context) {
         // Validate the RPC caller context.
         $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
         // Validate the parameters of the RPC service method.
@@ -759,7 +759,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         try {
             $bgOutputFilename = $this->createBgProcOutput();
             $this->updateBgProcStatus($bgStatusFilename, "outputfilename", $bgOutputFilename);
-            
+
             $cmd = "/usr/bin/greyhole " . $greyhole_poolmngt_params . $params['path'] . " 2>&1";
             $this->exec($cmd, $output, $bgOutputFilename);
             $this->finalizeBgProcStatus($bgStatusFilename, $output);
@@ -767,7 +767,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         } catch(Exception $e) {
             $this->finalizeBgProcStatus($bgStatusFilename, "", $e);
             exit(1);
-        }    
+        }
     }
 
     public function doBalance($params, $context) {
@@ -794,7 +794,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         } catch(Exception $e) {
             $this->finalizeBgProcStatus($bgStatusFilename, "", $e);
             exit(1);
-        }    
+        }
     }
 
     public function doFsck($params, $context) {
@@ -840,7 +840,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         if ($delete_orphaned_metadata === true)
             $greyhole_fsck_params .= ' --delete-orphaned-metadata';
 
-        
+
         // Create a background process.
         $bgStatusFilename = $this->createBgProcStatus();
         $pid = $this->fork();
@@ -853,7 +853,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         try {
             $bgOutputFilename = $this->createBgProcOutput();
             $this->updateBgProcStatus($bgStatusFilename, "outputfilename", $bgOutputFilename);
-            
+
             $cmd = "/usr/bin/greyhole --fsck " . $greyhole_fsck_params . " --dir=" . $path . " 2>&1";
             $this->exec($cmd, $output, $bgOutputFilename);
             $this->finalizeBgProcStatus($bgStatusFilename, $output);
@@ -861,7 +861,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         } catch(Exception $e) {
             $this->finalizeBgProcStatus($bgStatusFilename, "", $e);
             exit(1);
-        }    
+        }
     }
 
     public function doUnfsck($params, $context) {
@@ -888,7 +888,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         } catch(Exception $e) {
             $this->finalizeBgProcStatus($bgStatusFilename, "", $e);
             exit(1);
-        }    
+        }
     }
 
     public function doEmptyTrash($params, $context) {
@@ -907,7 +907,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         try {
             $bgOutputFilename = $this->createBgProcOutput();
             $this->updateBgProcStatus($bgStatusFilename, "outputfilename", $bgOutputFilename);
-            
+
             $cmd = "/usr/bin/greyhole --empty-trash 2>&1";
             $this->exec($cmd, $output, $bgOutputFilename);
             $this->finalizeBgProcStatus($bgStatusFilename, $output);

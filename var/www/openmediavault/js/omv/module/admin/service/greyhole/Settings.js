@@ -30,6 +30,29 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
     rpcGetMethod : "getSettings",
     rpcSetMethod : "setSettings",
 
+    initComponent : function () {
+        var me = this;
+
+        me.on('load', function () {
+            var checked = me.findField('enable').checked;
+            var parent = me.up('tabpanel');
+
+            if (!parent)
+                return;
+
+            var poolsPanel = parent.down('panel[title=' + _("Pools") + ']');
+            var sambaSharesPanel = parent.down('panel[title=' + _("Samba Shares") + ']');
+
+            if (poolsPanel) {
+                checked ? poolsPanel.enable() : poolsPanel.disable();
+            }
+            if (sambaSharesPanel) {
+                checked ? sambaSharesPanel.enable() : sambaSharesPanel.disable();
+            }
+        });
+        me.callParent(arguments);
+    },
+    
     getFormItems : function() {
         return [{
             xtype    : "fieldset",
