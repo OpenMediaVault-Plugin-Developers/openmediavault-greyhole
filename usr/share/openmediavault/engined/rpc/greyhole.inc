@@ -24,9 +24,10 @@
  */
 
 require_once("openmediavault/object.inc");
+require_once("openmediavault/config.inc");
 require_once("openmediavault/error.inc");
 require_once("openmediavault/util.inc");
-require_once("openmediavault/rpc.inc");
+require_once("openmediavault/rpcservice.inc");
 require_once("openmediavault/notify.inc");
 
 class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
@@ -920,7 +921,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         }
     }
 
-    function doInstallDB($params, $context) {
+    public function doInstallDB($params, $context) {
         global $xmlConfig;
 
         // Validate the RPC caller context.
