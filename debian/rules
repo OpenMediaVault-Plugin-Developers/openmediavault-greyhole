@@ -13,13 +13,6 @@ install:
 	dh_prep
 	dh_installdirs
 	dh_install
-	chmod +x $(CURDIR)/debian/openmediavault-greyhole/usr/share/openmediavault/mkconf/greyhole
-	chmod +x $(CURDIR)/debian/openmediavault-greyhole/usr/share/openmediavault/mkconf/greyhole.d/10main
-	chmod +x $(CURDIR)/debian/openmediavault-greyhole/usr/share/openmediavault/mkconf/greyhole.d/20pool
-	chmod +x $(CURDIR)/debian/openmediavault-greyhole/usr/share/openmediavault/mkconf/greyhole.d/30shares
-	chmod +x $(CURDIR)/debian/openmediavault-greyhole/usr/share/openmediavault/mkconf/samba.d/11greyhole
-	chmod +x $(CURDIR)/debian/openmediavault-greyhole/usr/share/openmediavault/mkconf/samba.d/21greyhole
-	chmod +x $(CURDIR)/debian/openmediavault-greyhole/etc/init.d/mount_shares_locally
 
 binary-indep: install omv_clean_scm
 	dh_testdir
