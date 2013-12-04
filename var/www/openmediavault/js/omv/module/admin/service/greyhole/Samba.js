@@ -139,7 +139,7 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShare", {
     }
 });
 
-Ext.define("OMV.module.admin.service.greyhole.Pools", {
+Ext.define("OMV.module.admin.service.greyhole.SambaShares", {
     extend   : "OMV.workspace.grid.Panel",
     requires : [
         "OMV.Rpc",
