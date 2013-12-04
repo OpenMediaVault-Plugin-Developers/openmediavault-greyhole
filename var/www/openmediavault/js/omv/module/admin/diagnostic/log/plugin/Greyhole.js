@@ -21,7 +21,7 @@
 // require("js/omv/module/admin/diagnostic/log/plugin/Plugin.js")
 // require("js/omv/util/Format.js")
 
-Ext.define("OMV.module.admin.diagnostic.log.plugin.MiniDlna", {
+Ext.define("OMV.module.admin.diagnostic.log.plugin.Greyhole", {
     extend : "OMV.module.admin.diagnostic.log.plugin.Plugin",
 
     id       : "greyhole",
