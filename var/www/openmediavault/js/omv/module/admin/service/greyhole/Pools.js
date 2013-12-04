@@ -33,15 +33,11 @@
 Ext.define("OMV.module.admin.service.greyhole.Fsck", {
     extend   : "OMV.workspace.window.Form",
     requires : [
-        "OMV.workspace.window.plugin.ConfigObject",
         "OMV.form.field.SharedFolderComboBox"
     ],
 
     rpcService   : "Greyhole",
     rpcSetMethod : "doFsck",
-    plugins      : [{
-        ptype : "configobject"
-    }],
 
     getFormItems: function() {
         var me = this;
@@ -193,15 +189,11 @@ Ext.define("OMV.module.admin.service.greyhole.PoolDisk", {
 Ext.define("OMV.module.admin.service.greyhole.PoolManagement", {
     extend   : "OMV.workspace.window.Form",
     requires : [
-        "OMV.workspace.window.plugin.ConfigObject",
         "OMV.form.field.SharedFolderComboBox"
     ],
 
     rpcService   : "Greyhole",
     rpcSetMethod : "doPoolManagement",
-    plugins      : [{
-        ptype : "configobject"
-    }],
 
     getFormItems: function() {
         var me = this;

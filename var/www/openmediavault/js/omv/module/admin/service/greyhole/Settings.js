@@ -25,15 +25,9 @@
 
 Ext.define("OMV.module.admin.service.greyhole.InstallDB", {
     extend   : "OMV.workspace.window.Form",
-    requires : [
-        "OMV.workspace.window.plugin.ConfigObject"
-    ],
 
     rpcService   : "Greyhole",
     rpcSetMethod : "doInstallDB",
-    plugins      : [{
-        ptype : "configobject"
-    }],
 
     getFormItems: function() {
         return [{
