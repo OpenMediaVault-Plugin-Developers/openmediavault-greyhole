@@ -75,7 +75,7 @@ case "$1" in
     fi
 
 
-    update-rc.d mount_shares_locally defaults
+    update-rc.d mountsmb_locally defaults
 
     ;;
 
