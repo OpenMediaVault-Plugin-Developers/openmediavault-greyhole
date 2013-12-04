@@ -108,14 +108,14 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
                 allowBlank : true,
                 plugins    : [{
                     ptype : "fieldinfo",
-                    text  : _("Will receive email reports for daily fsck, or when all drives are out of available space.")
+                    text  : _("Will receive email reports for daily fsck or when all drives are out of available space.")
                 }]
             },{
                 xtype      : "checkbox",
                 name       : "delete_moves_to_trash",
                 fieldLabel : _("Trash deletes"),
                 checked    : true,
-                boxLabel   : _("Move deleted files to trash instead of deleting them (This is a global setting that can be overided by local option on each Greyhole share)")
+                boxLabel   : _("Move deleted files to trash instead of deleting them. This is a global setting that can be overided by local option on each Greyhole share.")
             },{
                 xtype      : "checkbox",
                 name       : "balance_modified_files",
@@ -142,7 +142,7 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
                 name       : "check_for_open_files",
                 fieldLabel : _("Check for open Files"),
                 checked    : false,
-                boxLabel  : _("Disable to get more speed, but this might break some files, if any application change your files while Greyhole tries to work on them.")
+                boxLabel  : _("Disable to get more speed. This might break some files if any application change your files while Greyhole tries to work on them.")
             },{
                 xtype      : "combo",
                 name       : "log_level",
@@ -199,7 +199,7 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
             },{
                 xtype     : "label",
                 hideLabel : true,
-                text      : _("Warning: Changing your database connection properties may result in stoping Greyhole. Stop Greyhole daemon before any change. Check that the values you're modifying are matching the one of your MySQL greyhole database before restarting Greyhole daemon.")
+                text      : _("Warning: Changing your database connection properties may result in stoping Greyhole. Stop Greyhole daemon before any change. Make sure the values you are modifying match the MySQL greyhole database values before restarting Greyhole daemon.")
             },{
                 border : false,
                 html   : "<br />"
