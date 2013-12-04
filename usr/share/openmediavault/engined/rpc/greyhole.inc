@@ -61,6 +61,8 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         $this->registerMethod("doFsck");
         $this->registerMethod("doUnfsck");
         $this->registerMethod("doEmptyTrash");
+
+        $this->registerMethod("doInstallDB");
     }
 
     public function getSettings($params, $context) {
@@ -915,6 +917,31 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         } catch(Exception $e) {
             $this->finalizeBgProcStatus($bgStatusFilename, "", $e);
             exit(1);
+        }
+    }
+
+    function doInstallDB($params, $context) {
+        global $xmlConfig;
+
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
+
+        // Validate the parameters of the RPC service method.
+        $this->validateMethodParams($params, '{
+            "type":"object",
+            "properties":{
+                "password" : { "type" : "string" }
+            }
+        }');
+
+        //create password file
+        $file = "/tmp/.openmediavault-greyhole-mysql-pwd";
+        file_put_contents($file, $params['password']);
+
+        // install database
+        $cmd = "/usr/local/bin/create_greyhole_db 2>&1";
+        if(0 !== $this->exec($cmd, $output)) {
+            throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
         }
     }
 
