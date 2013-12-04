@@ -945,11 +945,10 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
             throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
         }
     }
+}
 
 // Register the RPC service.
 $rpcServiceMgr = &OMVRpcServiceMgr::getInstance();
 $rpcServiceMgr->registerService(new OMVRpcServiceGreyhole());
-
-}
 
 ?>

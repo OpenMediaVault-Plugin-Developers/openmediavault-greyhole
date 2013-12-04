@@ -28,7 +28,7 @@ require_once("openmediavault/initscript.inc");
 require_once("openmediavault/log.inc");
 
 class OMVModuleGreyhole extends OMVModuleServiceAbstract
-    implements OMVINotifyListener, OMVIModuleStatus {
+    implements OMVINotifyListener, OMVIModuleServiceStatus {
 
     public function getName() {
         return "greyhole";
