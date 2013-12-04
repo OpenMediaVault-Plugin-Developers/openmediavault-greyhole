@@ -5,3 +5,8 @@ Copyright: 2013 OpenMediaVault Plugin Developers <plugins@omv-extras.org>
  2012 Marcel Beck <marcel.beck@mbeck.org>
  2012 Stéphane Bocquet <stephane_bocquet@hotmail.com>
 License: GPL-3
+
+Files: /var/www/openmediavault/images/greyhole.png
+       /var/www/openmediavault/images/greyhole.svg
+Copyright: IcoMoon <http://www.icomoon.io>
+IcoMoon <http://www.icomoon.io>
