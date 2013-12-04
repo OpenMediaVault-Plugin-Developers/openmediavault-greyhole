@@ -142,7 +142,7 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
                 name       : "check_for_open_files",
                 fieldLabel : _("Check for open Files"),
                 checked    : false,
-                boxLabel  : _("Disable to get more speed. This might break some files if any application change your files while Greyhole tries to work on them.")
+                boxLabel  : _("Disable to get more speed. This might break some files if any application changes your files while Greyhole tries to work on them.")
             },{
                 xtype      : "combo",
                 name       : "log_level",
