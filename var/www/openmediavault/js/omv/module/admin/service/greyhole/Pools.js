@@ -31,17 +31,17 @@
 // require("js/omv/form/field/SharedFolderComboBox.js")
 
 Ext.define("OMV.module.admin.service.greyhole.PoolDisk", {
-    extend: "OMV.workspace.window.Form",
-    requires: [
+    extend   : "OMV.workspace.window.Form",
+    requires : [
         "OMV.workspace.window.plugin.ConfigObject",
         "OMV.form.field.SharedFolderComboBox"
     ],
 
-    rpcService: "Greyhole",
-    rpcGetMethod: "getPoolDisk",
-    rpcSetMethod: "setPoolDisk",
-    plugins: [{
-        ptype: "configobject"
+    rpcService   : "Greyhole",
+    rpcGetMethod : "getPoolDisk",
+    rpcSetMethod : "setPoolDisk",
+    plugins      : [{
+        ptype : "configobject"
     }],
 
     getFormItems: function() {

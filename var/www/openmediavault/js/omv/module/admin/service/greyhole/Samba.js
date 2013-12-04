@@ -29,6 +29,116 @@
 // require("js/omv/data/proxy/Rpc.js")
 // require("js/omv/form/field/SharedFolderComboBox.js")
 
+Ext.define("OMV.module.admin.service.greyhole.SambaShare", {
+    extend   : "OMV.workspace.window.Form",
+    requires : [
+        "OMV.workspace.window.plugin.ConfigObject",
+        "OMV.form.field.SharedFolderComboBox"
+    ],
+
+    rpcService   : "Greyhole",
+    rpcGetMethod : "getSMBShare",
+    rpcSetMethod : "setSMBShare",
+    plugins      : [{
+        ptype : "configobject"
+    }],
+
+    getFormItems: function() {
+        var me = this;
+        return [{
+            xtype         : "combo",
+            name          : "smbref",
+            hiddenName    : "smbref",
+            fieldLabel    : _("SMB Share"),
+            emptyText     : _("Select an SMB Share ..."),
+            allowBlank    : false,
+            allowNone     : false,
+            editable      : false,
+            triggerAction : "all",
+            displayField  : "name",
+            valueField    : "uuid",
+            store         : Ext.create("OMV.data.Store", {
+                autoLoad : true,
+                model    : OMV.data.Model.createImplicit({
+                    idProperty : "uuid",
+                        fields : [
+                            { name : "uuid" },
+                            { name : "name" }
+                        ]
+                }),
+                proxy    : {
+                    type    : "rpc",
+                    rpcData : {
+                        service : "Greyhole",
+                        method  : "getPoolDiskCandidates"
+                    },
+                    appendSortParams : false
+                },
+                sorters  : [{
+                    direction : "ASC",
+                    property  : "description"
+                }]
+            })
+        },{
+            xtype         : "combo",
+            name          : "num_copies",
+            hiddenName    : "num_copies",
+            fieldLabel    : _("Number of Copies"),
+            emptyText     : _("Select Number of Copies ..."),
+            allowBlank    : false,
+            allowNone     : false,
+            editable      : false,
+            triggerAction : "all",
+            displayField  : "name",
+            valueField    : "number",
+            store         : Ext.create("OMV.data.Store", {
+                autoLoad : true,
+                model    : OMV.data.Model.createImplicit({
+                    idProperty : "number",
+                    fields     : [
+                        { name : "number" },
+                        { name : "name" }
+                    ]
+                }),
+                proxy    : {
+                    type    : "rpc",
+                    rpcData : {
+                        service : "Greyhole",
+                        method  : "getPoolDiskCount"
+                    },
+                    appendSortParams : false
+                },
+                sorters  : [{
+                    direction : "ASC",
+                    property  : "name"
+                }]
+            }),
+            plugins    : [{
+                ptype : "fieldinfo",
+                text  : _("This is the number of copies of each file you want Greyhole to keep per Share. This is not the number of duplicates! 2 copies = 1 duplicate.")
+            }]
+        },{
+            xtype      : "checkbox",
+            name       : "sticky_files",
+            fieldLabel : _("Sticky files"),
+            checked    : false,
+            plugins    : [{
+                ptype : "fieldinfo",
+                text  : _("Sticky files are files that will always 'live' together in the storage pool. This will allow you to read (and read-only!) those files by using the storage pool drives themselves, instead of using the mounted shares.")
+            }]
+        },{
+            xtype      : "checkbox",
+            name       : "trash",
+            fieldLabel : _("Use Trash"),
+            checked    : false,
+            plugins    : [{
+                ptype : "fieldinfo",
+                text  : _("You can specify per-share trash preferences that will override the global trash preference.")
+            }]
+        }];
+    }
+});
+
 Ext.define("OMV.module.admin.service.greyhole.Pools", {
     extend   : "OMV.workspace.grid.Panel",
     requires : [
@@ -38,43 +148,41 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
         "OMV.data.proxy.Rpc"
     ],
     uses     : [
-        "OMV.module.admin.service.greyhole.PoolDisk",
-        "OMV.module.admin.service.greyhole.PoolMgmt",
-        "OMV.module.admin.service.greyhole.Fsck"
+        "OMV.module.admin.service.greyhole.SambaShare"
     ],
 
-	hidePagingToolbar : false,
+    hidePagingToolbar : false,
     stateful          : true,
-	autoReload        : true,
-	stateId           : "85f1cbf2-23d3-4960-a803-b7fc34d42235",
-	columns           : [{
-		header   :_("SMB Share"),
-		sortable :true,
-		dataIndex:"name",
+    autoReload        : true,
+    stateId           : "85f1cbf2-23d3-4960-a803-b7fc34d42235",
+    columns           : [{
+        header   :_("SMB Share"),
+        sortable :true,
+        dataIndex:"name",
         id       :"name"
-	},{
-		header   :_("Comment"),
-		sortable :true,
-		dataIndex:"comment",
+    },{
+        header   :_("Comment"),
+        sortable :true,
+        dataIndex:"comment",
         id       :"comment"
-	},{
-		header   :_("Files copies"),
-		sortable :true,
-		dataIndex:"num_copies",
+    },{
+        header   :_("Files copies"),
+        sortable :true,
+        dataIndex:"num_copies",
         id       :"num_copies"
-	},{
-		header   :_("Sticky files"),
-		sortable :true,
-		dataIndex:"sticky_files",
-		id       :"sticky_files",
-		renderer :OMV.util.Format.booleanRenderer()
-	},{
-		header   :_("Use Trash"),
-		sortable :true,
-		dataIndex:"trash",
-		id       :"trash",
+    },{
+        header   :_("Sticky files"),
+        sortable :true,
+        dataIndex:"sticky_files",
+        id       :"sticky_files",
         renderer :OMV.util.Format.booleanRenderer()
-	}],
+    },{
+        header   :_("Use Trash"),
+        sortable :true,
+        dataIndex:"trash",
+        id       :"trash",
+        renderer :OMV.util.Format.booleanRenderer()
+    }],
 
     initComponent: function() {
         var me = this;
@@ -83,15 +191,15 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
                 autoLoad : true,
                 model    : OMV.data.Model.createImplicit({
                     idProperty  : "uuid",
-                    fields      : [    
-					{ name : "uuid", type: "string" },
-					{ name : "name", type: "string" },
-					{ name : "comment", type: "string" },
-					{ name : "num_copies", type: "string" },
-					{ name : "sticky_files", type: "boolean" },
-					{ name : "trash", type: "boolean" }
-				]
-			}),
+                    fields      : [
+                    { name : "uuid", type: "string" },
+                    { name : "name", type: "string" },
+                    { name : "comment", type: "string" },
+                    { name : "num_copies", type: "string" },
+                    { name : "sticky_files", type: "boolean" },
+                    { name : "trash", type: "boolean" }
+                ]
+            }),
                 proxy: {
                     type    : "rpc",
                     rpcData : {
@@ -159,7 +267,7 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
         }).show();
     },
 
-	doDeletion: function () {
+    doDeletion: function () {
         var me = this;
         OMV.Rpc.request({
             scope    : me,
@@ -172,7 +280,7 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
                 }
             }
         });
-	}
+    }
 
 });
 
