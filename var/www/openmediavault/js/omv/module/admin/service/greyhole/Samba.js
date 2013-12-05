@@ -55,7 +55,7 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShare", {
             allowNone     : false,
             editable      : false,
             triggerAction : "all",
-            displayField  : "name",
+            displayField  : "description",
             valueField    : "uuid",
             store         : Ext.create("OMV.data.Store", {
                 autoLoad : true,
@@ -63,7 +63,7 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShare", {
                     idProperty : "uuid",
                         fields : [
                             { name : "uuid" },
-                            { name : "name" }
+                            { name : "description" }
                         ]
                 }),
                 proxy    : {
