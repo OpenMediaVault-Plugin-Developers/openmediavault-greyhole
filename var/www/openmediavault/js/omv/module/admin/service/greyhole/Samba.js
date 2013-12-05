@@ -62,21 +62,22 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShare", {
                 model    : OMV.data.Model.createImplicit({
                     idProperty : "uuid",
                         fields : [
-                            { name : "uuid" },
-                            { name : "description" }
+                            { name: "uuid", type: "string" },
+                            { name: "devicefile", type: "string" },
+                            { name: "description", type: "string" }
                         ]
                 }),
                 proxy    : {
                     type    : "rpc",
                     rpcData : {
-                        service : "Greyhole",
-                        method  : "getPoolDiskCandidates"
+                        service : "ShareMgmt",
+                        method  : "getCandidates"
                     },
                     appendSortParams : false
                 },
                 sorters  : [{
                     direction : "ASC",
-                    property  : "description"
+                    property  : "devicefile"
                 }]
             })
         },{

@@ -97,9 +97,7 @@ class OMVModuleGreyhole extends OMVModuleServiceAbstract
      *
      * @param OMVNotifyDispatcher $dispatcher
      */
-    function bindListeners(OMVNotifyDispatcher $dispatcher)
-    {
-
+    function bindListeners(OMVNotifyDispatcher $dispatcher) {
         /* Update service if configuration has been modified */
         $dispatcher->addListener(OMV_NOTIFY_MODIFY,
             "org.openmediavault.system.storage.greyhole",

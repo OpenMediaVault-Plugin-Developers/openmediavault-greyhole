@@ -45,7 +45,6 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         $this->registerMethod("setPoolDisk");
         $this->registerMethod("deletePoolDisk");
 
-        $this->registerMethod("getPoolDiskCandidates");
         $this->registerMethod("getPoolDiskCount");
 
         $this->registerMethod("getSMBShareCandidates");
@@ -330,53 +329,6 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
 
         // Return the deleted configuration object.
         return $object;
-    }
-
-    public function getPoolDiskCandidates($params, $context) {
-        global $xmlConfig;
-
-        // Validate the RPC caller context.
-        $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
-
-        // Get list of mount points, except bind mounts.
-        $xpath   = "//system/fstab/mntent[not(contains(opts,'bind'))]";
-        $objects = $xmlConfig->getList($xpath);
-        if (is_null($objects))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
-
-        // Get the filesystem details for each mount point.
-        $result = array();
-        foreach ($objects as $objectk => $objectv) {
-            $fs = new OMVFilesystem($objectv['fsname']);
-            if (! $fs->exists())
-                continue;
-
-            // Skip the filesystems that are not mounted at the moment.
-            if (FALSE === $fs->isMounted())
-                continue;
-
-            // Get some filesystem details.
-            $devicefile = $fs->getDeviceFile();
-            $label = $fs->getLabel();
-
-            // Prepare result object.
-            $object = array(
-                "uuid"        => $objectv['uuid'],
-                "devicefile"  => $devicefile,
-                "description" => !empty($label) ? $label : $devicefile
-            );
-
-            // Get some more filesystem details if possible.
-            if(FALSE !== ($fsStats = $fs->getStatistics())) {
-                $object['description'] = sprintf(
-                    gettext("%s (%s available)"), $object['description'],
-                    binary_format($fsStats['available']));
-            }
-
-            $result[] = $object;
-        }
-
-        return $result;
     }
 
     public function getPoolDiskCount($params, $context) {
