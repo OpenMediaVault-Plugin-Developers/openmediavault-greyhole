@@ -48,14 +48,14 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShare", {
         return [{
             xtype         : "combo",
             name          : "smbref",
-            hiddenName    : "smbref",
             fieldLabel    : _("SMB Share"),
             emptyText     : _("Select an SMB Share ..."),
             allowBlank    : false,
             allowNone     : false,
             editable      : false,
+            readOnly: (me.uuid !== OMV.UUID_UNDEFINED),
             triggerAction : "all",
-            displayField  : "description",
+            displayField  : "name",
             valueField    : "uuid",
             store         : Ext.create("OMV.data.Store", {
                 autoLoad : true,
@@ -63,21 +63,20 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShare", {
                     idProperty : "uuid",
                         fields : [
                             { name: "uuid", type: "string" },
-                            { name: "devicefile", type: "string" },
-                            { name: "description", type: "string" }
+                            { name: "name", type: "string" }
                         ]
                 }),
                 proxy    : {
                     type    : "rpc",
                     rpcData : {
-                        service : "ShareMgmt",
-                        method  : "getCandidates"
+                        service : "Greyhole",
+                        method  : "getSMBShareCandidates"
                     },
                     appendSortParams : false
                 },
                 sorters  : [{
                     direction : "ASC",
-                    property  : "devicefile"
+                    property  : "name"
                 }]
             })
         },{

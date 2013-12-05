@@ -352,14 +352,15 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
                     fields      : [
                         { name : "uuid", type: "string" },
                         { name : "volume", type: "string" },
+                        { name : "label", type: "string" },
                         { name : "type", type: "string" },
                         { name : "path", type: "string" },
-                        { name :"total_space", type: "string" },
-                        { name :"used_space", type: "string" },
-                        { name :"free_space", type: "string" },
-                        { name :"trash_size", type: "string" },
-                        { name :"potential_available_space", type: "string" },
-                        { name :"min_free", type: "string" }
+                        { name : "total_space", type: "string" },
+                        { name : "used_space", type: "string" },
+                        { name : "free_space", type: "string" },
+                        { name : "trash_size", type: "string" },
+                        { name : "potential_available_space", type: "string" },
+                        { name : "min_free", type: "string" }
                     ]
                 }),
                 proxy: {

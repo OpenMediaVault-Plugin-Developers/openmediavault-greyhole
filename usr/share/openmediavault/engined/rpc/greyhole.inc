@@ -406,7 +406,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
 
         // Add additional informations.
         foreach ($objects as $objectk => &$objectv) {
-            $xpath    = sprintf("//services/smb/shares/share[uuid='%s']", $objectv['smbref']);
+            $xpath = sprintf("//services/smb/shares/share[uuid='%s']", $objectv['smbref']);
             $meobject = $xmlConfig->get($xpath);
             if (! is_null($meobject) && ! empty($meobject)) {
                 $objectv['name']    = $meobject['name'];
