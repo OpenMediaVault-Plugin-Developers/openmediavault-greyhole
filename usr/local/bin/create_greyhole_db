@@ -29,6 +29,7 @@ rm -f ${PWDFILE}
 
 # Create Database/Table
 TMPFILE="$(mktemp)"
+PASSWORD="openmediavault"
 
 cat <<EOF >> "${TMPFILE}"
 CREATE DATABASE IF NOT EXISTS greyhole;

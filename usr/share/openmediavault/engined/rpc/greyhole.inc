@@ -90,11 +90,6 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         $object['log_memory_usage']       = boolval($object['log_memory_usage']);
         $object['check_for_open_files']   = boolval($object['check_for_open_files']);
 
-        $object['db_host'] = $object['db']['db_host'];
-        $object['db_user'] = $object['db']['db_user'];
-        $object['db_pass'] = $object['db']['db_pass'];
-        $object['db_name'] = $object['db']['db_name'];
-
         return $object;
     }
 
@@ -153,13 +148,11 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
 
             "pool_disks"             => isset($oldObject['pool_disks']) ? $oldObject['pool_disks'] : array(),
             "smb_shares"             => isset($oldObject['smb_shares']) ? $oldObject['smb_shares'] : array(),
-            "db"                     => array(
-                'db_engine' => 'mysql',
-                'db_host'   => $params['db_host'],
-                'db_user'   => $params['db_user'],
-                'db_pass'   => $params['db_pass'],
-                'db_name'   => $params['db_name'],
-            ),
+            "db_engine"              => 'mysql',
+            "db_host"                => $params['db_host'],
+            "db_user"                => $params['db_user'],
+            "db_pass"                => $params['db_pass'],
+            "db_name"                => $params['db_name']
         );
 
         // Set configuration object
@@ -296,7 +289,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
             break;
         } else {
             // Get existing configuration object
-            $xpath     = "//services/greyhole/pool_disks/disk[uuid='{$params['uuid']}']";
+            $xpath = "//services/greyhole/pool_disks/disk[uuid='{$params['uuid']}']";
             $oldObject = $xmlConfig->get($xpath);
             if (is_null($oldObject))
                 throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);

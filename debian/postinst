@@ -26,7 +26,6 @@ set -e
 . /etc/default/openmediavault
 . /usr/share/openmediavault/scripts/helper-functions
 
-
 case "$1" in
     configure)
     if [ -z "$2" ]; then
@@ -36,7 +35,8 @@ case "$1" in
     fi
 
     # Check for XML config
-    if ! omv_config_exists "//services/greyhole"; then
+    if ! omv_config_exists "/config/services/greyhole"; then
+    
         echo "Creating Initial Configuration"
         object="<enable>0</enable>"
         object="${object}<email_to>root</email_to>"
@@ -50,30 +50,17 @@ case "$1" in
         object="${object}<pool_disks></pool_disks>"
         object="${object}<smb_shares></smb_shares>"
         object="${object}<extraoptions></extraoptions>"
-
-        omv_config_add_element "//services" "greyhole" "${object}" true
-
-        object="<enable>0</enable>"
-        object="${object}<username></username>"
-        object="${object}<password></password>"
-
-        omv_config_add_element "//services/greyhole" "local_smb_mount" "${object}" true
-    fi
-
-    if ! omv_config_exists "//services/greyhole/db"; then
-        PASSWORD=$(</dev/urandom tr -dc A-Za-z0-9 | head -c8)
-
-        echo "Adding DB Section"
-        object="<db_engine>mysql</db_engine>"
+        object="${object}<db_engine>mysql</db_engine>"
         object="${object}<db_host>localhost</db_host>"
         object="${object}<db_user>greyhole</db_user>"
-
-        object="${object}<db_pass>${PASSWORD}</db_pass>"
+        object="${object}<db_pass>openmediavault</db_pass>"
         object="${object}<db_name>greyhole</db_name>"
+        object="${object}<smb_mount_enable>0</smb_mount_enable>"
+        object="${object}<smb_mount_username></smb_mount_username>"
+        object="${object}<smb_mount_password></smb_mount_password>"
 
-        omv_config_add_element "//services/greyhole" "db" "${object}" true
+        omv_config_add_element "/config/services" "greyhole" "${object}" true
     fi
-
 
     #update-rc.d mountsmb_locally defaults
 
