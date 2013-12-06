@@ -82,6 +82,10 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         $object['log_memory_usage']       = boolval($object['log_memory_usage']);
         $object['check_for_open_files']   = boolval($object['check_for_open_files']);
 
+        // Remove useless fields from the result object.
+        unset($object['pool_disks']);
+        unset($object['smb_shares']);
+        
         return $object;
     }
 
