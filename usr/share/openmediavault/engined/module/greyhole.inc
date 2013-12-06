@@ -33,6 +33,30 @@ class OMVModuleGreyhole extends OMVModuleServiceAbstract
         return "greyhole";
     }
 
+    public function applyConfig() {
+        $cmd = "omv-mkconf greyhole 2>&1";
+        if(0 !== $this->exec($cmd, $output))
+            throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
+    }
+
+    public function stopService() {
+        $initd = new OMVSysVInitScript("greyhole", FALSE);
+        $initd->exec();
+    }
+
+    public function startService() {
+        global $xmlConfig;
+        $xpath = "//services/greyhole";
+        $object = $xmlConfig->get($xpath);
+        if(is_null($object))
+            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,$xpath);
+
+        if(FALSE === boolval($object['enable']))
+            return;
+        $initd = new OMVSysVInitScript("greyhole", TRUE);
+        $initd->exec();
+    }
+
     public function getStatus() {
         global $xmlConfig;
         // Get the configuration object
@@ -50,52 +74,11 @@ class OMVModuleGreyhole extends OMVModuleServiceAbstract
         );
     }
 
-    public function applyConfig() {
-        $cmd = "omv-mkconf greyhole 2>&1";
-        if(0 !== $this->exec($cmd, $output))
-            throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
-    }
-
-    public function modify_smb_share($object) {
-        global $xmlConfig;
-
-        if (is_null($object))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED);
-
-        // Create greyhole.conf file
-        $this->applyConfig();
-
-        $xpath_smb_share = "//services/smb/shares/share[uuid='{$object['smbref']}']";
-        $smb_share       = $xmlConfig->get($xpath_smb_share);
-
-        if (is_null($smb_share))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath_smb_share);
-
-        $xpath_shared_folder = "//system/shares/sharedfolder[uuid='{$smb_share['sharedfolderref']}']";
-        $shared_folder       = $xmlConfig->get($xpath_shared_folder);
-
-        if (is_null($shared_folder))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath_shared_folder);
-
-        $xpath_mntent = "//system/fstab/mntent[uuid='{$shared_folder['mntentref']}']";
-        $mntent       = $xmlConfig->get($xpath_mntent);
-
-        if (is_null($mntent))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath_shared_folder);
-
-        $dir = $mntent['dir'] . '/' . $shared_folder['name'];
-
-        $cmd = 'sudo greyhole --fsck -d ' . $dir . ' 2>&1';
-        OMVUtil::exec($cmd, $output, $result);
-        if ($result !== 0)
-            throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
-    }
-
     function bindListeners(OMVNotifyDispatcher $dispatcher) {
         /* Update service if configuration has been modified */
         $dispatcher->addListener(
             OMV_NOTIFY_MODIFY,
-            "org.openmediavault.system.storage.greyhole",
+            "org.openmediavault.services.greyhole",
             array($this, "setDirty"));
 
         $dispatcher->addListener(
