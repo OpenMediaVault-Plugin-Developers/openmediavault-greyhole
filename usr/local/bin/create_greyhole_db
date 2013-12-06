@@ -1,7 +1,6 @@
 #!/bin/sh
 #
-# Copyright (C) 2010-2012 Ian Moore <imooreyahoo@gmail.com>
-# Copyright (C)      2013 OpenMediaVault Plugin Developers
+# Copyright (C) 2013 OpenMediaVault Plugin Developers
 #
 # This file is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,8 +28,6 @@ fi
 
 MYSQLROOTPW=`cat ${PWDFILE}`
 rm -f ${PWDFILE}
-
-ROOT_PASSWORD="openmediavault"
 
 DB_HOST=$(omv_config_get "//services/greyhole/db_host")
 DB_USER=$(omv_config_get "//services/greyhole/db_user")
