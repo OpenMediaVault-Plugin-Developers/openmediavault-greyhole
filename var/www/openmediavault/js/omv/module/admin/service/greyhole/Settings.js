@@ -179,7 +179,7 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
                 xtype      : "passwordfield",
                 name       : "root_pass",
                 fieldLabel : _("Root Password"),
-                allowBlank : false,
+                allowBlank : true,
                 plugins    : [{
                     ptype : "fieldinfo",
                     text  : _("Will not be saved.")
@@ -198,19 +198,36 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
                 scope   : this,
                 handler : function() {
                     var me = this;
-                    OMV.Rpc.request({
-                        scope   : me,
-                        rpcData : {
-                            service : "Greyhole",
-                            method  : "doInstallDB",
-                            params  : {
-                                db_host   : me.getForm().findField("db_host").getValue(),
-                                db_name   : me.getForm().findField("db_name").getValue(),
-                                db_user   : me.getForm().findField("db_user").getValue(),
-                                db_pass   : me.getForm().findField("db_pass").getValue(),
-                                root_pass : me.getForm().findField("root_pass").getValue()
-                            }
-                        }
+                    OMV.MessageBox.show({
+                        title   : _("Confirmation"),
+                        msg     : _("Are you sure you want to install the Greyhole database?"),
+                        buttons : Ext.Msg.YESNO,
+                        fn      : function(answer) {
+                            if (answer !== "yes")
+                               return;
+
+                            OMV.MessageBox.wait(null, _("Installing Greyhole database"));
+                            OMV.Rpc.request({
+                                scope   : me,
+                                rpcData : {
+                                    service : "Greyhole",
+                                    method  : "doInstallDB",
+                                    params  : {
+                                        db_host   : me.getForm().findField("db_host").getValue(),
+                                        db_name   : me.getForm().findField("db_name").getValue(),
+                                        db_user   : me.getForm().findField("db_user").getValue(),
+                                        db_pass   : me.getForm().findField("db_pass").getValue(),
+                                        root_pass : me.getForm().findField("root_pass").getValue()
+                                    }
+                                },
+                                success : function(id, success, response) {
+                                    me.doReload();
+                                    OMV.MessageBox.hide();
+                                }
+                            });
+                        },
+                        scope : me,
+                        icon  : Ext.Msg.QUESTION
                     });
                 }
             },{
