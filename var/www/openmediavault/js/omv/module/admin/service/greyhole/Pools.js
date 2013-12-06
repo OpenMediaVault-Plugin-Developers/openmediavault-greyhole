@@ -35,11 +35,12 @@ Ext.define("OMV.module.admin.service.greyhole.Fsck", {
         "OMV.form.field.SharedFolderComboBox"
     ],
 
-    rpcService   : "Greyhole",
-    rpcSetMethod : "doFsck",
-    width        : 550,
-    height       : 410,
-
+    rpcService      : "Greyhole",
+    rpcSetMethod    : "doFsck",
+    width           : 550,
+    height          : 410,
+    hideResetButton : true,
+    
     getFormItems: function() {
         var me = this;
         return [{
@@ -194,11 +195,12 @@ Ext.define("OMV.module.admin.service.greyhole.PoolManagement", {
         "OMV.form.field.SharedFolderComboBox"
     ],
 
-    rpcService   : "Greyhole",
-    rpcSetMethod : "doPoolManagement",
-    width        : 550,
-    height       : 300,
-
+    rpcService      : "Greyhole",
+    rpcSetMethod    : "doPoolManagement",
+    width           : 550,
+    height          : 300,
+    hideResetButton : true,
+    
     getFormItems: function() {
         var me = this;
         return [{
