@@ -6,7 +6,7 @@
  * @author     Marcel Beck <marcel.beck@mbeck.org>
  * @copyright  Copyright (c) 2011-2012 Stephane Bocquet
  * @copyright  Copyright (c) 2011-2012 Marcel Beck
- * @copyright  Copyright (c) 2013 OpenMediaVault Plugin Developers 
+ * @copyright  Copyright (c) 2013 OpenMediaVault Plugin Developers
  *
  * This file is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -69,12 +69,6 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
 
         // Validate the RPC caller context.
         $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
-        // Get the configuration object.
-        $xpath = "//services/greyhole";
-        $object = $xmlConfig->get($xpath);
-        if(is_null($object))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
-
         // Get configuration object
         $xpath  = "//services/greyhole";
         $object = $xmlConfig->get($xpath);
@@ -875,19 +869,43 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         $this->validateMethodParams($params, '{
             "type":"object",
             "properties":{
-                "password" : { "type" : "string" }
+                "db_host"   : { "type" : "string" },
+                "db_name"   : { "type" : "string" },
+                "db_user"   : { "type" : "string" },
+                "db_pass"   : { "type" : "string" },
+                "root_pass" : { "type" : "string" }
             }
         }');
 
+        // Get configuration object
+        $xpath  = "//services/greyhole";
+        $oldobject = $xmlConfig->get($xpath);
+        if (is_null($object))
+            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
+
+        // Modify result data
+        $object['db_host'] = $params['db_host'];
+        $object['db_name'] = $params['db_name'];
+        $object['db_user'] = $params['db_user'];
+        $object['db_pass'] = $params['db_pass'];
+
+        // Set configuration object
+        if (FALSE === $xmlConfig->replace($xpath, $object))
+            throw new OMVException(OMVErrorMsg::E_CONFIG_SET_OBJECT_FAILED);
+
         //create password file
         $file = "/tmp/.openmediavault-greyhole-mysql-pwd";
-        file_put_contents($file, $params['password']);
+        file_put_contents($file, $params['root_pass']);
 
         // install database
         $cmd = "/usr/local/bin/create_greyhole_db 2>&1";
-        if(0 !== $this->exec($cmd, $output)) {
+        if(0 !== $this->exec($cmd, $output))
             throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
-        }
+
+        // Notify general configuration changes
+        $dispatcher = &OMVNotifyDispatcher::getInstance();
+        $dispatcher->notify(OMV_NOTIFY_MODIFY,
+            "org.openmediavault.services.greyhole", $object);
     }
 }
 

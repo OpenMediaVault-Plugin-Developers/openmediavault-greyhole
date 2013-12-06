@@ -5,7 +5,7 @@
  * @author Marcel Beck <marcel.beck@mbeck.org>
  * @copyright Copyright (c) 2011 Stephane Bocquet
  * @copyright Copyright (c) 2011 Marcel Beck
- * @copyright Copyright (c) 2013 OpenMediaVault Plugin Developers 
+ * @copyright Copyright (c) 2013 OpenMediaVault Plugin Developers
  *
  * This file is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
@@ -21,26 +21,6 @@
 // require("js/omv/WorkspaceManager.js")
 // require("js/omv/workspace/form/Panel.js")
 // require("js/omv/form/field/SharedFolderComboBox.js")
-
-Ext.define("OMV.module.admin.service.greyhole.InstallDB", {
-    extend : "OMV.workspace.window.Form",
-
-    rpcService   : "Greyhole",
-    rpcSetMethod : "doInstallDB",
-
-    getFormItems: function() {
-        return [{
-            xtype      : "textfield",
-            name       : "password",
-            fieldLabel : _("Password"),
-            allowBlank : true,
-            plugins    : [{
-                ptype : "fieldinfo",
-                text  : _("Enter the root password for MySQL.")
-            }]
-        }];
-    }
-});
 
 Ext.define("OMV.module.admin.service.greyhole.Settings", {
     extend : "OMV.workspace.form.Panel",
@@ -196,6 +176,15 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
                 fieldLabel : _("Password"),
                 allowBlank : false
             },{
+                xtype      : "passwordfield",
+                name       : "root_pass",
+                fieldLabel : _("Root Password"),
+                allowBlank : false,
+                plugins    : [{
+                    ptype : "fieldinfo",
+                    text  : _("Will not be saved.")
+                }]
+            },{
                 xtype     : "label",
                 hideLabel : true,
                 text      : _("Warning: Changing your database connection properties may result in stoping Greyhole. Stop Greyhole daemon before any change. Make sure the values you are modifying match the MySQL greyhole database values before restarting Greyhole daemon.")
@@ -209,15 +198,20 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
                 scope   : this,
                 handler : function() {
                     var me = this;
-                    Ext.create("OMV.module.admin.service.greyhole.InstallDB", {
-                        title     : _("Install Greyhole Database"),
-                        listeners : {
-                            scope  : me,
-                            submit : function() {
-                                this.doReload();
+                    OMV.Rpc.request({
+                        scope   : me,
+                        rpcData : {
+                            service : "Greyhole",
+                            method  : "doInstallDB",
+                            params  : {
+                                db_host   : me.getForm().findField("db_host").getValue(),
+                                db_name   : me.getForm().findField("db_name").getValue(),
+                                db_user   : me.getForm().findField("db_user").getValue(),
+                                db_pass   : me.getForm().findField("db_pass").getValue(),
+                                root_pass : me.getForm().findField("root_pass").getValue()
                             }
                         }
-                    }).show();
+                    });
                 }
             },{
                 border : false,
