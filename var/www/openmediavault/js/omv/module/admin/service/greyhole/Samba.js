@@ -32,7 +32,8 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShare", {
     extend   : "OMV.workspace.window.Form",
     requires : [
         "OMV.workspace.window.plugin.ConfigObject",
-        "OMV.form.field.SharedFolderComboBox"
+        "OMV.form.field.SharedFolderComboBox",
+        "OMV.window.Execute"
     ],
 
     rpcService   : "Greyhole",
@@ -242,21 +243,34 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShares", {
         }).show();
     },
 
-    doDeletion: function () {
+    doDeletion: function() {
         var me = this;
-        OMV.Rpc.request({
-            scope    : me,
-            callback : me.onDeletion,
-            rpcData  : {
-                service : "Greyhole",
-                method  : "removeSMBShare",
-                params  : {
-                    uuid: record.get("uuid")
+        var record = me.getSelected();
+        var wnd = Ext.create("OMV.window.Execute", {
+            title           : _("Delete Samba Share"),
+            rpcService      : "Greyhole",
+            rpcMethod       : "removeSMBShare",
+            rpcParams       : {
+                uuid : record.get("uuid")
+            },
+            hideStartButton : true,
+            hideStopButton  : true,
+            scrollBottom    : false,
+            listeners       : {
+                scope     : me,
+                finish    : function(wnd, response) {
+                    wnd.setButtonDisabled("close", false);
+                },
+                exception : function(wnd, error) {
+                    OMV.MessageBox.error(null, error);
+                    wnd.close();
                 }
             }
         });
+        wnd.setButtonDisabled("close", true);
+        wnd.show();
+        wnd.start();
     }
-
 });
 
 OMV.WorkspaceManager.registerPanel({

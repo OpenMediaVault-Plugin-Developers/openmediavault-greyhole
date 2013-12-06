@@ -516,17 +516,49 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
 
             // Append object to configuration
             $success = $xmlConfig->set("//services/greyhole/smb_shares", array("share" => $object));
+
+            // Notify configuration changes
+            $dispatcher = &OMVNotifyDispatcher::getInstance();
+            $dispatcher->notify(($params['uuid'] == $GLOBALS['OMV_UUID_UNDEFINED']) ?
+                OMV_NOTIFY_CREATE : OMV_NOTIFY_MODIFY,
+                "org.openmediavault.services.greyhole.smb_shares.share", $object);
         } else {
             // Update existing configuration object
             $xpath = "//services/greyhole/smb_shares/share[uuid='{$params['uuid']}']";
             $success = $xmlConfig->replace($xpath, $object);
         }
 
-        // Notify configuration changes.
-        $dispatcher = &OMVNotifyDispatcher::getInstance();
-        $dispatcher->notify(($params['uuid'] == $GLOBALS['OMV_UUID_UNDEFINED']) ?
-            OMV_NOTIFY_CREATE : OMV_NOTIFY_MODIFY,
-            "org.openmediavault.services.greyhole.smb_shares.share", $object);
+        if($params['uuid'] !== $GLOBALS['OMV_UUID_UNDEFINED']) {
+            //apply config
+            $cmd = "omv-mkconf greyhole 2>&1";
+            if(0 !== $this->exec($cmd, $output))
+                throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
+
+            $xpath_smb_share = "//services/smb/shares/share[uuid='{$object['smbref']}']";
+            $smb_share = $xmlConfig->get($xpath_smb_share);
+
+            if (is_null($smb_share))
+                throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath_smb_share);
+
+            $xpath_shared_folder = "//system/shares/sharedfolder[uuid='{$smb_share['sharedfolderref']}']";
+            $shared_folder = $xmlConfig->get($xpath_shared_folder);
+
+            if (is_null($shared_folder))
+                throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath_shared_folder);
+
+            $xpath_mntent = "//system/fstab/mntent[uuid='{$shared_folder['mntentref']}']";
+            $mntent = $xmlConfig->get($xpath_mntent);
+
+            if (is_null($mntent))
+                throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath_shared_folder);
+
+            $dir = $mntent['dir'] . '/' . $shared_folder['name'];
+
+            $cmd = 'greyhole --fsck -d ' . $dir . ' 2>&1';
+            OMVUtil::exec($cmd, $output, $result);
+            if ($result !== 0)
+                throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
+        }
 
         // Return the configuration object.
         return $object;
@@ -555,29 +587,35 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         if (is_null($smb_share))
             throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath_smb_share);
 
-        // Notify configuration changes.
-        $dispatcher = &OMVNotifyDispatcher::getInstance();
-        $dispatcher->notify(OMV_NOTIFY_PREDELETE,
-            "org.openmediavault.services.greyhole.smb_shares.share", $object);
-
         if (false === ($meObject = $xmlConfig->delete($xpath_greyhole_smb_share)))
             throw new OMVException(OMVErrorMsg::E_CONFIG_OBJECT_NOT_FOUND, $xpath_greyhole_smb_share);
 
-        $outputFile = tempnam(sys_get_temp_dir(), "greyhole_remove_share");
-        $cmd        = 'sudo greyhole --remove-share ' . $smb_share['name'] . ' >' . $outputFile . ' 2>&1 & echo $!';
-        OMVUtil::exec($cmd, $output, $result);
-        if ($result !== 0)
+        // Create a background process.
+        $bgStatusFilename = $this->createBgProcStatus();
+        $pid = $this->fork();
+        if($pid > 0) { // Parent process.
+            $this->initializeBgProcStatus($bgStatusFilename, $pid);
+            return $bgStatusFilename;
+        }
+
+        // Child process.
+        try {
+            $bgOutputFilename = $this->createBgProcOutput();
+            $this->updateBgProcStatus($bgStatusFilename, "outputfilename", $bgOutputFilename);
+
+            $cmd = "greyhole --remove-share " . $smb_share['name'] . " 2>&1";
+            $this->exec($cmd, $output, $bgOutputFilename);
+            $this->finalizeBgProcStatus($bgStatusFilename, $output);
+            exit(0);
+        } catch(Exception $e) {
+            $this->finalizeBgProcStatus($bgStatusFilename, "", $e);
+            exit(1);
+        }
+
+        // apply config
+        $cmd = "omv-mkconf greyhole 2>&1";
+        if(0 !== $this->exec($cmd, $output))
             throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
-
-        // Remember pid and content filename in session
-        $pid = intval($output[0]);
-        $_SESSION['execjob'][$pid] = array(
-            "pid"        => $pid,
-            "outputFile" => $outputFile
-        );
-
-        $dispatcher = &OMVNotifyDispatcher::getInstance();
-        $dispatcher->notify(OMV_NOTIFY_DELETE, "org.openmediavault.services.greyhole.smb_shares.share");
 
         // Return the deleted configuration object.
         return $object;

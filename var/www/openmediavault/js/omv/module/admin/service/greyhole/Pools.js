@@ -40,7 +40,7 @@ Ext.define("OMV.module.admin.service.greyhole.Fsck", {
     width           : 550,
     height          : 410,
     hideResetButton : true,
-    
+
     getFormItems: function() {
         var me = this;
         return [{
@@ -200,7 +200,7 @@ Ext.define("OMV.module.admin.service.greyhole.PoolManagement", {
     width           : 550,
     height          : 300,
     hideResetButton : true,
-    
+
     getFormItems: function() {
         var me = this;
         return [{
@@ -303,7 +303,8 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
     uses     : [
         "OMV.module.admin.service.greyhole.PoolDisk",
         "OMV.module.admin.service.greyhole.PoolManagement",
-        "OMV.module.admin.service.greyhole.Fsck"
+        "OMV.module.admin.service.greyhole.Fsck",
+        "OMV.window.Execute"
     ],
 
     hidePagingToolbar : false,
@@ -528,32 +529,52 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
 
     onBalanceButton: function() {
         var me = this;
-        Ext.create("OMV.window.Execute", {
-            title      : _("Greyhole - Balance"),
-            rpcService : "Greyhole",
-            rpcMethod  : "doBalance",
-            listeners  : {
+        var wnd = Ext.create("OMV.window.Execute", {
+            title           : _("Greyhole - Balance"),
+            rpcService      : "Greyhole",
+            rpcMethod       : "doBalance",
+            hideStartButton : true,
+            hideStopButton  : true,
+            scrollBottom    : false,
+            listeners       : {
                 scope     : me,
+                finish    : function(wnd, response) {
+                    wnd.setButtonDisabled("close", false);
+                },
                 exception : function(wnd, error) {
                     OMV.MessageBox.error(null, error);
+                    wnd.close();
                 }
             }
-        }).show();
+        });
+        wnd.setButtonDisabled("close", true);
+        wnd.show();
+        wnd.start();
     },
 
-    onEmtpyTrashButton: function() {
+    onEmptyTrashButton: function() {
         var me = this;
-        Ext.create("OMV.window.Execute", {
-            title      : _("Greyhole - Empty Trash"),
-            rpcService : "Greyhole",
-            rpcMethod  : "doEmptyTrash",
-            listeners  : {
+        var wnd = Ext.create("OMV.window.Execute", {
+            title           : _("Greyhole - Empty Trash"),
+            rpcService      : "Greyhole",
+            rpcMethod       : "doEmptyTrash",
+            hideStartButton : true,
+            hideStopButton  : true,
+            scrollBottom    : false,
+            listeners       : {
                 scope     : me,
+                finish    : function(wnd, response) {
+                    wnd.setButtonDisabled("close", false);
+                },
                 exception : function(wnd, error) {
                     OMV.MessageBox.error(null, error);
+                    wnd.close();
                 }
             }
-        }).show();
+        });
+        wnd.setButtonDisabled("close", true);
+        wnd.show();
+        wnd.start();
     },
 
     onPoolManagementButton: function() {
@@ -584,13 +605,27 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
 
     onUnfsckButton: function() {
         var me = this;
-        OMV.Rpc.request({
-            scope    : me,
-            rpcData  : {
-                service : "Greyhole",
-                method  : "doUnfsck"
+        var wnd = Ext.create("OMV.window.Execute", {
+            title           : _("Greyhole - Empty Trash"),
+            rpcService      : "Greyhole",
+            rpcMethod       : "doUnfsck",
+            hideStartButton : true,
+            hideStopButton  : true,
+            scrollBottom    : false,
+            listeners       : {
+                scope     : me,
+                finish    : function(wnd, response) {
+                    wnd.setButtonDisabled("close", false);
+                },
+                exception : function(wnd, error) {
+                    OMV.MessageBox.error(null, error);
+                    wnd.close();
+                }
             }
         });
+        wnd.setButtonDisabled("close", true);
+        wnd.show();
+        wnd.start();
     }
 });
 

@@ -1,8 +1,14 @@
+openmediavault-greyhole (0.5.1) stable; urgency=low
+
+  * Bug fixes
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Fri, 06 Dec 2013 14:36:26 -0500
+
 openmediavault-greyhole (0.5) stable; urgency=low
 
   * Initial port to OMV 0.5
 
- -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Tue, 03 Dec 2013 16:11:26 -0500
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Fri, 06 Dec 2013 11:16:26 -0500
 
 openmediavault-greyhole (0.4) stable; urgency=low
 
