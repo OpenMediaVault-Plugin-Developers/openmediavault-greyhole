@@ -4,7 +4,7 @@
  * @license    http://www.gnu.org/licenses/gpl.html GPL Version 3
  * @author     Stephane Bocquet <stephane_bocquet@hotmail.com>
  * @copyright  Copyright (c) 2011 Ian Moore
- * @copyright  Copyright (c) 2013 OpenMediaVault Plugin Developers  
+ * @copyright  Copyright (c) 2013 OpenMediaVault Plugin Developers
  *
  * This file is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -91,36 +91,22 @@ class OMVModuleGreyhole extends OMVModuleServiceAbstract
             throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
     }
 
-    /**
-     * Bind listeners.
-     *
-     * @param OMVNotifyDispatcher $dispatcher
-     */
     function bindListeners(OMVNotifyDispatcher $dispatcher) {
         /* Update service if configuration has been modified */
-        $dispatcher->addListener(OMV_NOTIFY_MODIFY,
+        $dispatcher->addListener(
+            OMV_NOTIFY_MODIFY,
             "org.openmediavault.system.storage.greyhole",
-            array($this, "updateService"), 1);
+            array($this, "setDirty"));
 
-        $dispatcher->addListener(OMV_NOTIFY_CREATE,
-            "org.openmediavault.system.storage.greyhole.pool_disks.disk",
-            array($this, "create_pool_disk"), 1);
-        $dispatcher->addListener(OMV_NOTIFY_MODIFY,
-            "org.openmediavault.system.storage.greyhole.pool_disks.disk",
-            array($this, "modify_pool_disk"), 1);
-        $dispatcher->addListener(OMV_NOTIFY_DELETE,
-            "org.openmediavault.system.storage.greyhole.pool_disks.disk",
-            array($this, "delet_pool_disk"), 1);
+        $dispatcher->addListener(
+            OMV_NOTIFY_CREATE | OMV_NOTIFY_MODIFY | OMV_NOTIFY_DELETE,
+            "org.openmediavault.services.greyhole.pool_disks.disk",
+            array($this, "setDirty"));
 
-        $dispatcher->addListener(OMV_NOTIFY_CREATE,
-            "org.openmediavault.system.storage.greyhole.smb_shares.share",
-            array($this, "create_smb_share"), 1);
-        $dispatcher->addListener(OMV_NOTIFY_MODIFY,
-            "org.openmediavault.system.storage.greyhole.smb_shares.share",
-            array($this, "modify_smb_share"), 1);
-        $dispatcher->addListener(OMV_NOTIFY_DELETE,
-            "org.openmediavault.system.storage.greyhole.smb_shares.share",
-            array($this, "delete_smb_share"), 1);
+        $dispatcher->addListener(
+            OMV_NOTIFY_CREATE | OMV_NOTIFY_MODIFY | OMV_NOTIFY_DELETE,
+            "org.openmediavault.services.greyhole.smb_shares.share",
+            array($this, "setDirty"));
     }
 
 }

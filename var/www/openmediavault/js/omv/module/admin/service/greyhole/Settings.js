@@ -182,7 +182,7 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
                 allowBlank : true,
                 plugins    : [{
                     ptype : "fieldinfo",
-                    text  : _("Will not be saved.")
+                    text  : _("Used only for installing Greyhole database and will not be saved.")
                 }]
             },{
                 xtype     : "label",
