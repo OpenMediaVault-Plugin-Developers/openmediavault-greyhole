@@ -44,6 +44,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         $this->registerMethod("getPoolDisk");
         $this->registerMethod("setPoolDisk");
         $this->registerMethod("deletePoolDisk");
+        $this->registerMethod("getPoolDiskCandidates");
         $this->registerMethod("getPoolDiskCount");
 
         $this->registerMethod("getSMBShareCandidates");
@@ -85,7 +86,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         // Remove useless fields from the result object.
         unset($object['pool_disks']);
         unset($object['smb_shares']);
-        
+
         return $object;
     }
 
@@ -283,15 +284,9 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
 
             // Append object to configuration
             $success = $xmlConfig->set("//services/greyhole/pool_disks", array("disk" => $object));
-            break;
         } else {
-            // Get existing configuration object
-            $xpath = "//services/greyhole/pool_disks/disk[uuid='{$params['uuid']}']";
-            $oldObject = $xmlConfig->get($xpath);
-            if (is_null($oldObject))
-                throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
-
             // Update existing configuration object
+            $xpath = "//services/greyhole/pool_disks/disk[uuid='{$params['uuid']}']";
             $success = $xmlConfig->replace($xpath, $object);
         }
 
@@ -327,6 +322,49 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
 
         // Return the deleted configuration object.
         return $object;
+    }
+
+    public function getPoolDiskCandidates($params, $context) {
+        global $xmlConfig;
+
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
+
+        // Get list of mount points, except bind mounts.
+        $xpath = "//system/fstab/mntent[not(contains(opts,'bind'))]";
+        $objects = $xmlConfig->getList($xpath);
+        if (is_null($objects))
+            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
+
+        // Get the filesystem details for each mount point.
+        $result = array();
+        foreach ($objects as $objectk => $objectv) {
+            $fs = new OMVFilesystem($objectv['fsname']);
+            if (! $fs->exists())
+                continue;
+
+            // Skip the filesystems that are not mounted at the moment.
+            if (FALSE === $fs->isMounted())
+                continue;
+
+            if (NULL !== ($xmlConfig->get("//services/greyhole/pool_disks/disk[mntentref='{$objectv['uuid']}']")))
+                continue;
+
+            // Get the filesystem details.
+            $object = array(
+                "uuid"        => $objectv['uuid'],
+                "devicefile"  => $fs->getDeviceFile(),
+                "description" => $fs->getDeviceFile() // Default value
+            );
+            // Get some more filesystem details if possible.
+            if (FALSE !== ($fsStats = $fs->getStatistics())) {
+                $label  = $fs->getLabel();
+                $object['description'] = sprintf(gettext("%s (%s available)"), ! empty($label) ? $label : $object['devicefile'],
+                    binary_format($fsStats['available']));
+            }
+            $result[] = $object;
+        }
+        return $result;
     }
 
     public function getPoolDiskCount($params, $context) {
@@ -479,10 +517,8 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
             // Append object to configuration
             $success = $xmlConfig->set("//services/greyhole/smb_shares", array("share" => $object));
         } else {
-            // Get existing configuration object
-            $xpath = "//services/greyhole/smb_shares/share[uuid='{$params['uuid']}']";
-
             // Update existing configuration object
+            $xpath = "//services/greyhole/smb_shares/share[uuid='{$params['uuid']}']";
             $success = $xmlConfig->replace($xpath, $object);
         }
 

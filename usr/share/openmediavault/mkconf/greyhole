@@ -24,7 +24,7 @@ set -e
 . /etc/default/openmediavault
 . /usr/share/openmediavault/scripts/helper-functions
 
-GREYHOLE_EXTENSIONSDIR=${GREYHOLE_EXTENSIONSDIR:-"${OMV_SCRIPTS_DIR}/greyhole.d"}
+GREYHOLE_EXTENSIONSDIR=${GREYHOLE_EXTENSIONSDIR:-"${OMV_MKCONF_SCRIPTS_DIR}/greyhole.d"}
 GREYHOLE_CONFIG="/etc/greyhole.conf"
 GREYHOLE_INIT="greyhole"
 

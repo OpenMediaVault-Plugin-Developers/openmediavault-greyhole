@@ -156,6 +156,7 @@ Ext.define("OMV.module.admin.service.greyhole.PoolDisk", {
                     idProperty : "uuid",
                     fields     : [
                         { name: "uuid", type: "string" },
+                        { name: "devicefile", type: "string" },
                         { name: "description", type: "string" }
                     ]
                 }),

@@ -40,8 +40,13 @@ class OMVModuleGreyhole extends OMVModuleServiceAbstract
     }
 
     public function stopService() {
-        $initd = new OMVSysVInitScript("greyhole", FALSE);
-        $initd->exec();
+        //$initd = new OMVSysVInitScript("greyhole", FALSE);
+        //$initd->exec();
+
+        $cmd = "/etc/init.d/greyhole stop 2>&1";
+        $this->exec($cmd, $output);
+//        if(0 !== $this->exec($cmd, $output))
+//            throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
     }
 
     public function startService() {
@@ -53,8 +58,12 @@ class OMVModuleGreyhole extends OMVModuleServiceAbstract
 
         if(FALSE === boolval($object['enable']))
             return;
-        $initd = new OMVSysVInitScript("greyhole", TRUE);
-        $initd->exec();
+        //$initd = new OMVSysVInitScript("greyhole", TRUE);
+        //$initd->exec();
+        $cmd = "sudo /etc/init.d/greyhole start 2>&1";
+        $this->exec($cmd, $output);
+        //if(0 !== $this->exec($cmd, $output))
+        //    throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
     }
 
     public function getStatus() {
