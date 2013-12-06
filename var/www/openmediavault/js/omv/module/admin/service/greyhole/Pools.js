@@ -5,7 +5,7 @@
  * @author Marcel Beck <marcel.beck@mbeck.org>
  * @copyright Copyright (c) 2011 Stephane Bocquet
  * @copyright Copyright (c) 2011 Marcel Beck
- * @copyright Copyright (c) 2013 OpenMediaVault Plugin Developers 
+ * @copyright Copyright (c) 2013 OpenMediaVault Plugin Developers
  *
  * This file is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
@@ -310,36 +310,38 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
         dataIndex : "volume",
         stateId   : "volume"
     },{
-        text      :_("Label"),
-        sortable  :true,
-        dataIndex :"label",
-        stateId   :"label"
+        text      : _("Label"),
+        sortable  : true,
+        dataIndex : "label",
+        stateId   : "label"
     },{
-        text      :_("Filesystem"),
-        sortable  :true,
-        dataIndex :"type",
-        stateId   :"type"
+        text      : _("Filesystem"),
+        sortable  : true,
+        dataIndex : "type",
+        stateId   : "type"
     },{
-        text      :_("Path"),
-        sortable  :true,
-        dataIndex :"path",
-        stateId   :"path"
+        text      : _("Path"),
+        sortable  : true,
+        dataIndex : "path",
+        stateId   : "path"
     },{
-        text      :_("Space"),
-        sortable  :true,
-        dataIndex :"percent_space",
-        stateId   :"percent_space"
+        text      : _("Space"),
+        sortable  : true,
+        dataIndex : "percent_space",
+        stateId   : "percent_space",
+        renderer  : OMV.module.services.greyhole.util.Format.spaceRenderer
     },{
-        text      :_("Trash"),
-        sortable  :true,
-        dataIndex :"trash_size",
-        stateId   :"trash_size"
+        text      : _("Trash"),
+        sortable  : true,
+        dataIndex : "trash_size",
+        stateId   : "trash_size",
+        renderer  : OMV.module.services.greyhole.util.Format.trashRenderer
     },{
-        text      :_("Min Free"),
-        sortable  :true,
-        dataIndex :"min_free",
-        stateId   :"min_free",
-        renderer  :this.min_free_renderer
+        text      : _("Min Free"),
+        sortable  : true,
+        dataIndex : "min_free",
+        stateId   : "min_free",
+        renderer  : OMV.module.services.greyhole.util.Format.minFreeRenderer
     }],
 
     initComponent: function() {
@@ -583,11 +585,6 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
                 method  : "doUnfsck"
             }
         });
-    },
-
-    min_free_renderer:function (val, cell, record, row, col, store) {
-        val = val + ' GiB';
-        return val;
     }
 });
 
