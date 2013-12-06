@@ -178,7 +178,7 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
             },{
                 xtype      : "passwordfield",
                 name       : "root_pass",
-                fieldLabel : _("Root Password"),
+                fieldLabel : _("MySQL root Password"),
                 allowBlank : true,
                 plugins    : [{
                     ptype : "fieldinfo",
