@@ -589,72 +589,67 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         // Validate the RPC caller context.
         $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
 
-        $type = $params['type'];
+        //$type = $params['type'];
+
         $result = array();
 
-        // Add additional informations.
-        if (in_array($type, array('all', 'smb'))) {
-            // Get SMB Shares
-            $xpath = "//services/greyhole/smb_shares/share";
-            $greyhole_smb_shares = $xmlConfig->getList($xpath);
-            if (is_null($greyhole_smb_shares))
+        // Get SMB Shares
+        $xpath = "//services/greyhole/smb_shares/share";
+        $greyhole_smb_shares = $xmlConfig->getList($xpath);
+        if (is_null($greyhole_smb_shares))
+            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
+
+        foreach ($greyhole_smb_shares as $objectk => &$objectv) {
+            $xpath = sprintf("//services/smb/shares/share[uuid='%s']", $objectv['smbref']);
+            $smb_object = $xmlConfig->get($xpath);
+            if (is_null($smb_object))
                 throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
 
-            foreach ($greyhole_smb_shares as $objectk => &$objectv) {
-                $xpath = sprintf("//services/smb/shares/share[uuid='%s']", $objectv['smbref']);
-                $smb_object = $xmlConfig->get($xpath);
-                if (is_null($smb_object))
-                    throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
+            $xpath = sprintf("//system/shares/sharedfolder[uuid='%s']", $smb_object['sharedfolderref']);
+            $shared_object = $xmlConfig->get($xpath);
+            if (is_null($shared_object))
+                throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
 
-                $xpath = sprintf("//system/shares/sharedfolder[uuid='%s']", $smb_object['sharedfolderref']);
-                $shared_object = $xmlConfig->get($xpath);
-                if (is_null($shared_object))
-                    throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
+            $xpath = sprintf("//system/fstab/mntent[uuid='%s']", $shared_object['mntentref']);
+            $fstab_object = $xmlConfig->get($xpath);
+            if (is_null($fstab_object))
+                throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
 
-                $xpath = sprintf("//system/fstab/mntent[uuid='%s']", $shared_object['mntentref']);
-                $fstab_object = $xmlConfig->get($xpath);
-                if (is_null($fstab_object))
-                    throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
-
-                $object   = array(
-                    'type' => 'SMB Share',
-                    'name' => $smb_object['name'],
-                    'show' => 'SMB Share: ' . $smb_object['name'],
-                    'path' => $fstab_object['dir'] . '/' . $shared_object['reldirpath'],
-                );
-                $result[] = $object;
-            }
+            $object   = array(
+                'type' => 'SMB Share',
+                'name' => $smb_object['name'],
+                'show' => 'SMB Share: ' . $smb_object['name'],
+                'path' => $fstab_object['dir'] . '/' . $shared_object['reldirpath'],
+            );
+            $result[] = $object;
         }
 
         // Get Pool Disks
-        if (in_array($type, array('all', 'pool'))) {
-            $xpath = "//services/greyhole/pool_disks/disk";
-            $greyhole_pool_disks = $xmlConfig->getList($xpath);
-            if (is_null($greyhole_pool_disks))
+        $xpath = "//services/greyhole/pool_disks/disk";
+        $greyhole_pool_disks = $xmlConfig->getList($xpath);
+        if (is_null($greyhole_pool_disks))
+            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
+
+        // Add additional informations.
+        foreach ($greyhole_pool_disks as $objectk => &$objectv) {
+            $xpath = sprintf("//system/fstab/mntent[uuid='%s']", $objectv['mntentref']);
+            $fstab_object = $xmlConfig->get($xpath);
+            if (is_null($fstab_object))
                 throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
 
-            // Add additional informations.
-            foreach ($greyhole_pool_disks as $objectk => &$objectv) {
-                $xpath        = sprintf("//system/fstab/mntent[uuid='%s']", $objectv['mntentref']);
-                $fstab_object = $xmlConfig->get($xpath);
-                if (is_null($fstab_object))
-                    throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
-
-                if (! is_null($fstab_object) && ! empty($fstab_object)) {
-                    $fs = new OMVFilesystem($fstab_object['fsname']);
-                    if (TRUE === $fs->exists()) {
-                        $objectv['volume'] = $fs->getDeviceFile();
-                        $objectv['label']  = $fs->getLabel();
-                    }
+            if (! is_null($fstab_object) && ! empty($fstab_object)) {
+                $fs = new OMVFilesystem($fstab_object['fsname']);
+                if (TRUE === $fs->exists()) {
+                    $objectv['volume'] = $fs->getDeviceFile();
+                    $objectv['label']  = $fs->getLabel();
                 }
-
-                $object = array(
-                    'show' => 'Pool Disk: ' . $objectv['label'] . ' (' . $objectv['volume'] . ')',
-                    'path' => $fstab_object['dir'] . '/.greyhole',
-                );
-
-                $result[] = $object;
             }
+
+            $object = array(
+                'show' => 'Pool Disk: ' . $objectv['label'] . ' (' . $objectv['volume'] . ')',
+                'path' => $fstab_object['dir'] . '/.greyhole',
+            );
+            $result[] = $object;
         }
 
         return $result;
