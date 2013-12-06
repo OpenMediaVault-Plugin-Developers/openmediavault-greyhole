@@ -37,6 +37,8 @@ Ext.define("OMV.module.admin.service.greyhole.Fsck", {
 
     rpcService   : "Greyhole",
     rpcSetMethod : "doFsck",
+    width        : 550,
+    height       : 410,
 
     getFormItems: function() {
         var me = this;
@@ -194,6 +196,8 @@ Ext.define("OMV.module.admin.service.greyhole.PoolManagement", {
 
     rpcService   : "Greyhole",
     rpcSetMethod : "doPoolManagement",
+    width        : 550,
+    height       : 300,
 
     getFormItems: function() {
         var me = this;

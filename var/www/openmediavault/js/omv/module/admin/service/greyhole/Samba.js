@@ -5,7 +5,7 @@
  * @author Marcel Beck <marcel.beck@mbeck.org>
  * @copyright Copyright (c) 2011 Stephane Bocquet
  * @copyright Copyright (c) 2011 Marcel Beck
- * @copyright Copyright (c) 2013 OpenMediaVault Plugin Developers 
+ * @copyright Copyright (c) 2013 OpenMediaVault Plugin Developers
  *
  * This file is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
@@ -41,6 +41,8 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShare", {
     plugins      : [{
         ptype : "configobject"
     }],
+    width        : 550,
+    height       : 275,
 
     getFormItems: function() {
         var me = this;
@@ -52,7 +54,7 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShare", {
             allowBlank    : false,
             allowNone     : false,
             editable      : false,
-            readOnly: (me.uuid !== OMV.UUID_UNDEFINED),
+            readOnly      : (me.uuid !== OMV.UUID_UNDEFINED),
             triggerAction : "all",
             displayField  : "name",
             valueField    : "uuid",
