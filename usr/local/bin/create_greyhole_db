@@ -36,5 +36,5 @@ DB_NAME=$(omv_config_get "//services/greyhole/db_name")
 
 CMD="create database ${DB_NAME}; grant all on ${DB_NAME}.* to ${DB_NAME}@${DB_HOST} identified by '${DB_PASS}';"
 
-mysql --user=root --password=${MYSQLROOTPW} -e ${CMD}
-mysql --user=${DB_USER} --password=${DB_PASS} ${DB_NAME} < /usr/share/greyhole/schema-mysql.sql
+mysql --user=root --password=${MYSQLROOTPW} -Bse "${CMD}"
+mysql --user=${DB_USER} --password=${DB_PASS} -s ${DB_NAME} < /usr/share/greyhole/schema-mysql.sql

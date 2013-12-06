@@ -110,7 +110,8 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
                 "db_host"                : { "type" : "string" },
                 "db_user"                : { "type" : "string" },
                 "db_pass"                : { "type" : "string" },
-                "db_name"                : { "type" : "string" }
+                "db_name"                : { "type" : "string" },
+                "root_pass"              : { "type" : "string", "optional" : true }
             }
         }');
 
@@ -883,7 +884,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
 
         // Get configuration object
         $xpath  = "//services/greyhole";
-        $oldobject = $xmlConfig->get($xpath);
+        $object = $xmlConfig->get($xpath);
         if (is_null($object))
             throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
 
