@@ -5,8 +5,7 @@
  * @author Marcel Beck <marcel.beck@mbeck.org>
  * @copyright Copyright (c) 2011 Stephane Bocquet
  * @copyright Copyright (c) 2011 Marcel Beck
- * @version $Id: greyhole.js 12 2011-11-07 18:52:10Z
- *          stephane_bocquet@hotmail.com $
+ * @copyright Copyright (c) 2013 OpenMediaVault Plugin Developers 
  *
  * This file is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
@@ -24,7 +23,7 @@
 // require("js/omv/form/field/SharedFolderComboBox.js")
 
 Ext.define("OMV.module.admin.service.greyhole.InstallDB", {
-    extend   : "OMV.workspace.window.Form",
+    extend : "OMV.workspace.window.Form",
 
     rpcService   : "Greyhole",
     rpcSetMethod : "doInstallDB",
@@ -45,7 +44,7 @@ Ext.define("OMV.module.admin.service.greyhole.InstallDB", {
 
 Ext.define("OMV.module.admin.service.greyhole.Settings", {
     extend : "OMV.workspace.form.Panel",
-    uses     : [
+    uses   : [
         "OMV.module.admin.service.greyhole.InstallDB"
     ],
 

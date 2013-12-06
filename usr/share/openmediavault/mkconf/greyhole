@@ -29,14 +29,14 @@ GREYHOLE_CONFIG="/etc/greyhole.conf"
 GREYHOLE_INIT="greyhole"
 
 # Enable/disable service
-if [ "$(omv_config_get "//system/storage/greyhole/enable")" != "1" ]; then
+if [ "$(omv_config_get "//services/greyhole/enable")" != "1" ]; then
 	echo "# Stop/Disable Greyhole disabled"
 	invoke-rc.d ${GREYHOLE_INIT} stop 1>/dev/null 2>&1 || true
 	update-rc.d ${GREYHOLE_INIT} disable
 	exit 0
 fi
 
-pool_disk_count=$(omv_config_get_count "//system/storage/greyhole/pool_disks/disk")
+pool_disk_count=$(omv_config_get_count "//services/greyhole/pool_disks/disk")
 if [ ${pool_disk_count} -eq 0 ]; then
 	echo "# Stop/Disable Greyhole: No Pool Disks"
 	invoke-rc.d ${GREYHOLE_INIT} stop 1>/dev/null 2>&1 || true
@@ -44,7 +44,7 @@ if [ ${pool_disk_count} -eq 0 ]; then
 	exit 0
 fi
 
-# smb_share_count=$(omv_config_get_count "//system/storage/greyhole/smb_shares/share")
+# smb_share_count=$(omv_config_get_count "//services/greyhole/smb_shares/share")
 # if [ ${smb_share_count} -eq 0 ]; then
 # 	echo "# Stop/Disable Greyhole: No SMB Shares"
 # 	invoke-rc.d ${GREYHOLE_INIT} stop 1>/dev/null 2>&1 || true

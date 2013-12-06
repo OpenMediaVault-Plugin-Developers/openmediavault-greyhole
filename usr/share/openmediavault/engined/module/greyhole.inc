@@ -1,11 +1,10 @@
 <?php
 /**
- * vim: tabstop=4
  *
  * @license    http://www.gnu.org/licenses/gpl.html GPL Version 3
  * @author     Stephane Bocquet <stephane_bocquet@hotmail.com>
  * @copyright  Copyright (c) 2011 Ian Moore
- * @version    $Id: greyhole.inc 8 2011-11-07 02:22:11Z stephane_bocquet@hotmail.com $
+ * @copyright  Copyright (c) 2013 OpenMediaVault Plugin Developers  
  *
  * This file is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
