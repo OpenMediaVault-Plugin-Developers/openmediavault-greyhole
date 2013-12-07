@@ -250,7 +250,7 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShares", {
         
         if (records.length === 1)
             me.doDeletion();
-    }
+    },
 
     doDeletion: function() {
         var me = this;
