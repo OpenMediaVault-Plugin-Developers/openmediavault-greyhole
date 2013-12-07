@@ -245,6 +245,13 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShares", {
         }).show();
     },
 
+    startDeletion: function(records) {
+        var me = this;
+        
+        if (records.length === 1)
+            me.doDeletion();
+    }
+
     doDeletion: function() {
         var me = this;
         var record = me.getSelected();
@@ -261,6 +268,7 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShares", {
             listeners       : {
                 scope     : me,
                 finish    : function(wnd, response) {
+                    me.store.reload();
                     wnd.setButtonDisabled("close", false);
                 },
                 exception : function(wnd, error) {
