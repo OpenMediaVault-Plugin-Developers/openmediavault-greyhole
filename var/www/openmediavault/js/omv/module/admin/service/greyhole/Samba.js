@@ -157,7 +157,7 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShares", {
 
     hidePagingToolbar : false,
     stateful          : true,
-    autoReload        : true,
+    autoReload        : false,
     stateId           : "85f1cbf2-23d3-4960-a803-b7fc34d42235",
     columns           : [{
         header   :_("SMB Share"),
@@ -224,7 +224,7 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShares", {
             listeners : {
                 scope  : me,
                 submit : function() {
-                    this.doReload();
+                    me.doReload();
                 }
             }
         }).show();
@@ -239,7 +239,7 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShares", {
             listeners : {
                 scope  : me,
                 submit : function() {
-                    this.doReload();
+                    me.doReload();
                 }
             }
         }).show();
@@ -255,6 +255,7 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShares", {
     doDeletion: function() {
         var me = this;
         var record = me.getSelected();
+
         var wnd = Ext.create("OMV.window.Execute", {
             title           : _("Delete Samba Share"),
             rpcService      : "Greyhole",
@@ -268,7 +269,7 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShares", {
             listeners       : {
                 scope     : me,
                 finish    : function(wnd, response) {
-                    me.store.reload();
+                    me.doReload();
                     wnd.setButtonDisabled("close", false);
                 },
                 exception : function(wnd, error) {
@@ -277,6 +278,7 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShares", {
                 }
             }
         });
+
         wnd.setButtonDisabled("close", true);
         wnd.show();
         wnd.start();
