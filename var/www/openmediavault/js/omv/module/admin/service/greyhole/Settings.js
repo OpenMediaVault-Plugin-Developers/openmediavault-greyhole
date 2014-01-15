@@ -232,7 +232,7 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
                 }
             },{
                 border : false,
-                html   : "<br />"
+                html   : "</p>"
             }]
         }];
     }
