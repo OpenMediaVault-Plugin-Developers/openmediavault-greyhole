@@ -1,0 +1,386 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# polxmod <paolo.velati@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-greyhole\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-19 10:34-0600\n"
+"PO-Revision-Date: 2014-01-19 16:34+0000\n"
+"Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
+"Language-Team: Italian (http://www.transifex.com/projects/p/openmediavault-greyhole/language/it/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "%s (%s available)"
+msgstr ""
+
+msgid "Add Pool Disk"
+msgstr ""
+
+msgid "Add Samba Share"
+msgstr ""
+
+msgid "Are you sure you want to install the Greyhole database?"
+msgstr ""
+
+msgid "Balance modified"
+msgstr ""
+
+msgid "Cancel"
+msgstr "Cancella"
+
+msgid "Cancel All Checks"
+msgstr ""
+
+msgid "Check for open Files"
+msgstr ""
+
+msgid "Checksums"
+msgstr ""
+
+msgid "Comment"
+msgstr "Commenta"
+
+msgid "Component"
+msgstr "Componente"
+
+msgid "Confirmation"
+msgstr ""
+
+msgid "Database Name"
+msgstr "Nome Database"
+
+msgid "Database Settings"
+msgstr ""
+
+msgid "Database is installed"
+msgstr ""
+
+msgid "Date & Time"
+msgstr ""
+
+msgid "Debug"
+msgstr "Debug"
+
+msgid "Default"
+msgstr ""
+
+msgid "Delete Pool Disk"
+msgstr ""
+
+msgid "Delete Samba Share"
+msgstr ""
+
+msgid "Delete orphaned metadata"
+msgstr ""
+
+msgid ""
+"Disable to get more speed. This might break some files if any application "
+"changes your files while Greyhole tries to work on them."
+msgstr ""
+
+msgid "Disk Free space Cache time"
+msgstr ""
+
+msgid "Disk Pool Management"
+msgstr ""
+
+msgid "Do you really want to remove the pool disk directory content?"
+msgstr ""
+
+msgid ""
+"Do you want to remove the content of the pool disk directory recursively? "
+"Note, the data will be permanently deleted then. Select 'No' to delete the "
+"pool disk directory only or 'Cancel' to abort."
+msgstr ""
+
+msgid "Don't walk metadata store"
+msgstr ""
+
+msgid "Edit Pool Disk"
+msgstr ""
+
+msgid "Edit Samba Share"
+msgstr ""
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Email report"
+msgstr ""
+
+msgid "Empty Trash"
+msgstr "Svuota Cestino"
+
+msgid "Enable"
+msgstr "Abilita"
+
+msgid ""
+"Enable this to use modified files copies to help balance the available space"
+" in your storage pool drives."
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Event"
+msgstr ""
+
+msgid "Extra options"
+msgstr ""
+
+msgid "Files Balance"
+msgstr ""
+
+msgid "Files Check"
+msgstr ""
+
+msgid "Files copies"
+msgstr ""
+
+msgid "Filesystem"
+msgstr ""
+
+msgid "Find orphaned files"
+msgstr ""
+
+msgid "General settings"
+msgstr ""
+
+msgid "Going"
+msgstr ""
+
+msgid "Gone"
+msgstr ""
+
+msgid "Greyhole"
+msgstr ""
+
+msgid "Greyhole - Balance"
+msgstr ""
+
+msgid "Greyhole - Empty Trash"
+msgstr ""
+
+msgid "Hostname"
+msgstr ""
+
+msgid ""
+"How long should free disk space calculations be cached (in seconds). Use 0 "
+"to disable caching."
+msgstr ""
+
+msgid "Info"
+msgstr ""
+
+msgid "Install DB"
+msgstr ""
+
+msgid "Installing Greyhole database"
+msgstr ""
+
+msgid "Label"
+msgstr ""
+
+msgid "Log Greyhole memory usage on each log line."
+msgstr ""
+
+msgid "Log Memory Usage"
+msgstr ""
+
+msgid "Log level"
+msgstr ""
+
+msgid "Min Free"
+msgstr ""
+
+msgid "Min Free (GiB)"
+msgstr ""
+
+msgid ""
+"Move deleted files to trash instead of deleting them. This is a global "
+"setting that can be overided by local option on each Greyhole share."
+msgstr ""
+
+msgid "MySQL root Password"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "Number of Copies"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Path"
+msgstr ""
+
+msgid "Pool Disk"
+msgstr ""
+
+msgid "Pool Management"
+msgstr ""
+
+msgid "Pool Managment"
+msgstr ""
+
+msgid "Pools"
+msgstr ""
+
+msgid ""
+"Read ALL files in your storage pool, and check that file copies are "
+"identical. This will identify any problem you might have with your file-"
+"systems. NOTE: this can take a LONG time to complete, since it will read "
+"everything from all your drives!"
+msgstr ""
+
+msgid "Replaced"
+msgstr ""
+
+msgid "SMB Share"
+msgstr ""
+
+msgid "Samba Shares"
+msgstr ""
+
+msgid ""
+"Scan for files with no metadata in the storage pool drives. This will allow "
+"you to include existing files on a drive in your storage pool without having"
+" to copy them manually."
+msgstr ""
+
+msgid "Select Number of Copies ..."
+msgstr ""
+
+msgid "Select a path ..."
+msgstr ""
+
+msgid "Select a pool disk ..."
+msgstr ""
+
+msgid "Select a volume ..."
+msgstr ""
+
+msgid "Select an SMB Share ..."
+msgstr ""
+
+msgid ""
+"Send an email when fsck completes, to report on what was checked, and any "
+"error that was found."
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Space"
+msgstr ""
+
+msgid ""
+"Speed up fsck by skipping the scan of the metadata store directories. "
+"Scanning the metadata stores is only required to re-create symbolic links "
+"that might be missing from your shared directories."
+msgstr ""
+
+msgid "Sticky files"
+msgstr ""
+
+msgid ""
+"Sticky files are files that will always 'live' together in the storage pool."
+" This will allow you to read (and read-only!) those files by using the "
+"storage pool drives themselves, instead of using the mounted shares."
+msgstr ""
+
+msgid ""
+"Tell Greyhole that the missing drive at is gone for good. Greyhole will "
+"start replacing the missing file copies instantly."
+msgstr ""
+
+msgid ""
+"Tell Greyhole that the missing drive will return soon, and that it shouldn't"
+" re-create additional file copies to replace it."
+msgstr ""
+
+msgid "Tell Greyhole that you replaced the drive."
+msgstr ""
+
+msgid ""
+"Tell Greyhole that you want to remove a drive. Greyhole will then make sure "
+"you don't loose any files, and that the correct number of file copies are "
+"created to replace the missing drive."
+msgstr ""
+
+msgid ""
+"This is how much free space you want to reserve on each drive. This is a "
+"soft limit that will be ignored if the necessary hard drives are below their"
+" minimum."
+msgstr ""
+
+msgid ""
+"This is the number of copies of each file you want Greyhole to keep per "
+"Share. This is not the number of duplicates! 2 copies = 1 duplicate."
+msgstr ""
+
+msgid "Trash"
+msgstr ""
+
+msgid "Trash deletes"
+msgstr ""
+
+msgid "Use Default"
+msgstr ""
+
+msgid "Use Trash"
+msgstr ""
+
+msgid "Used only for installing Greyhole database and will not be saved."
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "Volume"
+msgstr ""
+
+msgid "Wait for"
+msgstr ""
+
+msgid "Warn"
+msgstr ""
+
+msgid ""
+"Warning: Changing your database connection properties may result in stoping "
+"Greyhole. Stop Greyhole daemon before any change. Make sure the values you "
+"are modifying match the MySQL greyhole database values before restarting "
+"Greyhole daemon."
+msgstr ""
+
+msgid ""
+"When fsck find metadata files with no file copies, delete those metadata "
+"files. If the file copies re-appear later, you'll need to run fsck with "
+"--find-orphaned-files to have them reappear in your shares."
+msgstr ""
+
+msgid ""
+"Will receive email reports for daily fsck or when all drives are out of "
+"available space."
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid ""
+"You can specify per-share trash preferences that will override the global "
+"trash preference."
+msgstr ""
+
+msgid "n/a"
+msgstr ""

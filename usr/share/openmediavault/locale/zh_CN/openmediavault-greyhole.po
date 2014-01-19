@@ -1,0 +1,386 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# dezi121 <by@songming.me>, 2013-2014
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-greyhole\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-19 10:34-0600\n"
+"PO-Revision-Date: 2014-01-19 16:34+0000\n"
+"Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/openmediavault-greyhole/language/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "%s (%s available)"
+msgstr "%s (%s 可用)"
+
+msgid "Add Pool Disk"
+msgstr "添加磁盘池"
+
+msgid "Add Samba Share"
+msgstr "添加 Samba共享"
+
+msgid "Are you sure you want to install the Greyhole database?"
+msgstr "确定要安装 Greyhole数据库？"
+
+msgid "Balance modified"
+msgstr "平衡变更"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Cancel All Checks"
+msgstr "取消全部检查"
+
+msgid "Check for open Files"
+msgstr "检查打开的文件"
+
+msgid "Checksums"
+msgstr "校验"
+
+msgid "Comment"
+msgstr "备注"
+
+msgid "Component"
+msgstr "组成"
+
+msgid "Confirmation"
+msgstr "确认"
+
+msgid "Database Name"
+msgstr "数据库名称"
+
+msgid "Database Settings"
+msgstr "数据库设置"
+
+msgid "Database is installed"
+msgstr ""
+
+msgid "Date & Time"
+msgstr "日期和时间"
+
+msgid "Debug"
+msgstr "Debug"
+
+msgid "Default"
+msgstr ""
+
+msgid "Delete Pool Disk"
+msgstr "删除磁盘池"
+
+msgid "Delete Samba Share"
+msgstr "删除Samba共享"
+
+msgid "Delete orphaned metadata"
+msgstr "删除孤立的元数据"
+
+msgid ""
+"Disable to get more speed. This might break some files if any application "
+"changes your files while Greyhole tries to work on them."
+msgstr "禁止以获得更快的速度。如果任何应用程序修改你的文件，而 Greyhole 试图对他们运行这可能会破坏一些文件。"
+
+msgid "Disk Free space Cache time"
+msgstr "磁盘缓存释放时间"
+
+msgid "Disk Pool Management"
+msgstr "磁盘池管理"
+
+msgid "Do you really want to remove the pool disk directory content?"
+msgstr "确定要删除磁盘池的目录内容？"
+
+msgid ""
+"Do you want to remove the content of the pool disk directory recursively? "
+"Note, the data will be permanently deleted then. Select 'No' to delete the "
+"pool disk directory only or 'Cancel' to abort."
+msgstr "你想递归删除磁盘池的目录内容吗？注意，这些数据将永久删除，选择“否”只删除磁盘池的目录，选择“取消”中断操作。"
+
+msgid "Don't walk metadata store"
+msgstr ""
+
+msgid "Edit Pool Disk"
+msgstr "编辑磁盘池"
+
+msgid "Edit Samba Share"
+msgstr "编辑Samba共享"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Email report"
+msgstr "Email报告"
+
+msgid "Empty Trash"
+msgstr "清空垃圾箱"
+
+msgid "Enable"
+msgstr "启动"
+
+msgid ""
+"Enable this to use modified files copies to help balance the available space"
+" in your storage pool drives."
+msgstr "启用此项会使用变更的文件副本，这将有助于平衡存储池的有效空间。"
+
+msgid "Error"
+msgstr "错误"
+
+msgid "Event"
+msgstr "事件"
+
+msgid "Extra options"
+msgstr "附加选项"
+
+msgid "Files Balance"
+msgstr "文件平衡"
+
+msgid "Files Check"
+msgstr "文件检查"
+
+msgid "Files copies"
+msgstr "文件拷贝"
+
+msgid "Filesystem"
+msgstr "文件系统"
+
+msgid "Find orphaned files"
+msgstr "查找孤立的文件"
+
+msgid "General settings"
+msgstr "常规设置"
+
+msgid "Going"
+msgstr "更换准备"
+
+msgid "Gone"
+msgstr "更换中"
+
+msgid "Greyhole"
+msgstr "Greyhole"
+
+msgid "Greyhole - Balance"
+msgstr "Greyhole - 平衡"
+
+msgid "Greyhole - Empty Trash"
+msgstr "Greyhole - 清空回收站"
+
+msgid "Hostname"
+msgstr "主机名"
+
+msgid ""
+"How long should free disk space calculations be cached (in seconds). Use 0 "
+"to disable caching."
+msgstr "多长时间 (秒) 释放磁盘缓存，0 表示关闭缓存。"
+
+msgid "Info"
+msgstr "信息"
+
+msgid "Install DB"
+msgstr "安装数据库"
+
+msgid "Installing Greyhole database"
+msgstr "安装Greyhole数据库"
+
+msgid "Label"
+msgstr "标签"
+
+msgid "Log Greyhole memory usage on each log line."
+msgstr "每行日志记录 Greyhole 使用内存情况。"
+
+msgid "Log Memory Usage"
+msgstr "内存使用日志"
+
+msgid "Log level"
+msgstr "负载日志"
+
+msgid "Min Free"
+msgstr "最小空闲"
+
+msgid "Min Free (GiB)"
+msgstr "最小空闲 (GiB)"
+
+msgid ""
+"Move deleted files to trash instead of deleting them. This is a global "
+"setting that can be overided by local option on each Greyhole share."
+msgstr "将删除的文件移到回收站而不是直接删除。可以通过每个Greyhole 共享的对应选项覆盖这个全局设置。"
+
+msgid "MySQL root Password"
+msgstr "MySQL root 密码"
+
+msgid "No"
+msgstr "否"
+
+msgid "Number of Copies"
+msgstr "拷贝数"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Path"
+msgstr "路径"
+
+msgid "Pool Disk"
+msgstr "磁盘池"
+
+msgid "Pool Management"
+msgstr "池管理"
+
+msgid "Pool Managment"
+msgstr "池管理"
+
+msgid "Pools"
+msgstr "池"
+
+msgid ""
+"Read ALL files in your storage pool, and check that file copies are "
+"identical. This will identify any problem you might have with your file-"
+"systems. NOTE: this can take a LONG time to complete, since it will read "
+"everything from all your drives!"
+msgstr "读取存储池中的所有文件并检查副本是否一致，这将识别你文件系统可能的任何问题。注意：这将花费很长的时间才能完成，因为它会读取你驱动器中的所有数据。"
+
+msgid "Replaced"
+msgstr "更换完成"
+
+msgid "SMB Share"
+msgstr "SMB共享"
+
+msgid "Samba Shares"
+msgstr "Samba共享"
+
+msgid ""
+"Scan for files with no metadata in the storage pool drives. This will allow "
+"you to include existing files on a drive in your storage pool without having"
+" to copy them manually."
+msgstr "扫描驱动器中没有元数据的文件，这将允许你包含存储池驱动器中已有文件，而不必手动复制它们。"
+
+msgid "Select Number of Copies ..."
+msgstr "选择拷贝数"
+
+msgid "Select a path ..."
+msgstr "选择路径"
+
+msgid "Select a pool disk ..."
+msgstr "选择磁盘池"
+
+msgid "Select a volume ..."
+msgstr "选择卷"
+
+msgid "Select an SMB Share ..."
+msgstr "选择SMB共享"
+
+msgid ""
+"Send an email when fsck completes, to report on what was checked, and any "
+"error that was found."
+msgstr " fsck完成时发送Email报告，包含检查内容与检查结果。"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "Space"
+msgstr "空间"
+
+msgid ""
+"Speed up fsck by skipping the scan of the metadata store directories. "
+"Scanning the metadata stores is only required to re-create symbolic links "
+"that might be missing from your shared directories."
+msgstr ""
+
+msgid "Sticky files"
+msgstr ""
+
+msgid ""
+"Sticky files are files that will always 'live' together in the storage pool."
+" This will allow you to read (and read-only!) those files by using the "
+"storage pool drives themselves, instead of using the mounted shares."
+msgstr ""
+
+msgid ""
+"Tell Greyhole that the missing drive at is gone for good. Greyhole will "
+"start replacing the missing file copies instantly."
+msgstr "通知 Greyhole 丢失的驱动器无法找回，Greyhole 将开始立即开始恢复丢失的文件副本。"
+
+msgid ""
+"Tell Greyhole that the missing drive will return soon, and that it shouldn't"
+" re-create additional file copies to replace it."
+msgstr "通知 Greyhole 丢失的驱动器很快会恢复，而不创建其它文件副本来替换驱动器。"
+
+msgid "Tell Greyhole that you replaced the drive."
+msgstr "通知 Greyhole 更换驱动器完成。"
+
+msgid ""
+"Tell Greyhole that you want to remove a drive. Greyhole will then make sure "
+"you don't loose any files, and that the correct number of file copies are "
+"created to replace the missing drive."
+msgstr "通知 Greyhole 你要删除驱动器，Greyhole 会确保你不丢失任何文件，并在替换丢失的驱动器上创建正确的文件副本数量。"
+
+msgid ""
+"This is how much free space you want to reserve on each drive. This is a "
+"soft limit that will be ignored if the necessary hard drives are below their"
+" minimum."
+msgstr "这是你想保留都少空余空间在每个驱动器上。这个限制非强制，如果必要的驱动器低于这个最小值限制将被忽略。"
+
+msgid ""
+"This is the number of copies of each file you want Greyhole to keep per "
+"Share. This is not the number of duplicates! 2 copies = 1 duplicate."
+msgstr "这个是你保存文件到共享的副本数，这个数不是重复数，2 份副本 = 1 重复。"
+
+msgid "Trash"
+msgstr "回收站"
+
+msgid "Trash deletes"
+msgstr "删除至回收站"
+
+msgid "Use Default"
+msgstr ""
+
+msgid "Use Trash"
+msgstr "使用回收站"
+
+msgid "Used only for installing Greyhole database and will not be saved."
+msgstr "仅用于安装 Greyhole 数据库而不会保存。"
+
+msgid "Username"
+msgstr "用户名"
+
+msgid "Volume"
+msgstr "卷"
+
+msgid "Wait for"
+msgstr "等待"
+
+msgid "Warn"
+msgstr "警告"
+
+msgid ""
+"Warning: Changing your database connection properties may result in stoping "
+"Greyhole. Stop Greyhole daemon before any change. Make sure the values you "
+"are modifying match the MySQL greyhole database values before restarting "
+"Greyhole daemon."
+msgstr "警告：改变数据库连接属性可能会导致 Greyhole 停止，所以在改变前要先停止 Greyhole 守护进程。在重启守护进程前请确保你修改的 greyhole 的 MySQL 数据库值相对应。"
+
+msgid ""
+"When fsck find metadata files with no file copies, delete those metadata "
+"files. If the file copies re-appear later, you'll need to run fsck with "
+"--find-orphaned-files to have them reappear in your shares."
+msgstr "当运行 fsck 检查到没有副本的元数据文件时删除这些元数据文件。如果往后出现了文件副本，你需要运行 fsck  --find-orphaned-files 让元数据在共享中重现。"
+
+msgid ""
+"Will receive email reports for daily fsck or when all drives are out of "
+"available space."
+msgstr "每天 fsck 完后或者所有驱动器没有可用空间了将收到邮件报告。"
+
+msgid "Yes"
+msgstr "是"
+
+msgid ""
+"You can specify per-share trash preferences that will override the global "
+"trash preference."
+msgstr "你可以设置每个共享的回收站参数，从而覆盖回收站的全局设置。"
+
+msgid "n/a"
+msgstr "N/A"

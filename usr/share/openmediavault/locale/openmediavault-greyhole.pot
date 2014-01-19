@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-09 08:29-0600\n"
+"POT-Creation-Date: 2014-01-19 10:34-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,10 +59,16 @@ msgstr ""
 msgid "Database Settings"
 msgstr ""
 
+msgid "Database is installed"
+msgstr ""
+
 msgid "Date & Time"
 msgstr ""
 
 msgid "Debug"
+msgstr ""
+
+msgid "Default"
 msgstr ""
 
 msgid "Delete Pool Disk"
@@ -288,6 +294,9 @@ msgid "Trash"
 msgstr ""
 
 msgid "Trash deletes"
+msgstr ""
+
+msgid "Use Default"
 msgstr ""
 
 msgid "Use Trash"
