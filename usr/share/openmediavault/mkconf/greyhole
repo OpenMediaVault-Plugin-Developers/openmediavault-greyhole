@@ -5,19 +5,20 @@
 # @author    Marcel Beck <marcel.beck@mbeck.org>
 # @copyright Copyright (c) 2011 Stephane Bocquet
 # @copyright Copyright (c) 2012 Marcel Beck
+# @copyright Copyright (c) 2014 OpenMediaVault Plugin Developers
 #
-# This file is free software: you can redistribute it and/or modify
+# This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # any later version.
 #
-# This file is distributed in the hope that it will be useful,
+# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with this file. If not, see <http://www.gnu.org/licenses/>.
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 set -e
 
@@ -30,26 +31,26 @@ GREYHOLE_INIT="greyhole"
 
 # Enable/disable service
 if [ "$(omv_config_get "//services/greyhole/enable")" != "1" ]; then
-	echo "# Stop/Disable Greyhole disabled"
-	invoke-rc.d ${GREYHOLE_INIT} stop 1>/dev/null 2>&1 || true
-	update-rc.d ${GREYHOLE_INIT} disable
-	exit 0
+    echo "# Stop/Disable Greyhole disabled"
+    invoke-rc.d ${GREYHOLE_INIT} stop 1>/dev/null 2>&1 || true
+    update-rc.d ${GREYHOLE_INIT} disable
+    exit 0
 fi
 
 pool_disk_count=$(omv_config_get_count "//services/greyhole/pool_disks/disk")
 if [ ${pool_disk_count} -eq 0 ]; then
-	echo "# Stop/Disable Greyhole: No Pool Disks"
-	invoke-rc.d ${GREYHOLE_INIT} stop 1>/dev/null 2>&1 || true
-	update-rc.d ${GREYHOLE_INIT} disable
-	exit 0
+    echo "# Stop/Disable Greyhole: No Pool Disks"
+    invoke-rc.d ${GREYHOLE_INIT} stop 1>/dev/null 2>&1 || true
+    update-rc.d ${GREYHOLE_INIT} disable
+    exit 0
 fi
 
 # smb_share_count=$(omv_config_get_count "//services/greyhole/smb_shares/share")
 # if [ ${smb_share_count} -eq 0 ]; then
-# 	echo "# Stop/Disable Greyhole: No SMB Shares"
-# 	invoke-rc.d ${GREYHOLE_INIT} stop 1>/dev/null 2>&1 || true
-# 	update-rc.d ${GREYHOLE_INIT} disable
-# 	exit 0
+#   echo "# Stop/Disable Greyhole: No SMB Shares"
+#   invoke-rc.d ${GREYHOLE_INIT} stop 1>/dev/null 2>&1 || true
+#   update-rc.d ${GREYHOLE_INIT} disable
+#   exit 0
 # fi
 
 echo "# Stop Greyhole"

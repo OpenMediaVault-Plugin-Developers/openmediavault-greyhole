@@ -5,18 +5,18 @@
  * @author Marcel Beck <marcel.beck@mbeck.org>
  * @copyright Copyright (c) 2011 Stephane Bocquet
  * @copyright Copyright (c) 2011 Marcel Beck
- * @copyright Copyright (c) 2013 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2013-2014 OpenMediaVault Plugin Developers
  *
- * This file is free software: you can redistribute it and/or modify it under
+ * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or any later version.
  *
- * This file is distributed in the hope that it will be useful, but WITHOUT ANY
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
  * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License along with
- * this file. If not, see <http://www.gnu.org/licenses/>.
+ * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
 // require("js/omv/WorkspaceManager.js")
@@ -631,9 +631,9 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
 });
 
 OMV.WorkspaceManager.registerPanel({
-    id          : "pools",
-    path        : "/service/greyhole",
-    text        : _("Pools"),
-    position    : 20,
-    className   : "OMV.module.admin.service.greyhole.Pools"
+    id        : "pools",
+    path      : "/service/greyhole",
+    text      : _("Pools"),
+    position  : 20,
+    className : "OMV.module.admin.service.greyhole.Pools"
 });

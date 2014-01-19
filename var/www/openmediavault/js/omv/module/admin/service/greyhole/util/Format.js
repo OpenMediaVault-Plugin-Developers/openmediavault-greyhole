@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2011-2012 Marcel Beck <marcel.beck@mbeck.org>
- * Copyright (C)      2013 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2014 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -97,6 +97,22 @@ OMV.module.services.greyhole.util.Format = function() {
             minFreeRenderer : function (value) {
                 value += ' GiB';
                 return value;
+            },
+
+            useTrashRenderer : function (value) {
+                var content;
+                switch (value) {
+                case 0:
+                    content = _("No");
+                    break;
+                case 1:
+                    content = _("Yes");
+                    break;
+                default:
+                    content = _("Use Default");
+                    break;
+                }
+                return content;
             }
         };
     }());

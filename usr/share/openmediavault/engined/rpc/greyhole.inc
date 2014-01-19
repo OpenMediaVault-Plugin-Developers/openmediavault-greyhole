@@ -6,20 +6,20 @@
  * @author     Marcel Beck <marcel.beck@mbeck.org>
  * @copyright  Copyright (c) 2011-2012 Stephane Bocquet
  * @copyright  Copyright (c) 2011-2012 Marcel Beck
- * @copyright  Copyright (c) 2013 OpenMediaVault Plugin Developers
+ * @copyright  Copyright (c) 2013-2014 OpenMediaVault Plugin Developers
  *
- * This file is free software: you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * any later version.
  *
- * This file is distributed in the hope that it will be useful,
+ * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this file. If not, see <http://www.gnu.org/licenses/>.
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  */
 
@@ -475,7 +475,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
 
         $object['num_copies']   = intval($object['num_copies']);
         $object['sticky_files'] = boolval($object['sticky_files']);
-        $object['trash']        = boolval($object['trash']);
+        $object['trash']        = intval($object['trash']);
 
         return $object;
     }
@@ -493,7 +493,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
                 "smbref"       : { ' . $GLOBALS['OMV_JSONSCHEMA_UUID'] . ' },
                 "num_copies"   : { "type" : "integer" },
                 "sticky_files" : { "type" : "boolean" },
-                "trash"        : { "type" : "boolean" }
+                "trash"        : { "type" : "integer" }
             }
         }');
 
@@ -504,7 +504,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
             "smbref"          => $params['smbref'],
             "num_copies"      => intval($params['num_copies']),
             "sticky_files"    => array_boolval($params, 'sticky_files'),
-            "trash"           => array_boolval($params, 'trash'),
+            "trash"           => intval($params, 'trash'),
         );
 
         // Set the configuration object.

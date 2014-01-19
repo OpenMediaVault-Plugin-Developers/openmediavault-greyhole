@@ -3,6 +3,7 @@
  * @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
  * @author    Volker Theile <volker.theile@openmediavault.org>
  * @copyright Copyright (c) 2009-2013 Volker Theile
+ * @copyright Copyright (c) 2013-2014 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,7 +47,7 @@ Ext.define("OMV.module.admin.diagnostic.log.plugin.Greyhole", {
         id        : "event"
     }],
     rpcParams : {
-        id: "greyhole"
+        id : "greyhole"
     },
     rpcFields : [
         { name : "date", type: "string" },
@@ -56,7 +57,7 @@ Ext.define("OMV.module.admin.diagnostic.log.plugin.Greyhole", {
 });
 
 OMV.PluginManager.register({
-    ptype: "diagnostic",
-    id: "log",
-    className: "OMV.module.admin.diagnostic.log.plugin.Greyhole"
+    ptype     : "diagnostic",
+    id        : "log",
+    className : "OMV.module.admin.diagnostic.log.plugin.Greyhole"
 });

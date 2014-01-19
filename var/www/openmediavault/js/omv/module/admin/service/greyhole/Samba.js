@@ -5,18 +5,18 @@
  * @author Marcel Beck <marcel.beck@mbeck.org>
  * @copyright Copyright (c) 2011 Stephane Bocquet
  * @copyright Copyright (c) 2011 Marcel Beck
- * @copyright Copyright (c) 2013 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2013-2014 OpenMediaVault Plugin Developers
  *
- * This file is free software: you can redistribute it and/or modify it under
+ * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or any later version.
  *
- * This file is distributed in the hope that it will be useful, but WITHOUT ANY
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
  * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License along with
- * this file. If not, see <http://www.gnu.org/licenses/>.
+ * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
 // require("js/omv/WorkspaceManager.js")
@@ -29,6 +29,7 @@
 // require("js/omv/data/Model.js")
 // require("js/omv/data/proxy/Rpc.js")
 // require("js/omv/form/field/SharedFolderComboBox.js")
+// require("js/omv/module/admin/service/greyhole/util/Format.js")
 
 Ext.define("OMV.module.admin.service.greyhole.SambaShare", {
     extend   : "OMV.workspace.window.Form",
@@ -131,10 +132,24 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShare", {
                 text  : _("Sticky files are files that will always 'live' together in the storage pool. This will allow you to read (and read-only!) those files by using the storage pool drives themselves, instead of using the mounted shares.")
             }]
         },{
-            xtype      : "checkbox",
+            xtype      : "combo",
             name       : "trash",
             fieldLabel : _("Use Trash"),
-            checked    : false,
+            mode       : "local",
+            store      : new Ext.data.SimpleStore({
+                fields  : [ "value", "text" ],
+                data    : [
+                    [ "0", _("No") ],
+                    [ "1", _("Yes") ],
+                    [ "2", _("Default") ]
+                ]
+            }),
+            displayField  : "text",
+            valueField    : "value",
+            allowBlank    : false,
+            editable      : false,
+            triggerAction : "all",
+            value         : "2",
             plugins    : [{
                 ptype : "fieldinfo",
                 text  : _("You can specify per-share trash preferences that will override the global trash preference.")
@@ -160,32 +175,32 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShares", {
     autoReload        : false,
     stateId           : "85f1cbf2-23d3-4960-a803-b7fc34d42235",
     columns           : [{
-        header   :_("SMB Share"),
-        sortable :true,
-        dataIndex:"name",
-        id       :"name"
+        header    : _("SMB Share"),
+        sortable  : true,
+        dataIndex : "name",
+        id        : "name"
     },{
-        header   :_("Comment"),
-        sortable :true,
-        dataIndex:"comment",
-        id       :"comment"
+        header    : _("Comment"),
+        sortable  : true,
+        dataIndex : "comment",
+        id        : "comment"
     },{
-        header   :_("Files copies"),
-        sortable :true,
-        dataIndex:"num_copies",
-        id       :"num_copies"
+        header    : _("Files copies"),
+        sortable  : true,
+        dataIndex : "num_copies",
+        id        : "num_copies"
     },{
-        header   :_("Sticky files"),
-        sortable :true,
-        dataIndex:"sticky_files",
-        id       :"sticky_files",
-        renderer :OMV.util.Format.booleanRenderer()
+        header    : _("Sticky files"),
+        sortable  : true,
+        dataIndex : "sticky_files",
+        id        : "sticky_files",
+        renderer  : OMV.util.Format.booleanRenderer()
     },{
-        header   :_("Use Trash"),
-        sortable :true,
-        dataIndex:"trash",
-        id       :"trash",
-        renderer :OMV.util.Format.booleanRenderer()
+        header    : _("Use Trash"),
+        sortable  : true,
+        dataIndex : "trash",
+        id        : "trash",
+        renderer  : OMV.module.services.greyhole.util.Format.useTrashRenderer
     }],
 
     initComponent: function() {
@@ -194,8 +209,8 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShares", {
             store : Ext.create("OMV.data.Store", {
                 autoLoad : true,
                 model    : OMV.data.Model.createImplicit({
-                    idProperty  : "uuid",
-                    fields      : [
+                    idProperty : "uuid",
+                    fields     : [
                     { name : "uuid", type: "string" },
                     { name : "name", type: "string" },
                     { name : "comment", type: "string" },
@@ -247,7 +262,7 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShares", {
 
     startDeletion: function(records) {
         var me = this;
-        
+
         if (records.length === 1)
             me.doDeletion();
     },
