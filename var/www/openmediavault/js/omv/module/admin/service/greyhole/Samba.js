@@ -141,7 +141,7 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShare", {
                 data    : [
                     [ "0", _("No") ],
                     [ "1", _("Yes") ],
-                    [ "2", _("Default") ]
+                    [ "2", _("Use Default") ]
                 ]
             }),
             displayField  : "text",
