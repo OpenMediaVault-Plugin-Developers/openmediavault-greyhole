@@ -49,3 +49,17 @@ do
 
     index=$(( ${index} - 1 ))
 done
+
+if [ "$(omv_config_get "//services/greyhole/trash_share")" != "1" ]; then
+
+	trashsharepath=$(omv_config_get "//services/greyhole/trash_share_path")
+
+	cat <<EOF >> ${OMV_SAMBA_CONFIG}
+[Greyhole Trash]
+comment = Greyhole Trash
+path = ${trashsharepath}
+dfree command = /usr/bin/greyhole-dfree
+vfs objects = greyhole
+EOF
+
+fi

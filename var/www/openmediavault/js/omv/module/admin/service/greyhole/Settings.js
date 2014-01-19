@@ -64,7 +64,16 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
                 { name  : "enable", value : false }
             ],
             properties : "!show"
-    }]
+        },{
+            name       : [
+                "trash_share_path",
+                "trash_share_ref"
+            ],
+            conditions : [
+                { name  : "trash_share", value : false }
+            ],
+            properties : "!disabled"
+        }]
     }],
 
     initComponent : function () {
@@ -251,6 +260,56 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
                 editable      : false,
                 triggerAction : "all",
                 value         : "DEBUG"
+            },{
+                xtype      : "checkbox",
+                name       : "trash_share",
+                fieldLabel : _("Create Trash Share"),
+                checked    : true,
+                boxLabel   : _("Create a samba share called Greyhole Trash that allows browsing of files in trash.")
+            },{
+                xtype         : "combo",
+                name          : "trash_share_ref",
+                fieldLabel    : _("Trash Share Volume"),
+                emptyText     : _("Select a volume ..."),
+                allowBlank    : true,
+                allowNone     : true,
+                editable      : false,
+                triggerAction : "all",
+                displayField  : "description",
+                valueField    : "uuid",
+                store         : Ext.create("OMV.data.Store", {
+                    autoLoad : true,
+                    model    : OMV.data.Model.createImplicit({
+                        idProperty : "uuid",
+                        fields     : [
+                            { name : "uuid", type : "string" },
+                            { name : "devicefile", type : "string" },
+                            { name : "description", type : "string" }
+                        ]
+                    }),
+                    proxy : {
+                        type : "rpc",
+                        rpcData : {
+                            service : "ShareMgmt",
+                            method  : "getCandidates"
+                        },
+                        appendSortParams : false
+                    },
+                    sorters : [{
+                        direction : "ASC",
+                        property  : "devicefile"
+                    }]
+                }),
+                plugins    : [{
+                    ptype : "fieldinfo",
+                    text  : _("Volume to use for Greyhole Trash.")
+                }]
+            },{
+                xtype      : "textfield",
+                name       : "trash_share_path",
+                fieldLabel : _("Trash Path"),
+                allowNone  : true,
+                readOnly   : true
             },{
                 xtype      : "textarea",
                 name       : "extraoptions",

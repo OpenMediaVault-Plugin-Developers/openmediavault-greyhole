@@ -82,6 +82,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         $object['balance_modified_files'] = boolval($object['balance_modified_files']);
         $object['log_memory_usage']       = boolval($object['log_memory_usage']);
         $object['check_for_open_files']   = boolval($object['check_for_open_files']);
+        $object['trash_share']            = boolval($object['trash_share']);
 
         // Remove useless fields from the result object.
         unset($object['pool_disks']);
@@ -107,6 +108,9 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
                 "df_cache_time"          : { "type" : "integer" },
                 "log_memory_usage"       : { "type" : "boolean" },
                 "check_for_open_files"   : { "type" : "boolean" },
+                "trash_share"            : { "type" : "boolean" },
+                "trash_share_ref"        : { "mntentref" : { ' . $GLOBALS['OMV_JSONSCHEMA_UUID'] . ', "optional" : true },
+                "trash_share_path"       : { "type" : "string", "optional" : true },
                 "extraoptions"           : { "type" : "string" },
                 "db_host"                : { "type" : "string" },
                 "db_user"                : { "type" : "string" },
@@ -142,15 +146,18 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
             'df_cache_time'          => $params['df_cache_time'],
             'log_memory_usage'       => array_boolval($params, 'log_memory_usage'),
             'check_for_open_files'   => array_boolval($params, 'check_for_open_files'),
-            "extraoptions"           => $params['extraoptions'],
+            'trash_share'            => array_boolval($params, 'trash_share'),
+            'trash_share_ref'        => $params['trash_share_ref'],
+            'trash_share_path'       => $params['trash_share_path'],
+            'extraoptions'           => $params['extraoptions'],
 
-            "pool_disks"             => isset($oldObject['pool_disks']) ? $oldObject['pool_disks'] : array(),
-            "smb_shares"             => isset($oldObject['smb_shares']) ? $oldObject['smb_shares'] : array(),
-            "db_engine"              => 'mysql',
-            "db_host"                => $params['db_host'],
-            "db_user"                => $params['db_user'],
-            "db_pass"                => $params['db_pass'],
-            "db_name"                => $params['db_name']
+            'pool_disks'             => isset($oldObject['pool_disks']) ? $oldObject['pool_disks'] : array(),
+            'smb_shares'             => isset($oldObject['smb_shares']) ? $oldObject['smb_shares'] : array(),
+            'db_engine'              => 'mysql',
+            'db_host'                => $params['db_host'],
+            'db_user'                => $params['db_user'],
+            'db_pass'                => $params['db_pass'],
+            'db_name'                => $params['db_name']
         );
 
         // Set configuration object
