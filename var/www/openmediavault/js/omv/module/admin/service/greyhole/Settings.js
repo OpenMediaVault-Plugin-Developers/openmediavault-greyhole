@@ -5,18 +5,18 @@
  * @author Marcel Beck <marcel.beck@mbeck.org>
  * @copyright Copyright (c) 2011 Stephane Bocquet
  * @copyright Copyright (c) 2011 Marcel Beck
- * @copyright Copyright (c) 2013 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2013-2014 OpenMediaVault Plugin Developers
  *
- * This file is free software: you can redistribute it and/or modify it under
+ * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or any later version.
  *
- * This file is distributed in the hope that it will be useful, but WITHOUT ANY
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
  * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License along with
- * this file. If not, see <http://www.gnu.org/licenses/>.
+ * this program. If not, see <http://www.gnu.org/licenses/>.
  */
 // require("js/omv/WorkspaceManager.js")
 // require("js/omv/workspace/form/Panel.js")
@@ -42,7 +42,29 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
                 { name  : "enable", value : false }
             ],
             properties : "!disabled"
-        }]
+        },{
+            name       : [
+                "db_name",
+                "db_host",
+                "db_user",
+                "db_pass",
+                "root_pass",
+                "warning",
+                "installdb"
+            ],
+            conditions : [
+                { name  : "enable", value : false }
+            ],
+            properties : "show"
+        },{
+            name       : [
+                "db_message"
+            ],
+            conditions : [
+                { name  : "enable", value : false }
+            ],
+            properties : "!show"
+    }]
     }],
 
     initComponent : function () {
@@ -70,6 +92,92 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
 
     getFormItems : function() {
         return [{
+            xtype    : "fieldset",
+            title    : _("Database Settings"),
+            defaults : {
+                labelSeparator : ""
+            },
+            items    : [{
+                xtype  : "text",
+                name   : "db_message",
+                text   : "Database is installed",
+                hidden : true,
+                margin : "0 0 5 0"
+            },{
+                xtype      : "textfield",
+                name       : "db_host",
+                fieldLabel : _("Hostname"),
+                allowBlank : false
+            },{
+                xtype      : "textfield",
+                name       : "db_name",
+                fieldLabel : _("Database Name"),
+                allowBlank : false
+            },{
+                xtype      : "textfield",
+                name       : "db_user",
+                fieldLabel : _("Username"),
+                allowBlank : false
+            },{
+                xtype      : "passwordfield",
+                name       : "db_pass",
+                fieldLabel : _("Password"),
+                allowBlank : false
+            },{
+                xtype      : "passwordfield",
+                name       : "root_pass",
+                fieldLabel : _("MySQL root Password"),
+                allowBlank : true,
+                plugins    : [{
+                    ptype : "fieldinfo",
+                    text  : _("Used only for installing Greyhole database and will not be saved.")
+                }]
+            },{
+                name   : "warning",
+                border : false,
+                html   : _("Warning: Changing your database connection properties may result in stoping Greyhole. Stop Greyhole daemon before any change. Make sure the values you are modifying match the MySQL greyhole database values before restarting Greyhole daemon.")
+            },{
+                xtype   : "button",
+                name    : "installdb",
+                text    : _("Install DB"),
+                scope   : this,
+                margin  : "5 0 5 0",
+                handler : function() {
+                    var me = this;
+                    OMV.MessageBox.show({
+                        title   : _("Confirmation"),
+                        msg     : _("Are you sure you want to install the Greyhole database?"),
+                        buttons : Ext.Msg.YESNO,
+                        fn      : function(answer) {
+                            if (answer !== "yes")
+                               return;
+
+                            OMV.MessageBox.wait(null, _("Installing Greyhole database"));
+                            OMV.Rpc.request({
+                                scope   : me,
+                                rpcData : {
+                                    service : "Greyhole",
+                                    method  : "doInstallDB",
+                                    params  : {
+                                        db_host   : me.getForm().findField("db_host").getValue(),
+                                        db_name   : me.getForm().findField("db_name").getValue(),
+                                        db_user   : me.getForm().findField("db_user").getValue(),
+                                        db_pass   : me.getForm().findField("db_pass").getValue(),
+                                        root_pass : me.getForm().findField("root_pass").getValue()
+                                    }
+                                },
+                                success : function(id, success, response) {
+                                    me.doReload();
+                                    OMV.MessageBox.hide();
+                                }
+                            });
+                        },
+                        scope : me,
+                        icon  : Ext.Msg.QUESTION
+                    });
+                }
+            }]
+        },{
             xtype    : "fieldset",
             title    : _("General settings"),
             defaults : {
@@ -142,106 +250,21 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
                 allowBlank    : false,
                 editable      : false,
                 triggerAction : "all",
-                value         : "INFO"
+                value         : "DEBUG"
             },{
                 xtype      : "textarea",
                 name       : "extraoptions",
                 fieldLabel : _("Extra options"),
                 allowBlank : true
             }]
-        },{
-            xtype    : "fieldset",
-            title    : _("Database Settings"),
-            defaults : {
-                labelSeparator : ""
-            },
-            items    : [{
-                xtype      : "textfield",
-                name       : "db_host",
-                fieldLabel : _("Hostname"),
-                allowBlank : false
-            },{
-                xtype      : "textfield",
-                name       : "db_name",
-                fieldLabel : _("Database Name"),
-                allowBlank : false
-            },{
-                xtype      : "textfield",
-                name       : "db_user",
-                fieldLabel : _("Username"),
-                allowBlank : false
-            },{
-                xtype      : "passwordfield",
-                name       : "db_pass",
-                fieldLabel : _("Password"),
-                allowBlank : false
-            },{
-                xtype      : "passwordfield",
-                name       : "root_pass",
-                fieldLabel : _("MySQL root Password"),
-                allowBlank : true,
-                plugins    : [{
-                    ptype : "fieldinfo",
-                    text  : _("Used only for installing Greyhole database and will not be saved.")
-                }]
-            },{
-                xtype     : "label",
-                hideLabel : true,
-                text      : _("Warning: Changing your database connection properties may result in stopping Greyhole. Stop Greyhole daemon before any change. Make sure the values you are modifying match the MySQL greyhole database values before restarting Greyhole daemon.")
-            },{
-                border : false,
-                html   : "<br />"
-            },{
-                xtype   : "button",
-                name    : "installdb",
-                text    : _("Install DB"),
-                scope   : this,
-                handler : function() {
-                    var me = this;
-                    OMV.MessageBox.show({
-                        title   : _("Confirmation"),
-                        msg     : _("Are you sure you want to install the Greyhole database?"),
-                        buttons : Ext.Msg.YESNO,
-                        fn      : function(answer) {
-                            if (answer !== "yes")
-                               return;
-
-                            OMV.MessageBox.wait(null, _("Installing Greyhole database"));
-                            OMV.Rpc.request({
-                                scope   : me,
-                                rpcData : {
-                                    service : "Greyhole",
-                                    method  : "doInstallDB",
-                                    params  : {
-                                        db_host   : me.getForm().findField("db_host").getValue(),
-                                        db_name   : me.getForm().findField("db_name").getValue(),
-                                        db_user   : me.getForm().findField("db_user").getValue(),
-                                        db_pass   : me.getForm().findField("db_pass").getValue(),
-                                        root_pass : me.getForm().findField("root_pass").getValue()
-                                    }
-                                },
-                                success : function(id, success, response) {
-                                    me.doReload();
-                                    OMV.MessageBox.hide();
-                                }
-                            });
-                        },
-                        scope : me,
-                        icon  : Ext.Msg.QUESTION
-                    });
-                }
-            },{
-                border : false,
-                html   : "</p>"
-            }]
         }];
     }
 });
 
 OMV.WorkspaceManager.registerPanel({
-    id: "settings",
-    path: "/service/greyhole",
-    text: _("Settings"),
-    position: 10,
-    className: "OMV.module.admin.service.greyhole.Settings"
+    id        : "settings",
+    path      : "/service/greyhole",
+    text      : _("Settings"),
+    position  : 10,
+    className : "OMV.module.admin.service.greyhole.Settings"
 });
