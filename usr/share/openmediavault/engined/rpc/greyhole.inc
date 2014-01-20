@@ -134,11 +134,17 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
             $params['email_to'] = $object_email['primaryemail'];
         }
 
-        $xpath = sprintf("//system/fstab/mntent[uuid='%s']", $params['trash_share_ref']);
-        $deviceDir = $xmlConfig->get($xpath);
-        $deviceDir = $deviceDir['dir'];
-        $params['trash_share_path'] = "{$deviceDir}/Greyhole Trash";
-        
+        if ( ($params['trash_share_ref'] != "") && $params['trash_share'] === true ) {
+            $xpath = sprintf("//system/fstab/mntent[uuid='%s']", $params['trash_share_ref']);
+            $deviceDir = $xmlConfig->get($xpath);
+            $deviceDir = $deviceDir['dir'];
+            $params['trash_share_path'] = "{$deviceDir}/Greyhole Trash";
+        } else {
+            $params['trash_share'] = false;
+            $params['trash_share_ref'] = "";
+            $params['trash_share_path'] = "";
+        }
+
         // Prepare configuration data
         $object = array(
             'enable'                 => array_boolval($params, 'enable'),
