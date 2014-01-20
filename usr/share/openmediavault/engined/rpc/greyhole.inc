@@ -135,14 +135,10 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         }
 
         if ( ($params['trash_share_ref'] != "") && $params['trash_share'] === true ) {
-            $xpath = sprintf("//system/fstab/mntent[uuid='%s']", $params['trash_share_ref']);
-            $deviceDir = $xmlConfig->get($xpath);
+            $xpath_trash = sprintf("//system/fstab/mntent[uuid='%s']", $params['trash_share_ref']);
+            $deviceDir = $xmlConfig->get($xpath_trash);
             $deviceDir = $deviceDir['dir'];
-            $params['trash_share_path'] = "{$deviceDir}/Greyhole Trash";
-        } else {
-            $params['trash_share'] = false;
-            $params['trash_share_ref'] = "";
-            $params['trash_share_path'] = "";
+            $params['trash_share_path'] = $deviceDir."/Greyhole Trash";
         }
 
         // Prepare configuration data
@@ -150,10 +146,8 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
             'enable'                 => array_boolval($params, 'enable'),
             'email_to'               => $params['email_to'],
             'log_level'              => $params['log_level'],
-
             'delete_moves_to_trash'  => array_boolval($params, 'delete_moves_to_trash'),
             'balance_modified_files' => array_boolval($params, 'balance_modified_files'),
-
             'df_cache_time'          => $params['df_cache_time'],
             'log_memory_usage'       => array_boolval($params, 'log_memory_usage'),
             'check_for_open_files'   => array_boolval($params, 'check_for_open_files'),
@@ -161,7 +155,6 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
             'trash_share_ref'        => $params['trash_share_ref'],
             'trash_share_path'       => $params['trash_share_path'],
             'extraoptions'           => $params['extraoptions'],
-
             'pool_disks'             => isset($oldObject['pool_disks']) ? $oldObject['pool_disks'] : array(),
             'smb_shares'             => isset($oldObject['smb_shares']) ? $oldObject['smb_shares'] : array(),
             'db_engine'              => 'mysql',
