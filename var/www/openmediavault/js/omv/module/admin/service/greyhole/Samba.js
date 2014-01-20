@@ -139,9 +139,9 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShare", {
             store      : new Ext.data.SimpleStore({
                 fields  : [ "value", "text" ],
                 data    : [
-                    [ "0", _("No") ],
-                    [ "1", _("Yes") ],
-                    [ "2", _("Use Default") ]
+                    [ 0, _("No") ],
+                    [ 1, _("Yes") ],
+                    [ 2, _("Use Default") ]
                 ]
             }),
             displayField  : "text",
@@ -149,7 +149,7 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShare", {
             allowBlank    : false,
             editable      : false,
             triggerAction : "all",
-            value         : "2",
+            value         : 2,
             plugins    : [{
                 ptype : "fieldinfo",
                 text  : _("You can specify per-share trash preferences that will override the global trash preference.")
