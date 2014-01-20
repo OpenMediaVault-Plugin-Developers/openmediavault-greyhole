@@ -109,7 +109,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
                 "log_memory_usage"       : { "type" : "boolean" },
                 "check_for_open_files"   : { "type" : "boolean" },
                 "trash_share"            : { "type" : "boolean" },
-                "trash_share_ref"        : { "mntentref" : { ' . $GLOBALS['OMV_JSONSCHEMA_UUID'] . ', "optional" : true },
+                "trash_share_ref"        : { "type" : "string", "optional" : true },
                 "trash_share_path"       : { "type" : "string", "optional" : true },
                 "extraoptions"           : { "type" : "string" },
                 "db_host"                : { "type" : "string" },

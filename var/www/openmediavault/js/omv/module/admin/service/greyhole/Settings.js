@@ -271,7 +271,7 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
                 name          : "trash_share_ref",
                 fieldLabel    : _("Trash Share Volume"),
                 emptyText     : _("Select a volume ..."),
-                allowBlank    : false,
+                allowBlank    : true,
                 allowNone     : false,
                 editable      : false,
                 triggerAction : "all",
