@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-20 10:47-0600\n"
+"POT-Creation-Date: 2014-01-20 13:02-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -296,7 +296,7 @@ msgstr ""
 msgid "Trash"
 msgstr ""
 
-msgid "Trash Path"
+msgid "Trash Share Path"
 msgstr ""
 
 msgid "Trash Share Volume"
@@ -318,9 +318,6 @@ msgid "Username"
 msgstr ""
 
 msgid "Volume"
-msgstr ""
-
-msgid "Volume to use for Greyhole Trash."
 msgstr ""
 
 msgid "Wait for"

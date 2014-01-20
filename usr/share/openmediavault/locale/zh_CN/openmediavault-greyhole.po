@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-20 10:47-0600\n"
-"PO-Revision-Date: 2014-01-20 16:47+0000\n"
+"POT-Creation-Date: 2014-01-20 13:02-0600\n"
+"PO-Revision-Date: 2014-01-20 19:02+0000\n"
 "Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/openmediavault-greyhole/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -55,12 +55,12 @@ msgid "Confirmation"
 msgstr "确认"
 
 msgid "Create Trash Share"
-msgstr ""
+msgstr "创建回收站共享"
 
 msgid ""
 "Create a samba share called Greyhole Trash that allows browsing of files in "
 "trash."
-msgstr ""
+msgstr "创建一个可以浏览 Greyhole 回收站内容的 samba 共享。"
 
 msgid "Database Name"
 msgstr "数据库名称"
@@ -337,11 +337,11 @@ msgstr "这个是你保存文件到共享的副本数，这个数不是重复数
 msgid "Trash"
 msgstr "回收站"
 
-msgid "Trash Path"
+msgid "Trash Share Path"
 msgstr ""
 
 msgid "Trash Share Volume"
-msgstr ""
+msgstr "回收站共享卷"
 
 msgid "Trash deletes"
 msgstr "删除至回收站"
@@ -360,9 +360,6 @@ msgstr "用户名"
 
 msgid "Volume"
 msgstr "卷"
-
-msgid "Volume to use for Greyhole Trash."
-msgstr ""
 
 msgid "Wait for"
 msgstr "等待"
