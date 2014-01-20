@@ -57,7 +57,7 @@ if [ "$(omv_config_get "//services/greyhole/trash_share")" != "1" ]; then
 	cat <<EOF >> ${OMV_SAMBA_CONFIG}
 [Greyhole Trash]
 comment = Greyhole Trash
-path = ${trashsharepath}
+path = "${trashsharepath}"
 dfree command = /usr/bin/greyhole-dfree
 vfs objects = greyhole
 EOF
