@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-19 10:34-0600\n"
+"POT-Creation-Date: 2014-01-20 10:47-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,6 +53,12 @@ msgstr ""
 msgid "Confirmation"
 msgstr ""
 
+msgid "Create Trash Share"
+msgstr ""
+
+msgid "Create a samba share called Greyhole Trash that allows browsing of files in trash."
+msgstr ""
+
 msgid "Database Name"
 msgstr ""
 
@@ -66,9 +72,6 @@ msgid "Date & Time"
 msgstr ""
 
 msgid "Debug"
-msgstr ""
-
-msgid "Default"
 msgstr ""
 
 msgid "Delete Pool Disk"
@@ -293,6 +296,12 @@ msgstr ""
 msgid "Trash"
 msgstr ""
 
+msgid "Trash Path"
+msgstr ""
+
+msgid "Trash Share Volume"
+msgstr ""
+
 msgid "Trash deletes"
 msgstr ""
 
@@ -309,6 +318,9 @@ msgid "Username"
 msgstr ""
 
 msgid "Volume"
+msgstr ""
+
+msgid "Volume to use for Greyhole Trash."
 msgstr ""
 
 msgid "Wait for"

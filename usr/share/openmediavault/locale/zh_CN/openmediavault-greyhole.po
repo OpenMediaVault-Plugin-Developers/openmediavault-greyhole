@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-19 10:34-0600\n"
-"PO-Revision-Date: 2014-01-19 16:34+0000\n"
+"POT-Creation-Date: 2014-01-20 10:47-0600\n"
+"PO-Revision-Date: 2014-01-20 16:47+0000\n"
 "Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/openmediavault-greyhole/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -54,6 +54,14 @@ msgstr "组成"
 msgid "Confirmation"
 msgstr "确认"
 
+msgid "Create Trash Share"
+msgstr ""
+
+msgid ""
+"Create a samba share called Greyhole Trash that allows browsing of files in "
+"trash."
+msgstr ""
+
 msgid "Database Name"
 msgstr "数据库名称"
 
@@ -61,16 +69,13 @@ msgid "Database Settings"
 msgstr "数据库设置"
 
 msgid "Database is installed"
-msgstr ""
+msgstr "数据库已经安装"
 
 msgid "Date & Time"
 msgstr "日期和时间"
 
 msgid "Debug"
 msgstr "Debug"
-
-msgid "Default"
-msgstr ""
 
 msgid "Delete Pool Disk"
 msgstr "删除磁盘池"
@@ -102,7 +107,7 @@ msgid ""
 msgstr "你想递归删除磁盘池的目录内容吗？注意，这些数据将永久删除，选择“否”只删除磁盘池的目录，选择“取消”中断操作。"
 
 msgid "Don't walk metadata store"
-msgstr ""
+msgstr "跳过元数据"
 
 msgid "Edit Pool Disk"
 msgstr "编辑磁盘池"
@@ -288,16 +293,16 @@ msgid ""
 "Speed up fsck by skipping the scan of the metadata store directories. "
 "Scanning the metadata stores is only required to re-create symbolic links "
 "that might be missing from your shared directories."
-msgstr ""
+msgstr "跳过元数据存储目录的扫描可以加快 fsck 速度。仅仅在需要重建符号链接时才扫描，这可能会在共享目录中丢失数据。"
 
 msgid "Sticky files"
-msgstr ""
+msgstr "Sticky 文件"
 
 msgid ""
 "Sticky files are files that will always 'live' together in the storage pool."
 " This will allow you to read (and read-only!) those files by using the "
 "storage pool drives themselves, instead of using the mounted shares."
-msgstr ""
+msgstr "Sticky 文件是总是存储池中“活动”的文件，这个选项允许你直接通过驱动器读取(只读!) Sticky 文件，而不是通过挂载的共享读取。"
 
 msgid ""
 "Tell Greyhole that the missing drive at is gone for good. Greyhole will "
@@ -332,11 +337,17 @@ msgstr "这个是你保存文件到共享的副本数，这个数不是重复数
 msgid "Trash"
 msgstr "回收站"
 
+msgid "Trash Path"
+msgstr ""
+
+msgid "Trash Share Volume"
+msgstr ""
+
 msgid "Trash deletes"
 msgstr "删除至回收站"
 
 msgid "Use Default"
-msgstr ""
+msgstr "使用默认"
 
 msgid "Use Trash"
 msgstr "使用回收站"
@@ -349,6 +360,9 @@ msgstr "用户名"
 
 msgid "Volume"
 msgstr "卷"
+
+msgid "Volume to use for Greyhole Trash."
+msgstr ""
 
 msgid "Wait for"
 msgstr "等待"

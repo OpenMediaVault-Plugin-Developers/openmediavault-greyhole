@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-19 10:34-0600\n"
-"PO-Revision-Date: 2014-01-19 16:34+0000\n"
+"POT-Creation-Date: 2014-01-20 10:47-0600\n"
+"PO-Revision-Date: 2014-01-20 16:47+0000\n"
 "Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/openmediavault-greyhole/language/de_DE/)\n"
 "MIME-Version: 1.0\n"
@@ -54,6 +54,14 @@ msgstr "Komponente"
 msgid "Confirmation"
 msgstr "Bestätigung"
 
+msgid "Create Trash Share"
+msgstr ""
+
+msgid ""
+"Create a samba share called Greyhole Trash that allows browsing of files in "
+"trash."
+msgstr ""
+
 msgid "Database Name"
 msgstr "Datenbankname"
 
@@ -68,9 +76,6 @@ msgstr "Datum & Zeit"
 
 msgid "Debug"
 msgstr "Debug"
-
-msgid "Default"
-msgstr ""
 
 msgid "Delete Pool Disk"
 msgstr "Pool-Laufwerk löschen"
@@ -332,6 +337,12 @@ msgstr "Gibt an, wieviele Kopien jeder Datei von Greyhole vorgehalten werden sol
 msgid "Trash"
 msgstr "Papierkorb"
 
+msgid "Trash Path"
+msgstr ""
+
+msgid "Trash Share Volume"
+msgstr ""
+
 msgid "Trash deletes"
 msgstr "Papierkorb nutzen"
 
@@ -349,6 +360,9 @@ msgstr "Benutzername"
 
 msgid "Volume"
 msgstr "Laufwerk"
+
+msgid "Volume to use for Greyhole Trash."
+msgstr ""
 
 msgid "Wait for"
 msgstr "Wair for"
