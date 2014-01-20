@@ -50,7 +50,7 @@ do
     index=$(( ${index} - 1 ))
 done
 
-if [ "$(omv_config_get "//services/greyhole/trash_share")" != "1" ]; then
+if [ "$(omv_config_get "//services/greyhole/trash_share")" != "0" ]; then
 
 	trashsharepath=$(omv_config_get "//services/greyhole/trash_share_path")
 
