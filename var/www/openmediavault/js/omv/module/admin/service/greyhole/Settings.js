@@ -72,7 +72,7 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
             conditions : [
                 { name  : "trash_share", value : false }
             ],
-            properties : "!disabled"
+            properties : "disabled"
         }]
     }],
 
@@ -307,7 +307,7 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
             },{
                 xtype      : "textfield",
                 name       : "trash_share_path",
-                fieldLabel : _("Trash Path"),
+                fieldLabel : _("Trash Share Path"),
                 allowNone  : true,
                 readOnly   : true
             },{
