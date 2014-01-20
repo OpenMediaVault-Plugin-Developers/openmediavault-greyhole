@@ -299,11 +299,7 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
                         direction : "ASC",
                         property  : "devicefile"
                     }]
-                }),
-                plugins    : [{
-                    ptype : "fieldinfo",
-                    text  : _("Volume to use for Greyhole Trash.")
-                }]
+                })
             },{
                 xtype      : "textfield",
                 name       : "trash_share_path",
