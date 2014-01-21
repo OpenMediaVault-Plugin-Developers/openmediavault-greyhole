@@ -108,7 +108,7 @@ OMV.module.services.greyhole.util.Format = function() {
                 case 1:
                     content = _("Yes");
                     break;
-                default:
+                case 2:
                     content = _("Use Default");
                     break;
                 }
