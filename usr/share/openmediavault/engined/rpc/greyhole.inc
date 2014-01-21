@@ -515,7 +515,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
             "smbref"          => $params['smbref'],
             "num_copies"      => intval($params['num_copies']),
             "sticky_files"    => array_boolval($params, 'sticky_files'),
-            "trash"           => intval($params, 'trash'),
+            "trash"           => intval($params['trash']),
         );
 
         // Set the configuration object.

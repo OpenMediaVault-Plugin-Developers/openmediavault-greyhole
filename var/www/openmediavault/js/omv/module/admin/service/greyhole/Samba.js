@@ -216,7 +216,7 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShares", {
                     { name : "comment", type: "string" },
                     { name : "num_copies", type: "string" },
                     { name : "sticky_files", type: "boolean" },
-                    { name : "trash", type: "boolean" }
+                    { name : "trash", type: "integer" }
                 ]
             }),
                 proxy: {
