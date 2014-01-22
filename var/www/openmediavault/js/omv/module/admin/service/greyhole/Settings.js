@@ -67,7 +67,8 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
         },{
             name       : [
                 "trash_share_path",
-                "trash_share_ref"
+                "trash_share_ref",
+                "trash_write"
             ],
             conditions : [
                 { name  : "trash_share", value : false }
@@ -306,6 +307,12 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
                 fieldLabel : _("Trash Share Path"),
                 allowNone  : true,
                 readOnly   : true
+            },{
+                xtype      : "checkbox",
+                name       : "trash_write",
+                fieldLabel : _("Trash Writeable"),
+                checked    : false,
+                boxLabel   : _("Make trash share writeable.")
             },{
                 xtype      : "textarea",
                 name       : "extraoptions",

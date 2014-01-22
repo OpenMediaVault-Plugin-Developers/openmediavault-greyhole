@@ -83,6 +83,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         $object['log_memory_usage']       = boolval($object['log_memory_usage']);
         $object['check_for_open_files']   = boolval($object['check_for_open_files']);
         $object['trash_share']            = boolval($object['trash_share']);
+        $object['trash_write']            = boolval($object['trash_write']);
 
         // Remove useless fields from the result object.
         unset($object['pool_disks']);
@@ -111,6 +112,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
                 "trash_share"            : { "type" : "boolean" },
                 "trash_share_ref"        : { "type" : "string", "optional" : true },
                 "trash_share_path"       : { "type" : "string", "optional" : true },
+                "trash_write"            : { "type" : "boolean", "optional" : true },
                 "extraoptions"           : { "type" : "string" },
                 "db_host"                : { "type" : "string" },
                 "db_user"                : { "type" : "string" },
@@ -154,6 +156,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
             'trash_share'            => array_boolval($params, 'trash_share'),
             'trash_share_ref'        => $params['trash_share_ref'],
             'trash_share_path'       => $params['trash_share_path'],
+            'trash_write'            => array_boolval($params, 'trash_write'),
             'extraoptions'           => $params['extraoptions'],
             'pool_disks'             => isset($oldObject['pool_disks']) ? $oldObject['pool_disks'] : array(),
             'smb_shares'             => isset($oldObject['smb_shares']) ? $oldObject['smb_shares'] : array(),
