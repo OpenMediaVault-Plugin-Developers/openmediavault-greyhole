@@ -55,7 +55,9 @@ if [ "$(omv_config_get "//services/greyhole/trash_share")" != "0" ]; then
 	trashsharepath=$(omv_config_get "//services/greyhole/trash_share_path")
 
     if [ "$(omv_config_get "//services/greyhole/trash_write")" != "0" ]; then
-        trashwrite="write list = @users"
+        trashwrite="@users"
+    else
+        trashwrite=""
     fi
 
 	cat <<EOF >> ${OMV_SAMBA_CONFIG}
@@ -64,7 +66,7 @@ comment = Greyhole Trash
 path = ${trashsharepath}
 dfree command = /usr/bin/greyhole-dfree
 vfs objects = greyhole
-${trashwrite}
+write list = ${trashwrite}
 EOF
 
 fi
