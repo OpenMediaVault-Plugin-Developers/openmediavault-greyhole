@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-20 13:02-0600\n"
+"POT-Creation-Date: 2014-01-22 07:33-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -191,6 +191,9 @@ msgstr ""
 msgid "Log level"
 msgstr ""
 
+msgid "Make trash share writeable."
+msgstr ""
+
 msgid "Min Free"
 msgstr ""
 
@@ -300,6 +303,9 @@ msgid "Trash Share Path"
 msgstr ""
 
 msgid "Trash Share Volume"
+msgstr ""
+
+msgid "Trash Writeable"
 msgstr ""
 
 msgid "Trash deletes"

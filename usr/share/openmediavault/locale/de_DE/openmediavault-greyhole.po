@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-20 13:02-0600\n"
-"PO-Revision-Date: 2014-01-20 19:02+0000\n"
+"POT-Creation-Date: 2014-01-22 07:33-0600\n"
+"PO-Revision-Date: 2014-01-22 13:33+0000\n"
 "Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/openmediavault-greyhole/language/de_DE/)\n"
 "MIME-Version: 1.0\n"
@@ -203,6 +203,9 @@ msgstr "Speicherverbrauch protokollieren"
 msgid "Log level"
 msgstr "Log Level"
 
+msgid "Make trash share writeable."
+msgstr ""
+
 msgid "Min Free"
 msgstr "Min. frei"
 
@@ -341,6 +344,9 @@ msgid "Trash Share Path"
 msgstr ""
 
 msgid "Trash Share Volume"
+msgstr ""
+
+msgid "Trash Writeable"
 msgstr ""
 
 msgid "Trash deletes"

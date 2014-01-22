@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-20 13:02-0600\n"
-"PO-Revision-Date: 2014-01-21 02:37+0000\n"
-"Last-Translator: dezi121 <by@songming.me>\n"
+"POT-Creation-Date: 2014-01-22 07:33-0600\n"
+"PO-Revision-Date: 2014-01-22 13:33+0000\n"
+"Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/openmediavault-greyhole/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -203,6 +203,9 @@ msgstr "内存使用日志"
 msgid "Log level"
 msgstr "负载日志"
 
+msgid "Make trash share writeable."
+msgstr ""
+
 msgid "Min Free"
 msgstr "最小空闲"
 
@@ -342,6 +345,9 @@ msgstr "回收站共享路径"
 
 msgid "Trash Share Volume"
 msgstr "回收站共享卷"
+
+msgid "Trash Writeable"
+msgstr ""
 
 msgid "Trash deletes"
 msgstr "删除至回收站"
