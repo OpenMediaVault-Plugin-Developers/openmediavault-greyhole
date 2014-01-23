@@ -316,12 +316,13 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
         text      : _("Volume"),
         sortable  : true,
         dataIndex : "volume",
-        width     : 160,
+        width     : 140,
         stateId   : "volume"
     },{
         text      : _("Label"),
         sortable  : true,
         dataIndex : "label",
+        width     : 80,
         stateId   : "label"
     },{
         text      : _("Filesystem"),
@@ -339,7 +340,7 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
         text      : _("Space"),
         sortable  : true,
         dataIndex : "percent_space",
-	 width      : 210,
+	 width      : 240,
         stateId   : "percent_space",
         renderer  : OMV.module.services.greyhole.util.Format.spaceRenderer
     },{
