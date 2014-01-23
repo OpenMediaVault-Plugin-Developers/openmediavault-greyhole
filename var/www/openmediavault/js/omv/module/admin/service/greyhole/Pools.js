@@ -346,7 +346,7 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
         text      : _("Trash"),
         sortable  : true,
         dataIndex : "trash_size",
-        width     : 80,
+        width     : 100,
         stateId   : "trash_size",
         renderer  : OMV.module.services.greyhole.util.Format.trashRenderer
     },{
