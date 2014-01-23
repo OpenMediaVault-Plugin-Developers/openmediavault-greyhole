@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-22 07:33-0600\n"
+"POT-Creation-Date: 2014-01-23 07:20-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,6 +24,9 @@ msgid "Add Pool Disk"
 msgstr ""
 
 msgid "Add Samba Share"
+msgstr ""
+
+msgid "Add ignored files"
 msgstr ""
 
 msgid "Are you sure you want to install the Greyhole database?"
@@ -107,6 +110,9 @@ msgstr ""
 msgid "Edit Samba Share"
 msgstr ""
 
+msgid "Edit ignored files"
+msgstr ""
+
 msgid "Email"
 msgstr ""
 
@@ -131,6 +137,9 @@ msgstr ""
 msgid "Extra options"
 msgstr ""
 
+msgid "File"
+msgstr ""
+
 msgid "Files Balance"
 msgstr ""
 
@@ -140,10 +149,16 @@ msgstr ""
 msgid "Files copies"
 msgstr ""
 
+msgid "Files/Folders that match the patterns below will be ignored by Greyhole."
+msgstr ""
+
 msgid "Filesystem"
 msgstr ""
 
 msgid "Find orphaned files"
+msgstr ""
+
+msgid "Folder"
 msgstr ""
 
 msgid "General settings"
@@ -164,13 +179,31 @@ msgstr ""
 msgid "Greyhole - Empty Trash"
 msgstr ""
 
+msgid "Greyhole Wiki"
+msgstr ""
+
+msgid "Home Page"
+msgstr ""
+
 msgid "Hostname"
 msgstr ""
 
 msgid "How long should free disk space calculations be cached (in seconds). Use 0 to disable caching."
 msgstr ""
 
+msgid "If checked, ignored object will be a folder instead of a file."
+msgstr ""
+
+msgid "Ignore"
+msgstr ""
+
+msgid "Ignored Files"
+msgstr ""
+
 msgid "Info"
+msgstr ""
+
+msgid "Information"
 msgstr ""
 
 msgid "Install DB"
@@ -309,6 +342,9 @@ msgid "Trash Writeable"
 msgstr ""
 
 msgid "Trash deletes"
+msgstr ""
+
+msgid "Type"
 msgstr ""
 
 msgid "Use Default"

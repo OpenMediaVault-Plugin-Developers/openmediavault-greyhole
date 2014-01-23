@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-22 07:33-0600\n"
-"PO-Revision-Date: 2014-01-22 13:33+0000\n"
+"POT-Creation-Date: 2014-01-23 07:20-0600\n"
+"PO-Revision-Date: 2014-01-23 13:20+0000\n"
 "Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/openmediavault-greyhole/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -26,6 +26,9 @@ msgstr "添加磁盘池"
 
 msgid "Add Samba Share"
 msgstr "添加 Samba共享"
+
+msgid "Add ignored files"
+msgstr ""
 
 msgid "Are you sure you want to install the Greyhole database?"
 msgstr "确定要安装 Greyhole数据库？"
@@ -115,6 +118,9 @@ msgstr "编辑磁盘池"
 msgid "Edit Samba Share"
 msgstr "编辑Samba共享"
 
+msgid "Edit ignored files"
+msgstr ""
+
 msgid "Email"
 msgstr "Email"
 
@@ -141,6 +147,9 @@ msgstr "事件"
 msgid "Extra options"
 msgstr "附加选项"
 
+msgid "File"
+msgstr ""
+
 msgid "Files Balance"
 msgstr "文件平衡"
 
@@ -150,11 +159,18 @@ msgstr "文件检查"
 msgid "Files copies"
 msgstr "文件拷贝"
 
+msgid ""
+"Files/Folders that match the patterns below will be ignored by Greyhole."
+msgstr ""
+
 msgid "Filesystem"
 msgstr "文件系统"
 
 msgid "Find orphaned files"
 msgstr "查找孤立的文件"
+
+msgid "Folder"
+msgstr ""
 
 msgid "General settings"
 msgstr "常规设置"
@@ -174,6 +190,12 @@ msgstr "Greyhole - 平衡"
 msgid "Greyhole - Empty Trash"
 msgstr "Greyhole - 清空回收站"
 
+msgid "Greyhole Wiki"
+msgstr ""
+
+msgid "Home Page"
+msgstr ""
+
 msgid "Hostname"
 msgstr "主机名"
 
@@ -182,8 +204,20 @@ msgid ""
 "to disable caching."
 msgstr "多长时间 (秒) 释放磁盘缓存，0 表示关闭缓存。"
 
+msgid "If checked, ignored object will be a folder instead of a file."
+msgstr ""
+
+msgid "Ignore"
+msgstr ""
+
+msgid "Ignored Files"
+msgstr ""
+
 msgid "Info"
 msgstr "信息"
+
+msgid "Information"
+msgstr ""
 
 msgid "Install DB"
 msgstr "安装数据库"
@@ -204,7 +238,7 @@ msgid "Log level"
 msgstr "负载日志"
 
 msgid "Make trash share writeable."
-msgstr ""
+msgstr "让回收站共享可写。"
 
 msgid "Min Free"
 msgstr "最小空闲"
@@ -347,10 +381,13 @@ msgid "Trash Share Volume"
 msgstr "回收站共享卷"
 
 msgid "Trash Writeable"
-msgstr ""
+msgstr "回收站可写"
 
 msgid "Trash deletes"
 msgstr "删除至回收站"
+
+msgid "Type"
+msgstr ""
 
 msgid "Use Default"
 msgstr "使用默认"

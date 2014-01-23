@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-22 07:33-0600\n"
-"PO-Revision-Date: 2014-01-22 13:33+0000\n"
+"POT-Creation-Date: 2014-01-23 07:20-0600\n"
+"PO-Revision-Date: 2014-01-23 13:20+0000\n"
 "Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/openmediavault-greyhole/language/de_DE/)\n"
 "MIME-Version: 1.0\n"
@@ -26,6 +26,9 @@ msgstr "Pool-Laufwerk hinzufügen"
 
 msgid "Add Samba Share"
 msgstr "Samba-Freigabe hinzufügen"
+
+msgid "Add ignored files"
+msgstr ""
 
 msgid "Are you sure you want to install the Greyhole database?"
 msgstr "Sind sie sicher, dass sie die Greyhole Datenbank installieren möchten?"
@@ -55,12 +58,12 @@ msgid "Confirmation"
 msgstr "Bestätigung"
 
 msgid "Create Trash Share"
-msgstr ""
+msgstr "Erstelle Freigabe für den Papierkorb"
 
 msgid ""
 "Create a samba share called Greyhole Trash that allows browsing of files in "
 "trash."
-msgstr ""
+msgstr "Erstelle eine Samba-Freigabe mit dem Namen Greyhole Trash, die es erlaubt, die Datein im Papierkorb anzuschauen."
 
 msgid "Database Name"
 msgstr "Datenbankname"
@@ -69,7 +72,7 @@ msgid "Database Settings"
 msgstr "Datenbankeinstellungen"
 
 msgid "Database is installed"
-msgstr ""
+msgstr "Datenbank ist eingerichtet"
 
 msgid "Date & Time"
 msgstr "Datum & Zeit"
@@ -115,6 +118,9 @@ msgstr "Pool-Laufwerk bearbeiten"
 msgid "Edit Samba Share"
 msgstr "Samba-Freigabe bearbeiten"
 
+msgid "Edit ignored files"
+msgstr ""
+
 msgid "Email"
 msgstr "E-Mail"
 
@@ -141,6 +147,9 @@ msgstr "Ereignis"
 msgid "Extra options"
 msgstr "Zusätzliche Optionen"
 
+msgid "File"
+msgstr ""
+
 msgid "Files Balance"
 msgstr "Dateien ausbalancieren"
 
@@ -150,11 +159,18 @@ msgstr "Dateien prüfen"
 msgid "Files copies"
 msgstr "Dateikopien"
 
+msgid ""
+"Files/Folders that match the patterns below will be ignored by Greyhole."
+msgstr ""
+
 msgid "Filesystem"
 msgstr "Dateisystem"
 
 msgid "Find orphaned files"
 msgstr "Verwaiste Dateien finden"
+
+msgid "Folder"
+msgstr ""
 
 msgid "General settings"
 msgstr "Allgemeine Einstellungen"
@@ -174,6 +190,12 @@ msgstr "Greyhole - Balancieren"
 msgid "Greyhole - Empty Trash"
 msgstr "Greyhole - Papierkorb leeren"
 
+msgid "Greyhole Wiki"
+msgstr ""
+
+msgid "Home Page"
+msgstr ""
+
 msgid "Hostname"
 msgstr "Hostname"
 
@@ -182,8 +204,20 @@ msgid ""
 "to disable caching."
 msgstr "Zeit (in Sekunden), die die Kalkulation zur Angabe des freien Speichers zwischengespeichert werden soll. '0' deaktiviert das Caching."
 
+msgid "If checked, ignored object will be a folder instead of a file."
+msgstr ""
+
+msgid "Ignore"
+msgstr ""
+
+msgid "Ignored Files"
+msgstr ""
+
 msgid "Info"
 msgstr "Info"
+
+msgid "Information"
+msgstr ""
 
 msgid "Install DB"
 msgstr "Datenbank erstellen"
@@ -204,7 +238,7 @@ msgid "Log level"
 msgstr "Log Level"
 
 msgid "Make trash share writeable."
-msgstr ""
+msgstr "Erlaube Schreibzugriffe auf die Freigabe des Papierkorbs."
 
 msgid "Min Free"
 msgstr "Min. frei"
@@ -341,19 +375,22 @@ msgid "Trash"
 msgstr "Papierkorb"
 
 msgid "Trash Share Path"
-msgstr ""
+msgstr "Pfad zur Papierkorbfreigabe"
 
 msgid "Trash Share Volume"
-msgstr ""
+msgstr "Datenträger für die Papierkorbfreigabe"
 
 msgid "Trash Writeable"
-msgstr ""
+msgstr "Papierkorb Schreibzugriff"
 
 msgid "Trash deletes"
 msgstr "Papierkorb nutzen"
 
-msgid "Use Default"
+msgid "Type"
 msgstr ""
+
+msgid "Use Default"
+msgstr "Standard benutzen"
 
 msgid "Use Trash"
 msgstr "Papierkorb nutzen"

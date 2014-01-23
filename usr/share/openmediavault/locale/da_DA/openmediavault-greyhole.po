@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-22 07:33-0600\n"
-"PO-Revision-Date: 2014-01-22 13:33+0000\n"
+"POT-Creation-Date: 2014-01-23 07:20-0600\n"
+"PO-Revision-Date: 2014-01-23 13:20+0000\n"
 "Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/openmediavault-greyhole/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -26,6 +26,9 @@ msgstr "Tilføj pool disk"
 
 msgid "Add Samba Share"
 msgstr "Tilføj Samba Mapper"
+
+msgid "Add ignored files"
+msgstr ""
 
 msgid "Are you sure you want to install the Greyhole database?"
 msgstr "Er du sikker på, at du vil installere Greyhole databasen?"
@@ -115,6 +118,9 @@ msgstr "Rediger pool disk"
 msgid "Edit Samba Share"
 msgstr "Rediger Samba Mappe"
 
+msgid "Edit ignored files"
+msgstr ""
+
 msgid "Email"
 msgstr "Email"
 
@@ -141,6 +147,9 @@ msgstr "Begivenhed"
 msgid "Extra options"
 msgstr "Ekstra valgmuligheder"
 
+msgid "File"
+msgstr ""
+
 msgid "Files Balance"
 msgstr "Fil balance"
 
@@ -150,11 +159,18 @@ msgstr "Fil kontrol"
 msgid "Files copies"
 msgstr "Fil-kopier"
 
+msgid ""
+"Files/Folders that match the patterns below will be ignored by Greyhole."
+msgstr ""
+
 msgid "Filesystem"
 msgstr "Filsystem"
 
 msgid "Find orphaned files"
 msgstr "Find forladte filer"
+
+msgid "Folder"
+msgstr ""
 
 msgid "General settings"
 msgstr "Generelle indstillinger"
@@ -174,6 +190,12 @@ msgstr "Greyhole - Balance"
 msgid "Greyhole - Empty Trash"
 msgstr "Greyhole - Tøm Papirkurv"
 
+msgid "Greyhole Wiki"
+msgstr ""
+
+msgid "Home Page"
+msgstr ""
+
 msgid "Hostname"
 msgstr "Værtsnavn"
 
@@ -182,8 +204,20 @@ msgid ""
 "to disable caching."
 msgstr "Hvor lang tid skal fri diskplads beregninger blive cached (i sekunder). Brug 0 for at deaktiver caching."
 
+msgid "If checked, ignored object will be a folder instead of a file."
+msgstr ""
+
+msgid "Ignore"
+msgstr ""
+
+msgid "Ignored Files"
+msgstr ""
+
 msgid "Info"
 msgstr "Oplysning"
+
+msgid "Information"
+msgstr ""
 
 msgid "Install DB"
 msgstr "Installer DB"
@@ -351,6 +385,9 @@ msgstr ""
 
 msgid "Trash deletes"
 msgstr "Papirkurv slettes"
+
+msgid "Type"
+msgstr ""
 
 msgid "Use Default"
 msgstr ""

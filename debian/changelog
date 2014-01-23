@@ -1,6 +1,7 @@
 openmediavault-greyhole (0.5.8) stable; urgency=low
 
   * Add ignored files/folders tab
+  * Add info tab
   * Update locales
 
  -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Thu, 23 Jan 2014 07:17:26 -0500
