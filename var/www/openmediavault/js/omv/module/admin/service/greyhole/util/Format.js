@@ -113,7 +113,12 @@ OMV.module.services.greyhole.util.Format = function() {
                     break;
                 }
                 return content;
+            },
+
+            fileFolderRenderer : function (value) {
+                return value ? _("Folder") : _("File");
             }
+            
         };
     }());
 

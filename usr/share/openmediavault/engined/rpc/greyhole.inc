@@ -53,6 +53,11 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         $this->registerMethod("setSMBShare");
         $this->registerMethod("removeSMBShare");
 
+        $this->registerMethod('getIgnoreList');
+        $this->registerMethod('getIgnore');
+        $this->registerMethod('setIgnore');
+        $this->registerMethod('deleteIgnore');
+
         $this->registerMethod("getFsckCandidates");
         $this->registerMethod("getPoolMngtCandidates");
 
@@ -88,6 +93,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         // Remove useless fields from the result object.
         unset($object['pool_disks']);
         unset($object['smb_shares']);
+        unset($object['ignores']);
 
         return $object;
     }
@@ -160,6 +166,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
             'extraoptions'           => $params['extraoptions'],
             'pool_disks'             => isset($oldObject['pool_disks']) ? $oldObject['pool_disks'] : array(),
             'smb_shares'             => isset($oldObject['smb_shares']) ? $oldObject['smb_shares'] : array(),
+            'ignores'                => isset($oldObject['ignores']) ? $oldObject['ignores'] : array(),
             'db_engine'              => 'mysql',
             'db_host'                => $params['db_host'],
             'db_user'                => $params['db_user'],
@@ -601,6 +608,123 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
 
         // Return the deleted configuration object.
         return $object;
+    }
+
+    public function getIgnoreList($params, $context) {
+        global $xmlConfig;
+
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
+
+        // Validate the parameters of the RPC service method.
+        $this->validateMethodParams($params, '{
+            "type"       : "object",
+            "properties" : {
+                "start"     : { "type" : "integer" },
+                "limit"     : { '.$GLOBALS['OMV_JSONSCHEMA_COUNTFIELD'].' },
+                "sortfield" : { '.$GLOBALS['OMV_JSONSCHEMA_SORTFIELD'].' },
+                "sortdir"   : { '.$GLOBALS['OMV_JSONSCHEMA_SORTDIR'].' }
+            }
+        }');
+
+        // Get configuration data.
+        $xpath = "//services/greyhole/ignores/ignore";
+        $objects = $xmlConfig->getList($xpath);
+        if(is_null($objects))
+            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
+
+        // Filter the result.
+        return $this->applyFilter($objects, $params['start'], $params['limit'],
+            $params['sortfield'], $params['sortdir']);
+    }
+
+    public function getIgnore($params, $context) {
+        global $xmlConfig;
+
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, array("role" => OMV_ROLE_ADMINISTRATOR));
+
+        // Validate the parameters of the RPC service method.
+        $this->validateMethodParams($params, '{
+            "type"       : "object",
+            "properties" : {
+                "uuid" : { '.$GLOBALS['OMV_JSONSCHEMA_UUID'].' }
+            }
+        }');
+
+          // Get the configuration object.
+        $xpath = sprintf("//services/greyhole/ignores/ignore[uuid='%s']", $params['uuid']);
+        $object = $xmlConfig->get($xpath);
+        if(is_null($object))
+            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
+
+        return $object;
+    }
+
+    public function setIgnore($params, $context) {
+        global $xmlConfig;
+
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
+
+        // Validate the parameters of the RPC service method.
+        $this->validateMethodParams($params, '{
+            "type"       : "object",
+            "properties" : {
+                "uuid"   : { '.$GLOBALS['OMV_JSONSCHEMA_UUID_UNDEFINED'].' },
+                "folder" : { "type" : "boolean" },
+                "ignore" : { "type" : "string" }
+            }
+        }');
+
+        // Prepare configuration data.
+        $object = array(
+            "uuid"   => ($params['uuid'] == $GLOBALS['OMV_UUID_UNDEFINED']) ? OMVUtil::uuid() : $params['uuid'],
+            "folder" => array_boolval($params, 'folder'),
+            "ignore" => $params['ignore']
+        );
+
+        // Set the configuration data.
+        $success = FALSE;
+        if($params['uuid'] == $GLOBALS['OMV_UUID_UNDEFINED']) {
+            // Append object to configuration.
+            $success = $xmlConfig->set("//services/greyhole/ignores", array("ignore" => $object));
+        } else {
+            // Update existing configuration object.
+            $success = $xmlConfig->replace("//services/greyhole/ignores/ignore[uuid='{$params['uuid']}']", $object);
+        }
+
+        if(FALSE === $success)
+            throw new OMVException(OMVErrorMsg::E_CONFIG_SET_OBJECT_FAILED);
+
+        // Notify configuration changes.
+        $dispatcher = &OMVNotifyDispatcher::getInstance();
+        $dispatcher->notify(($params['uuid'] == $GLOBALS['OMV_UUID_UNDEFINED']) ?
+            OMV_NOTIFY_CREATE : OMV_NOTIFY_MODIFY,
+            "org.openmediavault.services.greyhole.ignores.ignore", $object);
+
+        // Return the configuration object.
+        return $object;
+    }
+
+    public function deleteIgnore($params, $context) {
+        global $xmlConfig;
+
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
+
+        // Validate the parameters of the RPC service method.
+        $this->validateMethodParams($params, '{
+            "type"       : "object",
+            "properties" : {
+                "uuid" : { '.$GLOBALS['OMV_JSONSCHEMA_UUID'].' }
+            }
+        }');
+
+        // Delete the configuration object.
+        $xpath = sprintf("//services/greyhole/ignores/ignore[uuid='%s']", $params['uuid']);
+        return $this->deleteConfigObjectByPath($xpath,
+            "org.openmediavault.services.greyhole.ignores.ignore");
     }
 
     public function getFsckCandidates($params, $context) {

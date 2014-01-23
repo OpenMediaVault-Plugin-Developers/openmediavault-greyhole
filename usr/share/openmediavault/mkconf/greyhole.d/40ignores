@@ -1,0 +1,60 @@
+#!/bin/sh
+
+# @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
+# @author    Stephane Bocquet <stephane_bocquet@hotmail.com>
+# @author    Marcel Beck <marcel.beck@mbeck.org>
+# @copyright Copyright (c) 2011 Stephane Bocquet
+# @copyright Copyright (c) 2011-2012 Marcel Beck
+# @copyright Copyright (c) 2014 OpenMediaVault Plugin Developers
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+set -e
+
+. /etc/default/openmediavault
+. /usr/share/openmediavault/scripts/helper-functions
+
+# Only if enabled
+if [ "$(omv_config_get "//services/greyhole/enable")" != "1" ]; then
+    exit 0
+fi
+
+GREYHOLE_CONFIG="/etc/greyhole.conf"
+
+cat <<EOF >>
+
+#======================= Greyhole Ignored Files/Folders =======================" >> ${GREYHOLE_CONFIG}
+
+# rsync temporary files
+ignored_files = \..*\.[0-9a-zA-Z]{6}
+# Microsoft Office temporary files
+ignored_files = [0-9A-F]{8}\.tmp
+# CrashPlan (restore) temporary files
+ignored_files = \.cprestoretmp.*
+# SABnzbd temporary folders when extracting a download
+ignored_folders = .*/_UNPACK_.*
+# Windows thumbs database files
+ignored_files = Thumb.db
+EOF
+    
+index=$(omv_config_get_count "//services/greyhole/ignores/ignore")
+while [ ${index} -gt 0 ]
+do    
+    xmlstarlet sel -t -m "//services/greyhole/ignores/ignore[position()=${index}]" \
+      -i "folder[. = '0']" -o concat("ignored_files = ", ignore) -b -n \
+      -i "folder[. = '1']" -o concat("ignored_folders = ", ignore) -b -n \
+      ${OMV_CONFIG_FILE} | xmlstarlet unesc >> ${GREYHOLE_CONFIG}
+
+    index=$(( ${index} - 1 ))
+done

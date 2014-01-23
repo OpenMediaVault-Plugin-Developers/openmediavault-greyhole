@@ -1,3 +1,10 @@
+openmediavault-greyhole (0.5.8) stable; urgency=low
+
+  * Add ignored files/folders tab
+  * Update locales
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Thu, 23 Jan 2014 07:17:26 -0500
+
 openmediavault-greyhole (0.5.7) stable; urgency=low
 
   * Add option to make trash share writeable

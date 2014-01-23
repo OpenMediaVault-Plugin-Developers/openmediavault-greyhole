@@ -65,6 +65,10 @@ case "$1" in
         omv_config_add_element "/config/services" "greyhole" "${object}" true
     fi
 
+    if ! omv_config_exists "/config/services/greyhole/ignores"; then
+        omv_config_add_element "/config/services/greyhole" "ignores" "${object}" true
+    fi
+
     #update-rc.d mountsmb_locally defaults
 
     ;;
