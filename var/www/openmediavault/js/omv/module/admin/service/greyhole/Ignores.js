@@ -75,7 +75,7 @@ Ext.define("OMV.module.admin.service.greyhole.Ignores", {
 
     hidePagingToolbar : false,
     stateful          : true,
-    stateId           : "a982a76d-6804-4632-b31b-8b48c0ea6dde",
+    stateId           : "a986a76d-6904-1332-b31b-8b48c0ea6dde",
     columns           : [{
         text      : _("Ignore"),
         sortable  : true,
@@ -86,7 +86,9 @@ Ext.define("OMV.module.admin.service.greyhole.Ignores", {
         sortable  : true,
         dataIndex : "folder",
         stateId   : "folder",
-        renderer  : OMV.module.services.greyhole.util.Format.fileFolderRenderer
+        renderer  : function (value) {
+            return value ? _("Folder") : _("File");
+        }
     }],
 
     initComponent : function() {

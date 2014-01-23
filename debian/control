@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: OpenMediaVault Plugin Developers <plugins@omv-extras.org>
 Build-Depends: debhelper (>> 7)
 Standards-Version: 3.6.10
+Homepage: http://omv-extras.org/simple/index.php?id=how-to-install-greyhole-plugin
 
 Package: openmediavault-greyhole
 Architecture: all

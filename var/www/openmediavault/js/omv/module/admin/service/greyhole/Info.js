@@ -25,9 +25,10 @@ Ext.define("OMV.module.admin.service.greyhole.Info", {
     initComponent: function() {
         var me = this;
 
-        me.html = "<ul>" +
+        me.html = _("Greyhole Information") +
+                  "<ul>" +
                     "<li>Greyhole by Guillaume Boudreau, <a href='http://www.greyhole.net/' target=_blank>" +
-                      _("Home Page") + "http://www.greyhole.net/</a></li>" +
+                      _("Home Page") + "</a></li>" +
                     "<li><a href='https://github.com/gboudreau/Greyhole/wiki' target=_blank>" +
                       _("Greyhole Wiki") + "</a></li>" +
                   "</ul>" +
