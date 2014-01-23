@@ -40,6 +40,8 @@ Ext.define("OMV.module.admin.service.greyhole.Ignore", {
         ptype : "configobject"
     }],
 
+    width : 500,
+    
     getFormItems : function() {
         return [{
             xtype      : "checkbox",

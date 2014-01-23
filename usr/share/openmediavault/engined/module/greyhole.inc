@@ -93,6 +93,11 @@ class OMVModuleGreyhole extends OMVModuleServiceAbstract
             OMV_NOTIFY_CREATE | OMV_NOTIFY_MODIFY | OMV_NOTIFY_DELETE,
             "org.openmediavault.services.greyhole.smb_shares.share",
             array($this, "setDirty"));
+
+        $dispatcher->addListener(
+            OMV_NOTIFY_CREATE | OMV_NOTIFY_MODIFY | OMV_NOTIFY_DELETE,
+            "org.openmediavault.services.greyhole.ignores.ignore",
+            array($this, "setDirty"));
     }
 
 }
