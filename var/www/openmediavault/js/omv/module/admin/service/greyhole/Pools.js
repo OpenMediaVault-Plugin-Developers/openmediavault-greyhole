@@ -316,6 +316,7 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
         text      : _("Volume"),
         sortable  : true,
         dataIndex : "volume",
+        width     : 160,
         stateId   : "volume"
     },{
         text      : _("Label"),
@@ -326,28 +327,33 @@ Ext.define("OMV.module.admin.service.greyhole.Pools", {
         text      : _("Filesystem"),
         sortable  : true,
         dataIndex : "type",
+        width     : 80,
         stateId   : "type"
     },{
         text      : _("Path"),
         sortable  : true,
         dataIndex : "path",
+        flex      : 1,
         stateId   : "path"
     },{
         text      : _("Space"),
         sortable  : true,
         dataIndex : "percent_space",
+	 width      : 210,
         stateId   : "percent_space",
         renderer  : OMV.module.services.greyhole.util.Format.spaceRenderer
     },{
         text      : _("Trash"),
         sortable  : true,
         dataIndex : "trash_size",
+        width     : 80,
         stateId   : "trash_size",
         renderer  : OMV.module.services.greyhole.util.Format.trashRenderer
     },{
         text      : _("Min Free"),
         sortable  : true,
         dataIndex : "min_free",
+        width     : 60,
         stateId   : "min_free",
         renderer  : OMV.module.services.greyhole.util.Format.minFreeRenderer
     }],
