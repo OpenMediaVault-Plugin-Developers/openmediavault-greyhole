@@ -32,9 +32,9 @@ fi
 
 GREYHOLE_CONFIG="/etc/greyhole.conf"
 
-cat <<EOF >>
+cat <<EOF >> ${GREYHOLE_CONFIG}
 
-#======================= Greyhole Ignored Files/Folders =======================" >> ${GREYHOLE_CONFIG}
+#======================= Greyhole Ignored Files/Folders ======================="
 
 # rsync temporary files
 ignored_files = \..*\.[0-9a-zA-Z]{6}
@@ -46,14 +46,15 @@ ignored_files = \.cprestoretmp.*
 ignored_folders = .*/_UNPACK_.*
 # Windows thumbs database files
 ignored_files = Thumb.db
+
 EOF
-    
+
 index=$(omv_config_get_count "//services/greyhole/ignores/ignore")
 while [ ${index} -gt 0 ]
-do    
+do
     xmlstarlet sel -t -m "//services/greyhole/ignores/ignore[position()=${index}]" \
-      -i "folder[. = '0']" -o concat("ignored_files = ", ignore) -b -n \
-      -i "folder[. = '1']" -o concat("ignored_folders = ", ignore) -b -n \
+      -i "folder[. = '0']" -v "concat('ignored_files = ', ignore)" -b \
+      -i "folder[. = '1']" -v "concat('ignored_folders = ', ignore)" -b \
       ${OMV_CONFIG_FILE} | xmlstarlet unesc >> ${GREYHOLE_CONFIG}
 
     index=$(( ${index} - 1 ))
