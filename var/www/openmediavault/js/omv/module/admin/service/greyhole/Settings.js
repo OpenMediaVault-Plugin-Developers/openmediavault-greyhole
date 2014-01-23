@@ -89,12 +89,16 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
 
             var poolsPanel = parent.down('panel[title=' + _("Pools") + ']');
             var sambaSharesPanel = parent.down('panel[title=' + _("Samba Shares") + ']');
+            var ignoresPanel = parent.down('panel[title=' + _("Ignored Files") + ']');
 
             if (poolsPanel) {
                 checked ? poolsPanel.enable() : poolsPanel.disable();
             }
             if (sambaSharesPanel) {
                 checked ? sambaSharesPanel.enable() : sambaSharesPanel.disable();
+            }
+            if (ignoresPanel) {
+                checked ? ignoresPanel.enable() : ignoresPanel.disable();
             }
         });
         me.callParent(arguments);
