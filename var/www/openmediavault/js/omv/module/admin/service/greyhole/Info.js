@@ -20,11 +20,11 @@
 // require("js/omv/workspace/panel/Panel.js")
 
 Ext.define("OMV.module.admin.service.greyhole.Info", {
-    extend: "Ext.panel.Panel",
+    extend : "Ext.panel.Panel",
 
-    autoScroll: true,
+    autoScroll : true,
 
-    initComponent: function() {
+    initComponent : function() {
         var me = this;
 
         me.html = _("Greyhole Information") +
@@ -47,9 +47,9 @@ Ext.define("OMV.module.admin.service.greyhole.Info", {
 });
 
 OMV.WorkspaceManager.registerPanel({
-    id: "info",
-    path: "/service/greyhole",
-    text: _("Information"),
-    position: 50,
-    className: "OMV.module.admin.service.greyhole.Info"
+    id        : "info",
+    path      : "/service/greyhole",
+    text      : _("Information"),
+    position  : 50,
+    className : "OMV.module.admin.service.greyhole.Info"
 });
