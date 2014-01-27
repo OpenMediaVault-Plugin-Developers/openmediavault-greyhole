@@ -22,6 +22,8 @@
 Ext.define("OMV.module.admin.service.greyhole.Info", {
     extend: "Ext.panel.Panel",
 
+    autoScroll: true,
+
     initComponent: function() {
         var me = this;
 
