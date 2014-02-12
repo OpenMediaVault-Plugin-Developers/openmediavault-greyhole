@@ -1,4 +1,6 @@
 /**
+ *
+ * @license http://www.gnu.org/licenses/gpl.html GPL Version 3
  * Copyright (C) 2011-2012 Marcel Beck <marcel.beck@mbeck.org>
  * Copyright (C) 2013-2014 OpenMediaVault Plugin Developers
  *
