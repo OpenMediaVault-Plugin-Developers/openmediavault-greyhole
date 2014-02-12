@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-23 07:38-0600\n"
-"PO-Revision-Date: 2014-01-23 13:38+0000\n"
-"Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
+"PO-Revision-Date: 2014-01-24 08:47+0000\n"
+"Last-Translator: julakali <julakali@gmail.com>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/openmediavault-greyhole/language/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +28,7 @@ msgid "Add Samba Share"
 msgstr "Samba-Freigabe hinzufügen"
 
 msgid "Add ignored files"
-msgstr ""
+msgstr "Ignorierte Dateien hinzufügen"
 
 msgid "Are you sure you want to install the Greyhole database?"
 msgstr "Sind sie sicher, dass sie die Greyhole Datenbank installieren möchten?"
@@ -119,7 +119,7 @@ msgid "Edit Samba Share"
 msgstr "Samba-Freigabe bearbeiten"
 
 msgid "Edit ignored files"
-msgstr ""
+msgstr "Ignorierte Dateien bearbeiten"
 
 msgid "Email"
 msgstr "E-Mail"
@@ -148,7 +148,7 @@ msgid "Extra options"
 msgstr "Zusätzliche Optionen"
 
 msgid "File"
-msgstr ""
+msgstr "Datei"
 
 msgid "Files Balance"
 msgstr "Dateien ausbalancieren"
@@ -161,7 +161,7 @@ msgstr "Dateikopien"
 
 msgid ""
 "Files/Folders that match the patterns below will be ignored by Greyhole."
-msgstr ""
+msgstr "Dateien/Ordner die mit den Mustern unten übereinstimmen, werden von Greyhole ignoriert."
 
 msgid "Filesystem"
 msgstr "Dateisystem"
@@ -170,7 +170,7 @@ msgid "Find orphaned files"
 msgstr "Verwaiste Dateien finden"
 
 msgid "Folder"
-msgstr ""
+msgstr "Ordner"
 
 msgid "General settings"
 msgstr "Allgemeine Einstellungen"
@@ -191,13 +191,13 @@ msgid "Greyhole - Empty Trash"
 msgstr "Greyhole - Papierkorb leeren"
 
 msgid "Greyhole Information"
-msgstr ""
+msgstr "Greyhole Informationen"
 
 msgid "Greyhole Wiki"
-msgstr ""
+msgstr "Greyhole Wiki"
 
 msgid "Home Page"
-msgstr ""
+msgstr "Homepage"
 
 msgid "Hostname"
 msgstr "Hostname"
@@ -208,19 +208,19 @@ msgid ""
 msgstr "Zeit (in Sekunden), die die Kalkulation zur Angabe des freien Speichers zwischengespeichert werden soll. '0' deaktiviert das Caching."
 
 msgid "If checked, ignored object will be a folder instead of a file."
-msgstr ""
+msgstr "Das ignorierte Objekt ist ein Ordner statt einer Datei, wenn ausgewählt."
 
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorieren"
 
 msgid "Ignored Files"
-msgstr ""
+msgstr "Ignorierte Dateien"
 
 msgid "Info"
 msgstr "Info"
 
 msgid "Information"
-msgstr ""
+msgstr "Informationen"
 
 msgid "Install DB"
 msgstr "Datenbank erstellen"
@@ -390,7 +390,7 @@ msgid "Trash deletes"
 msgstr "Papierkorb nutzen"
 
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 msgid "Use Default"
 msgstr "Standard benutzen"

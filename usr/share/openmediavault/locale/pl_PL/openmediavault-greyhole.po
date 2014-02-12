@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Cyryl Sochacki <cyrylsochacki@gmail.com>, 2013
+# Cyryl Sochacki <cyrylsochacki@gmail.com>, 2013-2014
+# qba111 <j.ratajczak@eqba.pl>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-23 07:38-0600\n"
-"PO-Revision-Date: 2014-01-23 13:38+0000\n"
-"Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
+"PO-Revision-Date: 2014-02-04 10:25+0000\n"
+"Last-Translator: Cyryl Sochacki <cyrylsochacki@gmail.com>\n"
 "Language-Team: Polish (Poland) (http://www.transifex.com/projects/p/openmediavault-greyhole/language/pl_PL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,113 +23,113 @@ msgid "%s (%s available)"
 msgstr "%s (%s dostępnych)"
 
 msgid "Add Pool Disk"
-msgstr ""
+msgstr "Dodaj pule dysku"
 
 msgid "Add Samba Share"
-msgstr ""
+msgstr "Dodaj zasób Samby"
 
 msgid "Add ignored files"
-msgstr ""
+msgstr "Dodaj ignorowane pliki"
 
 msgid "Are you sure you want to install the Greyhole database?"
-msgstr ""
+msgstr "Czy napewno chcesz zainstalować bazę Greyhole?"
 
 msgid "Balance modified"
-msgstr ""
+msgstr "Modyfikacja balansu"
 
 msgid "Cancel"
 msgstr "Anuluj"
 
 msgid "Cancel All Checks"
-msgstr ""
+msgstr "Anuluj wszystkie sprawdzenia"
 
 msgid "Check for open Files"
-msgstr ""
+msgstr "Sprawdź, czy otwarte pliki"
 
 msgid "Checksums"
-msgstr ""
+msgstr "Suma kontrolna"
 
 msgid "Comment"
-msgstr ""
+msgstr "Komentarz"
 
 msgid "Component"
-msgstr ""
+msgstr "Komponent"
 
 msgid "Confirmation"
-msgstr ""
+msgstr "Potwierdzenie"
 
 msgid "Create Trash Share"
-msgstr ""
+msgstr "Utwórz zasób kosza"
 
 msgid ""
 "Create a samba share called Greyhole Trash that allows browsing of files in "
 "trash."
-msgstr ""
+msgstr "Tworzy zasób samby o nazwie Greyhole Trash pozwalający na przeglądanie plików w koszu."
 
 msgid "Database Name"
-msgstr ""
+msgstr "Nazwa bazy"
 
 msgid "Database Settings"
-msgstr ""
+msgstr "Ustawienia bazy"
 
 msgid "Database is installed"
-msgstr ""
+msgstr "Baza danych zainstalowana"
 
 msgid "Date & Time"
 msgstr "Data i czas"
 
 msgid "Debug"
-msgstr ""
+msgstr "Debug"
 
 msgid "Delete Pool Disk"
-msgstr ""
+msgstr "Usuń pule dysku"
 
 msgid "Delete Samba Share"
-msgstr ""
+msgstr "Usuń  udział samby"
 
 msgid "Delete orphaned metadata"
-msgstr ""
+msgstr "Usuń osierocone metadane"
 
 msgid ""
 "Disable to get more speed. This might break some files if any application "
 "changes your files while Greyhole tries to work on them."
-msgstr ""
+msgstr "Wyłącz aby zwiększyć prędkość. Może to spowodować uszkodzenie pliku jeżeli jakaś aplikacja będzie go zmieniała podczas kiedy Greyhole będzie wykonywał na nim operacje. "
 
 msgid "Disk Free space Cache time"
-msgstr ""
+msgstr "Czasu czyszczenia z pamięci podręcznej dysku"
 
 msgid "Disk Pool Management"
-msgstr ""
+msgstr "Zarządzanie pulą dysku"
 
 msgid "Do you really want to remove the pool disk directory content?"
-msgstr ""
+msgstr "Czy na pewno chcesz usunąć zawartość katalogu?"
 
 msgid ""
 "Do you want to remove the content of the pool disk directory recursively? "
 "Note, the data will be permanently deleted then. Select 'No' to delete the "
 "pool disk directory only or 'Cancel' to abort."
-msgstr ""
+msgstr "Czy chcesz usunąć zawartość rekursywnie katalogów ? Uwaga, dane zostaną trwale usunięte. Wybierz 'Nie', aby usunąć tylko katalog lub przycisk Anuluj, aby przerwać."
 
 msgid "Don't walk metadata store"
-msgstr ""
+msgstr "Nie opuszczaj magazynu metadanych"
 
 msgid "Edit Pool Disk"
-msgstr ""
+msgstr "Edytuj pule dysku"
 
 msgid "Edit Samba Share"
-msgstr ""
+msgstr "Edytuj zasób samby"
 
 msgid "Edit ignored files"
-msgstr ""
+msgstr "Edytuj ignorowane pliki"
 
 msgid "Email"
 msgstr "Email"
 
 msgid "Email report"
-msgstr ""
+msgstr "Raport Email"
 
 msgid "Empty Trash"
-msgstr ""
+msgstr "Opróżnij kosz"
 
 msgid "Enable"
 msgstr "Włącz"
@@ -136,7 +137,7 @@ msgstr "Włącz"
 msgid ""
 "Enable this to use modified files copies to help balance the available space"
 " in your storage pool drives."
-msgstr ""
+msgstr "Włącz aby korzystać ze zmodyfikowanych plików kopii co ułatwia równoważenie dostępnego miejsca na twoich dyskach. "
 
 msgid "Error"
 msgstr "Błąd"
@@ -145,59 +146,59 @@ msgid "Event"
 msgstr "Zdarzenia"
 
 msgid "Extra options"
-msgstr ""
+msgstr "Dodatkowe opcje"
 
 msgid "File"
-msgstr ""
+msgstr "Plik"
 
 msgid "Files Balance"
-msgstr ""
+msgstr "Rozmieszczanie plików"
 
 msgid "Files Check"
-msgstr ""
+msgstr "Wybrane pliki"
 
 msgid "Files copies"
-msgstr ""
+msgstr "Kopie plików"
 
 msgid ""
 "Files/Folders that match the patterns below will be ignored by Greyhole."
-msgstr ""
+msgstr "Pliki/foldery pasujące do poniższych wzorów będą ignorowane przez Greyhole."
 
 msgid "Filesystem"
-msgstr ""
+msgstr "System plików"
 
 msgid "Find orphaned files"
-msgstr ""
+msgstr "Znajdź osierocone pliki"
 
 msgid "Folder"
-msgstr ""
+msgstr "Katalog"
 
 msgid "General settings"
 msgstr "Ustawienia główne"
 
 msgid "Going"
-msgstr ""
+msgstr "Aktualnie"
 
 msgid "Gone"
-msgstr ""
+msgstr "Poszedł"
 
 msgid "Greyhole"
-msgstr ""
+msgstr "Greyhole"
 
 msgid "Greyhole - Balance"
-msgstr ""
+msgstr "Greyhole - balans"
 
 msgid "Greyhole - Empty Trash"
-msgstr ""
+msgstr "Greyhole - opróżnij kosz"
 
 msgid "Greyhole Information"
-msgstr ""
+msgstr "Informacje Greyhole"
 
 msgid "Greyhole Wiki"
-msgstr ""
+msgstr "Wiki Greyhole"
 
 msgid "Home Page"
-msgstr ""
+msgstr "Strona domowa"
 
 msgid "Hostname"
 msgstr "Nazwa hosta"
@@ -205,63 +206,63 @@ msgstr "Nazwa hosta"
 msgid ""
 "How long should free disk space calculations be cached (in seconds). Use 0 "
 "to disable caching."
-msgstr ""
+msgstr "Jak długo wyliczenia wolnego miejsca powinny być trzymane w cache (w sekundach). 0 aby wyłączyć. "
 
 msgid "If checked, ignored object will be a folder instead of a file."
-msgstr ""
+msgstr "Jeżeli zaznaczone ignorowany będzie folder zamiast pliku."
 
 msgid "Ignore"
-msgstr ""
+msgstr "Ignoruj"
 
 msgid "Ignored Files"
-msgstr ""
+msgstr "Ignorowane pliki"
 
 msgid "Info"
 msgstr "Info"
 
 msgid "Information"
-msgstr ""
+msgstr "Informacje"
 
 msgid "Install DB"
 msgstr "Instaluj DB"
 
 msgid "Installing Greyhole database"
-msgstr ""
+msgstr "Instalacja bazy danych Greyhole"
 
 msgid "Label"
 msgstr "Edykieta"
 
 msgid "Log Greyhole memory usage on each log line."
-msgstr ""
+msgstr "Zapisuj wykorzystanie pamięci w każdej linii logu Greyhole."
 
 msgid "Log Memory Usage"
-msgstr ""
+msgstr "Logi użycia pamięci"
 
 msgid "Log level"
-msgstr ""
+msgstr "Poziom logów"
 
 msgid "Make trash share writeable."
-msgstr ""
+msgstr "Uczyń zasób kosza zapisywalnym."
 
 msgid "Min Free"
-msgstr ""
+msgstr "Min. wolnych"
 
 msgid "Min Free (GiB)"
-msgstr ""
+msgstr "Min. wolnych (GiB)"
 
 msgid ""
 "Move deleted files to trash instead of deleting them. This is a global "
 "setting that can be overided by local option on each Greyhole share."
-msgstr ""
+msgstr "Przenoś usuwane pliki do kosza zamiast kasować je. To jest ustawienie globalne i może być nadpisane na każdym zasobie oddzielnie. "
 
 msgid "MySQL root Password"
-msgstr ""
+msgstr "Hasło MySQL root-a"
 
 msgid "No"
 msgstr "Nie"
 
 msgid "Number of Copies"
-msgstr ""
+msgstr "Liczba kopii"
 
 msgid "Password"
 msgstr "Hasło"
@@ -270,136 +271,136 @@ msgid "Path"
 msgstr "Ścieżka"
 
 msgid "Pool Disk"
-msgstr ""
+msgstr "Pula dysku"
 
 msgid "Pool Management"
-msgstr ""
+msgstr "Zarządzanie pulą"
 
 msgid "Pool Managment"
-msgstr ""
+msgstr "Zarządzanie pulą"
 
 msgid "Pools"
-msgstr ""
+msgstr "Pule"
 
 msgid ""
 "Read ALL files in your storage pool, and check that file copies are "
 "identical. This will identify any problem you might have with your file-"
 "systems. NOTE: this can take a LONG time to complete, since it will read "
 "everything from all your drives!"
-msgstr ""
+msgstr "Skanuj wszystkie pliki w pulach i sprawdź czy kopie są identyczne. Pozwala to na zidentyfikowanie problemów w systemie plików. UWAGA!!! Może to trwać BARDZO długo, ponieważ skanowane są wszystkie pliki na wszystkich napędach!"
 
 msgid "Replaced"
-msgstr ""
+msgstr "Zastąpiony"
 
 msgid "SMB Share"
-msgstr ""
+msgstr "Udział SMB"
 
 msgid "Samba Shares"
-msgstr ""
+msgstr "Udziały samby"
 
 msgid ""
 "Scan for files with no metadata in the storage pool drives. This will allow "
 "you to include existing files on a drive in your storage pool without having"
 " to copy them manually."
-msgstr ""
+msgstr "Wyszukaj plików bez metadanych na urządzeniach w puli. Pozwoli to na dołączenie istniejących na napędach plików do puli bez potrzeby ich ręcznego kopiowania. "
 
 msgid "Select Number of Copies ..."
-msgstr ""
+msgstr "Wybierz liczbę kopii..."
 
 msgid "Select a path ..."
 msgstr "Wybierz ścieżkę ..."
 
 msgid "Select a pool disk ..."
-msgstr ""
+msgstr "Wybierz pulę dysku ..."
 
 msgid "Select a volume ..."
-msgstr ""
+msgstr "Wybierz dysk"
 
 msgid "Select an SMB Share ..."
-msgstr ""
+msgstr "Wybierz zasób SMB..."
 
 msgid ""
 "Send an email when fsck completes, to report on what was checked, and any "
 "error that was found."
-msgstr ""
+msgstr "Wyślij email po zakończeniu fsck z informacją co było sprawdzane i czy znaleziono jakieś błędy."
 
 msgid "Settings"
 msgstr "Ustawienia"
 
 msgid "Space"
-msgstr ""
+msgstr "Przestrzeń"
 
 msgid ""
 "Speed up fsck by skipping the scan of the metadata store directories. "
 "Scanning the metadata stores is only required to re-create symbolic links "
 "that might be missing from your shared directories."
-msgstr ""
+msgstr "Przyspiesz wykonywanie fsck przez pominięcie skanowania katalogów z metadanymi. Skanowanie metadanych jest wymagane tylko do odtworzenia dowiązań symbolicznych brakujących w udostępnionych folderach. "
 
 msgid "Sticky files"
-msgstr ""
+msgstr "Przyklejone pliki"
 
 msgid ""
 "Sticky files are files that will always 'live' together in the storage pool."
 " This will allow you to read (and read-only!) those files by using the "
 "storage pool drives themselves, instead of using the mounted shares."
-msgstr ""
+msgstr "Przyklejone pliki są zawsze trzymane razem w puli magazynującej. Pozwala to na ich odczytywanie (i tylko odczytywanie!) bezpośrednio przez dostęp do napędów puli zamiast przez podmontowany zasób. "
 
 msgid ""
 "Tell Greyhole that the missing drive at is gone for good. Greyhole will "
 "start replacing the missing file copies instantly."
-msgstr ""
+msgstr "Powiedz Greyhole, że brakujący napęd zniknął na dobre. Greyhole natychmiast rozpocznie zastępowanie brakujących plików."
 
 msgid ""
 "Tell Greyhole that the missing drive will return soon, and that it shouldn't"
 " re-create additional file copies to replace it."
-msgstr ""
+msgstr "Powiedz Greyhole, że brakujący dysk niedługo zostanie dodany ponownie i nie ma potrzeby wykonywania dodatkowych kopii plików w celu jego zastąpienia."
 
 msgid "Tell Greyhole that you replaced the drive."
-msgstr ""
+msgstr "Powiedz Greyhole, że napęd został wymieniony."
 
 msgid ""
 "Tell Greyhole that you want to remove a drive. Greyhole will then make sure "
 "you don't loose any files, and that the correct number of file copies are "
 "created to replace the missing drive."
-msgstr ""
+msgstr "Powiedz Greyhole, że zamierzasz usunąć napęd. Greyhole upewni się, że nie utracisz żadnych plików oraz czy odpowiednia liczba kopii plików została utworzona w celu zastąpienia napędu. "
 
 msgid ""
 "This is how much free space you want to reserve on each drive. This is a "
 "soft limit that will be ignored if the necessary hard drives are below their"
 " minimum."
-msgstr ""
+msgstr "Wartość ta określa ile miejsca chcesz zarezerwować na każdym napędzie. Jest to tzw. miękki limit i będzie ignorowany jeżeli wolne miejsce na dyskach będzie poniżej minimum. "
 
 msgid ""
 "This is the number of copies of each file you want Greyhole to keep per "
 "Share. This is not the number of duplicates! 2 copies = 1 duplicate."
-msgstr ""
+msgstr "Jest to liczba kopii każdego pliku jaką Greyhole będzie posiadał dla każdego pliku. To nie jest liczba duplikatów! 2 kopie = 1 duplikat."
 
 msgid "Trash"
 msgstr "Kosz"
 
 msgid "Trash Share Path"
-msgstr ""
+msgstr "Ścieżka zasobu kosza"
 
 msgid "Trash Share Volume"
-msgstr ""
+msgstr "Wolumen zasobu kosza"
 
 msgid "Trash Writeable"
-msgstr ""
+msgstr "Kosz zapisywalny"
 
 msgid "Trash deletes"
-msgstr ""
+msgstr "Usuń śmieci"
 
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 msgid "Use Default"
-msgstr ""
+msgstr "Użyj domyślnie"
 
 msgid "Use Trash"
 msgstr "Użyj kosza"
 
 msgid "Used only for installing Greyhole database and will not be saved."
-msgstr ""
+msgstr "Wykorzystywane tylko do instalacji bazy Greyhole i nie jest nigdzie zapisywane."
 
 msgid "Username"
 msgstr "Nazwa użytkownika"
@@ -418,18 +419,18 @@ msgid ""
 "Greyhole. Stop Greyhole daemon before any change. Make sure the values you "
 "are modifying match the MySQL greyhole database values before restarting "
 "Greyhole daemon."
-msgstr ""
+msgstr "UWAGA! Zmiana parametrów połączenia do bazy może spowodować zatrzymanie Greyhole. Zatrzymaj daemona przez wprowadzeniem zmian. Upewnij się, że wartości które zmieniasz zgadzają się z ustawieniami MySQL dla bazy greyhole zanim zrestartujesz usługę."
 
 msgid ""
 "When fsck find metadata files with no file copies, delete those metadata "
 "files. If the file copies re-appear later, you'll need to run fsck with "
 "--find-orphaned-files to have them reappear in your shares."
-msgstr ""
+msgstr "Kiedy fsck znajdzie pliki metadanych bez żadnych kopii pliki usunie metadane. Kiedy kopie plików pojawią się ponownie będziesz musiał uruchomić fsck z opcją --find-orphaned-files aby pojawiły się w zasobach.  "
 
 msgid ""
 "Will receive email reports for daily fsck or when all drives are out of "
 "available space."
-msgstr ""
+msgstr "Na ten adres wysyłane będą raporty z fsck oraz kiedy wszystkie dyski będą zapełnione. "
 
 msgid "Yes"
 msgstr "Tak"
@@ -437,7 +438,7 @@ msgstr "Tak"
 msgid ""
 "You can specify per-share trash preferences that will override the global "
 "trash preference."
-msgstr ""
+msgstr "Możesz określić ustawienia kosza dla każdego zasobu, co nadpisuje ustawienia globalne."
 
 msgid "n/a"
 msgstr "n/a"

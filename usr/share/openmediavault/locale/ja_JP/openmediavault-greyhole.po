@@ -1,0 +1,443 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# kansuke <kansuke4649@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-greyhole\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-23 07:38-0600\n"
+"PO-Revision-Date: 2014-01-31 12:42+0000\n"
+"Last-Translator: kansuke <kansuke4649@gmail.com>\n"
+"Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/openmediavault-greyhole/language/ja_JP/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja_JP\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "%s (%s available)"
+msgstr "%s (%s 利用可能)"
+
+msgid "Add Pool Disk"
+msgstr "プールディスクの追加"
+
+msgid "Add Samba Share"
+msgstr "Samba共有の追加"
+
+msgid "Add ignored files"
+msgstr "無視するファイルを追加"
+
+msgid "Are you sure you want to install the Greyhole database?"
+msgstr "Greyholeデータベースをインストールしてもよろしいですか？"
+
+msgid "Balance modified"
+msgstr "バランス修正"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "Cancel All Checks"
+msgstr "すべてのチェックをキャンセル"
+
+msgid "Check for open Files"
+msgstr "開いているファイルをチェック"
+
+msgid "Checksums"
+msgstr "チェックサム"
+
+msgid "Comment"
+msgstr "コメント"
+
+msgid "Component"
+msgstr "コンポーネント"
+
+msgid "Confirmation"
+msgstr "確認"
+
+msgid "Create Trash Share"
+msgstr "共有ごみ箱を作成"
+
+msgid ""
+"Create a samba share called Greyhole Trash that allows browsing of files in "
+"trash."
+msgstr "ゴミ箱内のファイルの閲覧を可能にするGreyholeゴミ箱と呼ばれるSamba共有を作成します。"
+
+msgid "Database Name"
+msgstr "データベース名"
+
+msgid "Database Settings"
+msgstr "データベース設定"
+
+msgid "Database is installed"
+msgstr "データベースはインストールされました"
+
+msgid "Date & Time"
+msgstr "日付 & 時間"
+
+msgid "Debug"
+msgstr "デバッグ"
+
+msgid "Delete Pool Disk"
+msgstr "プールディスクの削除"
+
+msgid "Delete Samba Share"
+msgstr "Samba共有の削除"
+
+msgid "Delete orphaned metadata"
+msgstr "孤立したメタデータの削除"
+
+msgid ""
+"Disable to get more speed. This might break some files if any application "
+"changes your files while Greyhole tries to work on them."
+msgstr "もっとスピードを得るために無効にします。Greyholeがそれらに作業をしようとしながら、任意のアプリケーションがファイルを変更する場合、これはいくつかのファイルを破壊することになります。"
+
+msgid "Disk Free space Cache time"
+msgstr "ディスクの空き容量のキャッシュ時間"
+
+msgid "Disk Pool Management"
+msgstr "ディスクプールの管理"
+
+msgid "Do you really want to remove the pool disk directory content?"
+msgstr "あなたは本当に、プールディスクのディレクトリ内容を削除しますか？"
+
+msgid ""
+"Do you want to remove the content of the pool disk directory recursively? "
+"Note, the data will be permanently deleted then. Select 'No' to delete the "
+"pool disk directory only or 'Cancel' to abort."
+msgstr "あなたは再帰的にプールディスク内のディレクトリの内容を削除しますか？ 注意、データは恒久的に削除されます。'いいえ' を選択すると、プールディスクのディレクトリのみを削除します。 'キャンセル' を選択すると処理を中止します。"
+
+msgid "Don't walk metadata store"
+msgstr "メタデータストアをスキップ"
+
+msgid "Edit Pool Disk"
+msgstr "プールディスクの編集"
+
+msgid "Edit Samba Share"
+msgstr "Samba共有の編集"
+
+msgid "Edit ignored files"
+msgstr "無視するファイルの編集"
+
+msgid "Email"
+msgstr "電子メール"
+
+msgid "Email report"
+msgstr "電子メールリポート"
+
+msgid "Empty Trash"
+msgstr "ごみ箱を空に"
+
+msgid "Enable"
+msgstr "有効"
+
+msgid ""
+"Enable this to use modified files copies to help balance the available space"
+" in your storage pool drives."
+msgstr "有効にすると、ストレージプールドライブで使用可能なスペースのバランスを助けるために変更されたファイルのコピーを使用します。"
+
+msgid "Error"
+msgstr "エラー"
+
+msgid "Event"
+msgstr "イベント"
+
+msgid "Extra options"
+msgstr "その他のオプション"
+
+msgid "File"
+msgstr "ファイル"
+
+msgid "Files Balance"
+msgstr "ファイルのバランス"
+
+msgid "Files Check"
+msgstr "ファイルチェック"
+
+msgid "Files copies"
+msgstr "ファイルコピー"
+
+msgid ""
+"Files/Folders that match the patterns below will be ignored by Greyhole."
+msgstr "以下のパターンに一致するファイル/フォルダがGreyholeによって無視されます。"
+
+msgid "Filesystem"
+msgstr "ファイルシステム"
+
+msgid "Find orphaned files"
+msgstr "孤立したファイルを検索します"
+
+msgid "Folder"
+msgstr "フォルダー"
+
+msgid "General settings"
+msgstr "一般設定"
+
+msgid "Going"
+msgstr "Going"
+
+msgid "Gone"
+msgstr "Gone"
+
+msgid "Greyhole"
+msgstr "Greyhole"
+
+msgid "Greyhole - Balance"
+msgstr "Greyhole - バランス"
+
+msgid "Greyhole - Empty Trash"
+msgstr "Greyhole - ごみ箱を空に"
+
+msgid "Greyhole Information"
+msgstr "Greyhole 情報"
+
+msgid "Greyhole Wiki"
+msgstr "Greyhole Wiki"
+
+msgid "Home Page"
+msgstr "ホームページ"
+
+msgid "Hostname"
+msgstr "ホスト名"
+
+msgid ""
+"How long should free disk space calculations be cached (in seconds). Use 0 "
+"to disable caching."
+msgstr "ディスクの空き容量の計算がどのくらいの時間キャッシュされるかを設定します(秒単位) 。 0を設定するとキャッシュが無効になります。"
+
+msgid "If checked, ignored object will be a folder instead of a file."
+msgstr "チェックすると、無視されるオブジェクトはファイルではなく、フォルダになります。"
+
+msgid "Ignore"
+msgstr "無視"
+
+msgid "Ignored Files"
+msgstr "無視されたファイル"
+
+msgid "Info"
+msgstr "情報"
+
+msgid "Information"
+msgstr "情報"
+
+msgid "Install DB"
+msgstr "DBのインストール"
+
+msgid "Installing Greyhole database"
+msgstr "Greyholeデータベースのインストール"
+
+msgid "Label"
+msgstr "ラベル"
+
+msgid "Log Greyhole memory usage on each log line."
+msgstr "各ログ行のGreyholeのメモリ使用量のログ。"
+
+msgid "Log Memory Usage"
+msgstr "メモリ使用量を記録"
+
+msgid "Log level"
+msgstr "ログレベル"
+
+msgid "Make trash share writeable."
+msgstr "共有ごみ箱を書き込み可能にします。"
+
+msgid "Min Free"
+msgstr "最小の空き容量"
+
+msgid "Min Free (GiB)"
+msgstr "最小の空き容量(GiB)"
+
+msgid ""
+"Move deleted files to trash instead of deleting them. This is a global "
+"setting that can be overided by local option on each Greyhole share."
+msgstr "削除する代わりに、削除対象のファイルをゴミ箱に移動します。これはグローバル設定で、各Greyhole共有のローカルオプションで上書きすることができます。"
+
+msgid "MySQL root Password"
+msgstr "MySQL root パスワード"
+
+msgid "No"
+msgstr "いいえ"
+
+msgid "Number of Copies"
+msgstr "コピーする数"
+
+msgid "Password"
+msgstr "パスワード"
+
+msgid "Path"
+msgstr "パス"
+
+msgid "Pool Disk"
+msgstr "プールディスク"
+
+msgid "Pool Management"
+msgstr "プール管理"
+
+msgid "Pool Managment"
+msgstr "プール管理"
+
+msgid "Pools"
+msgstr "プール"
+
+msgid ""
+"Read ALL files in your storage pool, and check that file copies are "
+"identical. This will identify any problem you might have with your file-"
+"systems. NOTE: this can take a LONG time to complete, since it will read "
+"everything from all your drives!"
+msgstr "ストレージプールのすべてのファイルを読み取り、ファイルのコピーが同一であることを確認します。これは、あなたのファイルシステムが持っている可能性のある問題を特定します。注意：この処理はすべてのドライブからすべてを読み込むので、完了まで長時間かかることがあります！"
+
+msgid "Replaced"
+msgstr "リプレース済み"
+
+msgid "SMB Share"
+msgstr "SMB共有"
+
+msgid "Samba Shares"
+msgstr "Samba共有"
+
+msgid ""
+"Scan for files with no metadata in the storage pool drives. This will allow "
+"you to include existing files on a drive in your storage pool without having"
+" to copy them manually."
+msgstr "ストレージプールドライブのメタデータを持たないファイルをスキャンします。これは手動でコピーしなくても、ストレージプール内のドライブ上のファイルを含めることができます。"
+
+msgid "Select Number of Copies ..."
+msgstr "コピーする数を選択 ..."
+
+msgid "Select a path ..."
+msgstr "パスを選択 ..."
+
+msgid "Select a pool disk ..."
+msgstr "プールディスクを選択 ..."
+
+msgid "Select a volume ..."
+msgstr "ボリュームを選択 ..."
+
+msgid "Select an SMB Share ..."
+msgstr "Samba共有を選択 ..."
+
+msgid ""
+"Send an email when fsck completes, to report on what was checked, and any "
+"error that was found."
+msgstr "fsckが完了した際に何をチェックしたか、チェック時に発見されたすべてのエラーを電子メールで送信します。"
+
+msgid "Settings"
+msgstr "設定"
+
+msgid "Space"
+msgstr "スペース"
+
+msgid ""
+"Speed up fsck by skipping the scan of the metadata store directories. "
+"Scanning the metadata stores is only required to re-create symbolic links "
+"that might be missing from your shared directories."
+msgstr "メタデータストアディレクトリのスキャンをスキップして、fsckをスピードアップします。メタデータのスキャンは共有ディレクトリから欠落している可能性がある、シンボリックリンクの再生成するために必要です。"
+
+msgid "Sticky files"
+msgstr "スティッキーファイル"
+
+msgid ""
+"Sticky files are files that will always 'live' together in the storage pool."
+" This will allow you to read (and read-only!) those files by using the "
+"storage pool drives themselves, instead of using the mounted shares."
+msgstr "スティッキーファイルはストレージプール内に常に存在するファイルです。このファイルを読むことができ（読み込み専用！）、ストレージプールドライブから使用され、マウントされた共有の代わりに使用されます。"
+
+msgid ""
+"Tell Greyhole that the missing drive at is gone for good. Greyhole will "
+"start replacing the missing file copies instantly."
+msgstr "欠落したドライブは、永遠になくなっていることをGreyholeに教えてください。Greyholeはすぐに不足しているファイルのコピーの置き換えを開始します。"
+
+msgid ""
+"Tell Greyhole that the missing drive will return soon, and that it shouldn't"
+" re-create additional file copies to replace it."
+msgstr "欠落したドライブはすぐに元に戻り、そしてそれは、それを置き換えるために追加のファイルのコピーを再作成するべきではないとGreyholeに教えてください。"
+
+msgid "Tell Greyhole that you replaced the drive."
+msgstr "ドライブを交換していることをGreyholeに教えてください。"
+
+msgid ""
+"Tell Greyhole that you want to remove a drive. Greyhole will then make sure "
+"you don't loose any files, and that the correct number of file copies are "
+"created to replace the missing drive."
+msgstr "ドライブを削除することをGreyholeに教えてください。Greyholeは、あなたが任意のファイルを失うことがないことを確認し、ファイルのコピーの正確な数が欠落したドライブを交換するために作成されます。"
+
+msgid ""
+"This is how much free space you want to reserve on each drive. This is a "
+"soft limit that will be ignored if the necessary hard drives are below their"
+" minimum."
+msgstr "各ドライブ上に確保する空き容量です。これはソフトリミットで、必要なハードドライブが、その最小値を下回っている場合は無視されます。"
+
+msgid ""
+"This is the number of copies of each file you want Greyhole to keep per "
+"Share. This is not the number of duplicates! 2 copies = 1 duplicate."
+msgstr "これは、Greyhole共有当たりの保持したい各ファイルのコピーの数です。これは、重複の数ではありません！2コピー = 1 重複。"
+
+msgid "Trash"
+msgstr "ごみ箱"
+
+msgid "Trash Share Path"
+msgstr "共有ごみ箱のパス"
+
+msgid "Trash Share Volume"
+msgstr "共有ごみ箱のボリューム"
+
+msgid "Trash Writeable"
+msgstr "ごみ箱を書き込み可能にする"
+
+msgid "Trash deletes"
+msgstr "ごみ箱を削除する"
+
+msgid "Type"
+msgstr "タイプ"
+
+msgid "Use Default"
+msgstr "デフォルトを使用する"
+
+msgid "Use Trash"
+msgstr "ごみ箱を使用する"
+
+msgid "Used only for installing Greyhole database and will not be saved."
+msgstr "Greyholeデータベースをインストールするためにのみ使用され、保存されることはありません。"
+
+msgid "Username"
+msgstr "ユーザー名"
+
+msgid "Volume"
+msgstr "ボリューム"
+
+msgid "Wait for"
+msgstr "次のためのウェイト:"
+
+msgid "Warn"
+msgstr "警告"
+
+msgid ""
+"Warning: Changing your database connection properties may result in stoping "
+"Greyhole. Stop Greyhole daemon before any change. Make sure the values you "
+"are modifying match the MySQL greyhole database values before restarting "
+"Greyhole daemon."
+msgstr "警告:データベース接続プロパティを変更すると、Greyholeが停止することがあります。変更前にGreyholeデーモンを停止してください。Greyholeデーモンを再起動する前に、MySQLのgreyholeデータベースの値と一致する変更しているかどうか、値を確認してください。"
+
+msgid ""
+"When fsck find metadata files with no file copies, delete those metadata "
+"files. If the file copies re-appear later, you'll need to run fsck with "
+"--find-orphaned-files to have them reappear in your shares."
+msgstr "ファイルのコピーがないメタデータファイルをfsckが発見した場合、メタデータファイルは削除されます。ファイルのコピーが後になって再表示される場合はfsckを --find-orphaned-files オプション付きで、再表示される共有に対し実行する必要があります。"
+
+msgid ""
+"Will receive email reports for daily fsck or when all drives are out of "
+"available space."
+msgstr "毎日のfsckの結果またはすべてのドライブで利用可能な容量が不足した場合に電子メールでレポートを受け取ります。"
+
+msgid "Yes"
+msgstr "はい"
+
+msgid ""
+"You can specify per-share trash preferences that will override the global "
+"trash preference."
+msgstr "あなたは共有ごとのゴミ箱の環境設定を指定することができます。これは、グローバルのゴミ箱の環境設定を上書きします。"
+
+msgid "n/a"
+msgstr "n/a"
