@@ -1,9 +1,9 @@
-openmediavault-greyhole (0.6.0) stable; urgency=low
+openmediavault-greyhole (0.5.9) stable; urgency=low
 
-  * Update for Kralizec
-  * Update locales
+  * Add samba share notify
+  * Allow samba share edit
 
- -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Wed, 12 Feb 2014 07:29:26 -0500
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Fri, 14 Feb 2014 13:03:26 -0500
 
 openmediavault-greyhole (0.5.8) stable; urgency=low
 
