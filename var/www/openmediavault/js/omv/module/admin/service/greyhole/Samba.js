@@ -58,7 +58,6 @@ Ext.define("OMV.module.admin.service.greyhole.SambaShare", {
             allowBlank    : false,
             allowNone     : false,
             editable      : false,
-            readOnly      : (me.uuid !== OMV.UUID_UNDEFINED),
             triggerAction : "all",
             displayField  : "name",
             valueField    : "uuid",
