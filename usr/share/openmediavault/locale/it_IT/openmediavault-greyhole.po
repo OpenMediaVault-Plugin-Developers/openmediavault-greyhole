@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# polxmod <paolo.velati@gmail.com>, 2014
+# Paolo Velati <paolo.velati@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-23 07:38-0600\n"
-"PO-Revision-Date: 2014-01-23 13:38+0000\n"
-"Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
+"PO-Revision-Date: 2014-03-14 16:59+0000\n"
+"Last-Translator: Paolo Velati <paolo.velati@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/openmediavault-greyhole/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,10 +25,10 @@ msgid "Add Pool Disk"
 msgstr ""
 
 msgid "Add Samba Share"
-msgstr ""
+msgstr "Aggiungi Condivisione Samba"
 
 msgid "Add ignored files"
-msgstr ""
+msgstr "Aggiungi file ignorati"
 
 msgid "Are you sure you want to install the Greyhole database?"
 msgstr ""
@@ -46,7 +46,7 @@ msgid "Check for open Files"
 msgstr ""
 
 msgid "Checksums"
-msgstr ""
+msgstr "Checksums"
 
 msgid "Comment"
 msgstr "Commenta"
@@ -55,27 +55,27 @@ msgid "Component"
 msgstr "Componente"
 
 msgid "Confirmation"
-msgstr ""
+msgstr "Conferma"
 
 msgid "Create Trash Share"
-msgstr ""
+msgstr "Crea Condivisione Cestino"
 
 msgid ""
 "Create a samba share called Greyhole Trash that allows browsing of files in "
 "trash."
-msgstr ""
+msgstr "Crea una condivisione samba chiamata Cestino Greyhole che permetta la navigazione dei file nel cestino."
 
 msgid "Database Name"
 msgstr "Nome Database"
 
 msgid "Database Settings"
-msgstr ""
+msgstr "Impostazioni Database"
 
 msgid "Database is installed"
-msgstr ""
+msgstr "Il Database è installato"
 
 msgid "Date & Time"
-msgstr ""
+msgstr "Data & Orario"
 
 msgid "Debug"
 msgstr "Debug"
@@ -84,7 +84,7 @@ msgid "Delete Pool Disk"
 msgstr ""
 
 msgid "Delete Samba Share"
-msgstr ""
+msgstr "Elimina Condivisione Samba"
 
 msgid "Delete orphaned metadata"
 msgstr ""
@@ -116,10 +116,10 @@ msgid "Edit Pool Disk"
 msgstr ""
 
 msgid "Edit Samba Share"
-msgstr ""
+msgstr "Modifica Condivisione Samba"
 
 msgid "Edit ignored files"
-msgstr ""
+msgstr "Modifica file ignorati"
 
 msgid "Email"
 msgstr "Email"
@@ -139,41 +139,41 @@ msgid ""
 msgstr ""
 
 msgid "Error"
-msgstr ""
+msgstr "Errore"
 
 msgid "Event"
-msgstr ""
+msgstr "Evento"
 
 msgid "Extra options"
-msgstr ""
+msgstr "Opzioni Extra"
 
 msgid "File"
-msgstr ""
+msgstr "File"
 
 msgid "Files Balance"
 msgstr ""
 
 msgid "Files Check"
-msgstr ""
+msgstr "Controllo File"
 
 msgid "Files copies"
 msgstr ""
 
 msgid ""
 "Files/Folders that match the patterns below will be ignored by Greyhole."
-msgstr ""
+msgstr "File/Cartelle che corrispondono ai modelli sottostanti verranno ignorati da Greyhole."
 
 msgid "Filesystem"
-msgstr ""
+msgstr "Filesystem"
 
 msgid "Find orphaned files"
 msgstr ""
 
 msgid "Folder"
-msgstr ""
+msgstr "Cartella"
 
 msgid "General settings"
-msgstr ""
+msgstr "Impostazioni generali"
 
 msgid "Going"
 msgstr ""
@@ -185,22 +185,22 @@ msgid "Greyhole"
 msgstr ""
 
 msgid "Greyhole - Balance"
-msgstr ""
+msgstr "Greyhole - Bilancia"
 
 msgid "Greyhole - Empty Trash"
-msgstr ""
+msgstr "Greyhole - Svuota Cestino"
 
 msgid "Greyhole Information"
-msgstr ""
+msgstr "Informazione Greyhole"
 
 msgid "Greyhole Wiki"
-msgstr ""
+msgstr "Wiki Greyhole"
 
 msgid "Home Page"
-msgstr ""
+msgstr "Home Page"
 
 msgid "Hostname"
-msgstr ""
+msgstr "Nome host"
 
 msgid ""
 "How long should free disk space calculations be cached (in seconds). Use 0 "
@@ -208,40 +208,40 @@ msgid ""
 msgstr ""
 
 msgid "If checked, ignored object will be a folder instead of a file."
-msgstr ""
+msgstr "Se selezionato, l'oggetto ignorato sarà una cartella al posto di un file."
 
 msgid "Ignore"
-msgstr ""
+msgstr "Ignora"
 
 msgid "Ignored Files"
-msgstr ""
+msgstr "File Ignorati"
 
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
 msgid "Information"
-msgstr ""
+msgstr "Informazione"
 
 msgid "Install DB"
-msgstr ""
+msgstr "Installa DB"
 
 msgid "Installing Greyhole database"
 msgstr ""
 
 msgid "Label"
-msgstr ""
+msgstr "Etichetta"
 
 msgid "Log Greyhole memory usage on each log line."
 msgstr ""
 
 msgid "Log Memory Usage"
-msgstr ""
+msgstr "Logga Utilizzo Memoria"
 
 msgid "Log level"
-msgstr ""
+msgstr "Livello log"
 
 msgid "Make trash share writeable."
-msgstr ""
+msgstr "Rendi scrivibile la condivisione cestino."
 
 msgid "Min Free"
 msgstr ""
@@ -255,19 +255,19 @@ msgid ""
 msgstr ""
 
 msgid "MySQL root Password"
-msgstr ""
+msgstr "Password root MySQL"
 
 msgid "No"
-msgstr ""
+msgstr "No"
 
 msgid "Number of Copies"
-msgstr ""
+msgstr "Numero di Copie"
 
 msgid "Password"
-msgstr ""
+msgstr "Password"
 
 msgid "Path"
-msgstr ""
+msgstr "Percorso"
 
 msgid "Pool Disk"
 msgstr ""
@@ -292,10 +292,10 @@ msgid "Replaced"
 msgstr ""
 
 msgid "SMB Share"
-msgstr ""
+msgstr "Condivisione SMB"
 
 msgid "Samba Shares"
-msgstr ""
+msgstr "Condivisioni Samba"
 
 msgid ""
 "Scan for files with no metadata in the storage pool drives. This will allow "
@@ -304,19 +304,19 @@ msgid ""
 msgstr ""
 
 msgid "Select Number of Copies ..."
-msgstr ""
+msgstr "Seleziona Numero di Copie ..."
 
 msgid "Select a path ..."
-msgstr ""
+msgstr "Seleziona un percorso ..."
 
 msgid "Select a pool disk ..."
 msgstr ""
 
 msgid "Select a volume ..."
-msgstr ""
+msgstr "Seleziona un volume ..."
 
 msgid "Select an SMB Share ..."
-msgstr ""
+msgstr "Seleziona una Condivisione SMB ..."
 
 msgid ""
 "Send an email when fsck completes, to report on what was checked, and any "
@@ -324,10 +324,10 @@ msgid ""
 msgstr ""
 
 msgid "Settings"
-msgstr ""
+msgstr "Impostazioni"
 
 msgid "Space"
-msgstr ""
+msgstr "Spazio"
 
 msgid ""
 "Speed up fsck by skipping the scan of the metadata store directories. "
@@ -375,43 +375,43 @@ msgid ""
 msgstr ""
 
 msgid "Trash"
-msgstr ""
+msgstr "Cestino"
 
 msgid "Trash Share Path"
-msgstr ""
+msgstr "Percorso Condivisione Cestino"
 
 msgid "Trash Share Volume"
-msgstr ""
+msgstr "Volume Cestino Condiviso"
 
 msgid "Trash Writeable"
-msgstr ""
+msgstr "Cestino Scrivibile"
 
 msgid "Trash deletes"
 msgstr ""
 
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 msgid "Use Default"
-msgstr ""
+msgstr "Usa Predefinito"
 
 msgid "Use Trash"
-msgstr ""
+msgstr "Usa Cestino"
 
 msgid "Used only for installing Greyhole database and will not be saved."
 msgstr ""
 
 msgid "Username"
-msgstr ""
+msgstr "Nome utente"
 
 msgid "Volume"
-msgstr ""
+msgstr "Volume"
 
 msgid "Wait for"
-msgstr ""
+msgstr "Aspetta per"
 
 msgid "Warn"
-msgstr ""
+msgstr "Warn"
 
 msgid ""
 "Warning: Changing your database connection properties may result in stoping "
@@ -432,7 +432,7 @@ msgid ""
 msgstr ""
 
 msgid "Yes"
-msgstr ""
+msgstr "Sì"
 
 msgid ""
 "You can specify per-share trash preferences that will override the global "
@@ -440,4 +440,4 @@ msgid ""
 msgstr ""
 
 msgid "n/a"
-msgstr ""
+msgstr "n/d"
