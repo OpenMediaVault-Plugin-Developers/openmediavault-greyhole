@@ -41,18 +41,20 @@ do
     smb_share_ref=$(omv_config_get "//services/greyhole/smb_shares/share[position()=${index}]/smbref")
     smb_share_name=$(omv_config_get "//services/smb/shares/share[uuid='${smb_share_ref}']/name")
 
-    xmlstarlet sel -t -m "//services/greyhole/smb_shares/share[position()=${index}]" \
-      -o "[${smb_share_name}]" -n \
-      -o "dfree command = /usr/bin/greyhole-dfree" -n \
-      -o "vfs objects = greyhole" -n \
-      ${OMV_CONFIG_FILE} | xmlstarlet unesc >> ${OMV_SAMBA_CONFIG}
+    if [ ! -z "${smb_share_name}" ]; then
+        xmlstarlet sel -t -m "//services/greyhole/smb_shares/share[position()=${index}]" \
+          -o "[${smb_share_name}]" -n \
+          -o "dfree command = /usr/bin/greyhole-dfree" -n \
+          -o "vfs objects = greyhole" -n \
+          ${OMV_CONFIG_FILE} | xmlstarlet unesc >> ${OMV_SAMBA_CONFIG}
+    fi
 
     index=$(( ${index} - 1 ))
 done
 
 if [ "$(omv_config_get "//services/greyhole/trash_share")" != "0" ]; then
 
-	trashsharepath=$(omv_config_get "//services/greyhole/trash_share_path")
+    trashsharepath=$(omv_config_get "//services/greyhole/trash_share_path")
 
     if [ "$(omv_config_get "//services/greyhole/trash_write")" != "0" ]; then
         trashwrite="@users"
@@ -60,7 +62,7 @@ if [ "$(omv_config_get "//services/greyhole/trash_share")" != "0" ]; then
         trashwrite=""
     fi
 
-	cat <<EOF >> ${OMV_SAMBA_CONFIG}
+    cat <<EOF >> ${OMV_SAMBA_CONFIG}
 [Greyhole Trash]
 comment = Greyhole Trash
 path = ${trashsharepath}

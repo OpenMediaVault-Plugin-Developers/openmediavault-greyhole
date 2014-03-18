@@ -8,8 +8,8 @@ Homepage: http://omv-extras.org/simple/index.php?id=how-to-install-greyhole-plug
 
 Package: openmediavault-greyhole
 Architecture: all
-Depends: ${misc:Depends}, openmediavault (>= 0.5.34), openmediavault-mysql (>= 0.5),
- greyhole (>= 0.9.44), cifs-utils, openmediavault (<< 0.6)
+Depends: ${misc:Depends}, openmediavault (>= 0.5.40), openmediavault-mysql (>= 0.5),
+ greyhole (>= 0.9.44), cifs-utils
 Priority: optional
 Description: OpenMediaVault Greyhole (Storage pool server) plugin
  Greyhole is an application that uses Samba to create a storage pool of all

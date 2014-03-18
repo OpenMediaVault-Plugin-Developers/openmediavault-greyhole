@@ -1,9 +1,24 @@
+openmediavault-greyhole (0.6.1) stable; urgency=low
+
+  * Verify samba share exists before adding to greyhole config
+  * Update locales
+  * Update to run on sardaukar and kralizec
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Tue, 18 Mar 2014 13:27:26 -0500
+
 openmediavault-greyhole (0.5.9) stable; urgency=low
 
   * Add samba share notify
   * Allow samba share edit
 
  -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Fri, 14 Feb 2014 13:03:26 -0500
+
+openmediavault-greyhole (0.6.0) stable; urgency=low
+
+  * Update to run on kralizec
+  * Update locales
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Fri, 12 Feb 2014 07:29:26 -0500
 
 openmediavault-greyhole (0.5.8) stable; urgency=low
 

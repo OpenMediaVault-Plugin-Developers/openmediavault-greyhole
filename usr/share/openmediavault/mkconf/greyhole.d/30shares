@@ -42,12 +42,14 @@ do
     smb_share_num_copies=$(omv_config_get "//services/greyhole/smb_shares/share[position()=${index}]/num_copies")
     smb_share_name=$(omv_config_get "//services/smb/shares/share[uuid='${smb_share_ref}']/name")
 
-    xmlstarlet sel -t -m "//services/greyhole/smb_shares/share[position()=${index}]" \
-      -o "num_copies[${smb_share_name}] = ${smb_share_num_copies}" -n \
-      -i "sticky_files[. = '1']" -o "sticky_files = ${smb_share_name}/" -b -n \
-      -i "trash[. = '0']" -o "delete_moves_to_trash[${smb_share_name}] = no" -b -n \
-      -i "trash[. = '1']" -o "delete_moves_to_trash[${smb_share_name}] = yes" -b -n \
-      ${OMV_CONFIG_FILE} | xmlstarlet unesc >> ${GREYHOLE_CONFIG}
+    if [ ! -z "${smb_share_name}" ]; then
+        xmlstarlet sel -t -m "//services/greyhole/smb_shares/share[position()=${index}]" \
+          -o "num_copies[${smb_share_name}] = ${smb_share_num_copies}" -n \
+          -i "sticky_files[. = '1']" -o "sticky_files = ${smb_share_name}/" -b -n \
+          -i "trash[. = '0']" -o "delete_moves_to_trash[${smb_share_name}] = no" -b -n \
+          -i "trash[. = '1']" -o "delete_moves_to_trash[${smb_share_name}] = yes" -b -n \
+          ${OMV_CONFIG_FILE} | xmlstarlet unesc >> ${GREYHOLE_CONFIG}
+    fi
 
     index=$(( ${index} - 1 ))
 done
