@@ -73,7 +73,7 @@ class OMVModuleGreyhole extends OMVModuleServiceAbstract
             "name"    => $this->getName(),
             "title"   => gettext("Greyhole"),
             "enabled" => boolval($object['enable']),
-            "running" => (strpos($output[0], 'Greyhole is running.') > -1)
+            "running" => (strpos($output[0], 'is running') > -1)
         );
     }
 
