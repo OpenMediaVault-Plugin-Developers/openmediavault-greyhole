@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-23 07:38-0600\n"
-"PO-Revision-Date: 2014-03-14 16:59+0000\n"
+"PO-Revision-Date: 2014-04-07 10:02+0000\n"
 "Last-Translator: Paolo Velati <paolo.velati@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/openmediavault-greyhole/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -19,10 +19,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "%s (%s available)"
-msgstr ""
+msgstr "%s (%s disponibile)"
 
 msgid "Add Pool Disk"
-msgstr ""
+msgstr "Aggiungi Disco di Aggregazione"
 
 msgid "Add Samba Share"
 msgstr "Aggiungi Condivisione Samba"
@@ -31,19 +31,19 @@ msgid "Add ignored files"
 msgstr "Aggiungi file ignorati"
 
 msgid "Are you sure you want to install the Greyhole database?"
-msgstr ""
+msgstr "Sei sicuro di voler installare il database di Greyhole?"
 
 msgid "Balance modified"
-msgstr ""
+msgstr "Bilanciamento modificato"
 
 msgid "Cancel"
 msgstr "Cancella"
 
 msgid "Cancel All Checks"
-msgstr ""
+msgstr "Cancella tutti i controlli"
 
 msgid "Check for open Files"
-msgstr ""
+msgstr "Controlla File aperti"
 
 msgid "Checksums"
 msgstr "Checksums"
@@ -81,13 +81,13 @@ msgid "Debug"
 msgstr "Debug"
 
 msgid "Delete Pool Disk"
-msgstr ""
+msgstr "Elimina Disco di Aggregazione"
 
 msgid "Delete Samba Share"
 msgstr "Elimina Condivisione Samba"
 
 msgid "Delete orphaned metadata"
-msgstr ""
+msgstr "Cancella metadata orfani"
 
 msgid ""
 "Disable to get more speed. This might break some files if any application "
@@ -98,7 +98,7 @@ msgid "Disk Free space Cache time"
 msgstr ""
 
 msgid "Disk Pool Management"
-msgstr ""
+msgstr "Gestione Disco di Aggregazione"
 
 msgid "Do you really want to remove the pool disk directory content?"
 msgstr ""
@@ -113,7 +113,7 @@ msgid "Don't walk metadata store"
 msgstr ""
 
 msgid "Edit Pool Disk"
-msgstr ""
+msgstr "Modifica Disco di Aggregazione"
 
 msgid "Edit Samba Share"
 msgstr "Modifica Condivisione Samba"
@@ -151,13 +151,13 @@ msgid "File"
 msgstr "File"
 
 msgid "Files Balance"
-msgstr ""
+msgstr "Bilanciamento file"
 
 msgid "Files Check"
 msgstr "Controllo File"
 
 msgid "Files copies"
-msgstr ""
+msgstr "Copie dei file"
 
 msgid ""
 "Files/Folders that match the patterns below will be ignored by Greyhole."
@@ -167,7 +167,7 @@ msgid "Filesystem"
 msgstr "Filesystem"
 
 msgid "Find orphaned files"
-msgstr ""
+msgstr "Trova file orfani"
 
 msgid "Folder"
 msgstr "Cartella"
@@ -179,10 +179,10 @@ msgid "Going"
 msgstr ""
 
 msgid "Gone"
-msgstr ""
+msgstr "Andato"
 
 msgid "Greyhole"
-msgstr ""
+msgstr "Greyhole"
 
 msgid "Greyhole - Balance"
 msgstr "Greyhole - Bilancia"
@@ -226,7 +226,7 @@ msgid "Install DB"
 msgstr "Installa DB"
 
 msgid "Installing Greyhole database"
-msgstr ""
+msgstr "Installazione database Greyhole in corso"
 
 msgid "Label"
 msgstr "Etichetta"
@@ -244,10 +244,10 @@ msgid "Make trash share writeable."
 msgstr "Rendi scrivibile la condivisione cestino."
 
 msgid "Min Free"
-msgstr ""
+msgstr "Min Libero"
 
 msgid "Min Free (GiB)"
-msgstr ""
+msgstr "Min Libero (GiB)"
 
 msgid ""
 "Move deleted files to trash instead of deleting them. This is a global "
@@ -270,7 +270,7 @@ msgid "Path"
 msgstr "Percorso"
 
 msgid "Pool Disk"
-msgstr ""
+msgstr "Disco di Aggregazione"
 
 msgid "Pool Management"
 msgstr ""
@@ -279,7 +279,7 @@ msgid "Pool Managment"
 msgstr ""
 
 msgid "Pools"
-msgstr ""
+msgstr "Aggregazioni"
 
 msgid ""
 "Read ALL files in your storage pool, and check that file copies are "
@@ -289,7 +289,7 @@ msgid ""
 msgstr ""
 
 msgid "Replaced"
-msgstr ""
+msgstr "Sostitutito"
 
 msgid "SMB Share"
 msgstr "Condivisione SMB"
@@ -310,7 +310,7 @@ msgid "Select a path ..."
 msgstr "Seleziona un percorso ..."
 
 msgid "Select a pool disk ..."
-msgstr ""
+msgstr "Seleziona un disk aggregato ..."
 
 msgid "Select a volume ..."
 msgstr "Seleziona un volume ..."
