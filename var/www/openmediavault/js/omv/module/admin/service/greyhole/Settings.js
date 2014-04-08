@@ -149,7 +149,7 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
             },{
                 name   : "warning",
                 border : false,
-                html   : _("Warning: Changing your database connection properties may result in stoping Greyhole. Stop Greyhole daemon before any change. Make sure the values you are modifying match the MySQL greyhole database values before restarting Greyhole daemon.")
+                html   : _("Warning: Changing your database connection properties may result in stopping Greyhole. Stop Greyhole daemon before any change. Make sure the values you are modifying match the MySQL greyhole database values before restarting Greyhole daemon.")
             },{
                 xtype   : "button",
                 name    : "installdb",
