@@ -71,6 +71,9 @@ case "$1" in
 
     #update-rc.d mountsmb_locally defaults
 
+    dpkg-trigger update-fixperms
+    dpkg-trigger update-locale
+
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
