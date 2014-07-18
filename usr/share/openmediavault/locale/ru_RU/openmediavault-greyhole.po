@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Alexander Savchenko, 2014
 # артур Мудрых <arturmon82@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-23 07:38-0600\n"
-"PO-Revision-Date: 2014-01-23 13:38+0000\n"
-"Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
+"POT-Creation-Date: 2014-07-18 09:11-0500\n"
+"PO-Revision-Date: 2014-07-18 14:13+0000\n"
+"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/openmediavault-greyhole/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,7 +73,7 @@ msgid "Database Settings"
 msgstr "Настройки базы данных"
 
 msgid "Database is installed"
-msgstr ""
+msgstr "База данных установлена"
 
 msgid "Date & Time"
 msgstr "Дата и Время"
@@ -148,7 +149,7 @@ msgid "Extra options"
 msgstr "Дополнительные опции"
 
 msgid "File"
-msgstr ""
+msgstr "Файл"
 
 msgid "Files Balance"
 msgstr "Балансировка файлов"
@@ -170,7 +171,7 @@ msgid "Find orphaned files"
 msgstr "Найти потерянные файлы"
 
 msgid "Folder"
-msgstr ""
+msgstr "Папка"
 
 msgid "General settings"
 msgstr "Общие параметры"
@@ -197,7 +198,7 @@ msgid "Greyhole Wiki"
 msgstr ""
 
 msgid "Home Page"
-msgstr ""
+msgstr "Домашняя страница"
 
 msgid "Hostname"
 msgstr "Имя хоста"
@@ -220,7 +221,7 @@ msgid "Info"
 msgstr "Информация"
 
 msgid "Information"
-msgstr ""
+msgstr "Информация"
 
 msgid "Install DB"
 msgstr ""
@@ -375,7 +376,7 @@ msgid ""
 msgstr ""
 
 msgid "Trash"
-msgstr ""
+msgstr "Корзина"
 
 msgid "Trash Share Path"
 msgstr ""
@@ -393,7 +394,7 @@ msgid "Type"
 msgstr ""
 
 msgid "Use Default"
-msgstr ""
+msgstr "Использовать умолчания"
 
 msgid "Use Trash"
 msgstr ""
@@ -414,8 +415,8 @@ msgid "Warn"
 msgstr ""
 
 msgid ""
-"Warning: Changing your database connection properties may result in stoping "
-"Greyhole. Stop Greyhole daemon before any change. Make sure the values you "
+"Warning: Changing your database connection properties may result in stopping"
+" Greyhole. Stop Greyhole daemon before any change. Make sure the values you "
 "are modifying match the MySQL greyhole database values before restarting "
 "Greyhole daemon."
 msgstr ""
