@@ -24,6 +24,7 @@
 
 Ext.define("OMV.module.admin.diagnostic.log.plugin.Greyhole", {
     extend : "OMV.module.admin.diagnostic.log.plugin.Plugin",
+    alias  : "omv.plugin.diagnostic.log.cups.access",
 
     id       : "greyhole",
     text     : _("Greyhole"),
@@ -54,10 +55,4 @@ Ext.define("OMV.module.admin.diagnostic.log.plugin.Greyhole", {
         { name : "component", type: "string" },
         { name : "event", type: "string" }
     ]
-});
-
-OMV.PluginManager.register({
-    ptype     : "diagnostic",
-    id        : "log",
-    className : "OMV.module.admin.diagnostic.log.plugin.Greyhole"
 });

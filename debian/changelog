@@ -1,3 +1,10 @@
+openmediavault-greyhole (1.0.1) stable; urgency=low
+
+  * Fix logging
+  * Update locales
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Thu, 31 Jul 2014 17:37:28 -0500
+
 openmediavault-greyhole (1.0) stable; urgency=low
 
   * Minor changes to info page
