@@ -115,7 +115,7 @@ $moduleMgr->registerModule(new OMVModuleGreyhole());
 OMVLogFile::registerType("greyhole", array(
     "filename" => "greyhole.log",
     "filepath" => "/var/log/greyhole.log",
-    "regex"    => "/^(\S+\s+\d+\s+\S+)\s+\d+\s+(\S+)\: (.*)$/",
+    "regex"    => "/^(\S+\s+\d+\s+\S+)\s+(\S+\s+\S+)\: (.*)$/",
     "columns"  => array(
         "date"      => array(
             "index" => 1,
