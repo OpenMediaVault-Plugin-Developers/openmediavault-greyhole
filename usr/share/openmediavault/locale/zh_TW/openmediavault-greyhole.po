@@ -3,442 +3,441 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Alexander Savchenko, 2014
-# артур Мудрых <arturmon82@gmail.com>, 2013
+# kochin <kochinc@outlook.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-07-18 09:11-0500\n"
-"PO-Revision-Date: 2014-11-14 19:48+0000\n"
-"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
-"Language-Team: Russian (http://www.transifex.com/projects/p/openmediavault-greyhole/language/ru/)\n"
+"PO-Revision-Date: 2014-11-26 17:16+0000\n"
+"Last-Translator: kochin <kochinc@outlook.com>\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/openmediavault-greyhole/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "%s (%s available)"
-msgstr "%s (%s доступно)"
+msgstr "%s (%s 可用)"
 
 msgid "Add Pool Disk"
-msgstr "Добавить пул дисков"
+msgstr "新增集用磁碟"
 
 msgid "Add Samba Share"
-msgstr ""
+msgstr "新增 Samba 共享"
 
 msgid "Add ignored files"
-msgstr ""
+msgstr "新增略過檔案"
 
 msgid "Are you sure you want to install the Greyhole database?"
-msgstr "Вы уверены, что хотите установить базу данных Greyhole?"
+msgstr "您確定要安裝 Greyhole 資料庫嗎？"
 
 msgid "Balance modified"
-msgstr "Баланс изменен"
+msgstr "平衡已被變更"
 
 msgid "Cancel"
-msgstr "Отмена"
+msgstr "取消"
 
 msgid "Cancel All Checks"
-msgstr "Отменить все проверки"
+msgstr "取消所有檢查"
 
 msgid "Check for open Files"
-msgstr "Проверить открытые файлы"
+msgstr "檢查開啟檔案"
 
 msgid "Checksums"
-msgstr "Контрольные суммы"
+msgstr "核對和"
 
 msgid "Comment"
-msgstr "Комментарий"
+msgstr "註釋"
 
 msgid "Component"
-msgstr "Компонент"
+msgstr "元件"
 
 msgid "Confirmation"
-msgstr "Подтверждение"
+msgstr "確認"
 
 msgid "Create Trash Share"
-msgstr ""
+msgstr "建立垃圾桶共享"
 
 msgid ""
 "Create a samba share called Greyhole Trash that allows browsing of files in "
 "trash."
-msgstr ""
+msgstr "建立一個 samba 共享叫 Greyhole Trash 來允許瀏覽垃圾桶中的檔案。"
 
 msgid "Database Name"
-msgstr "Имя базы данных"
+msgstr "資料庫名稱"
 
 msgid "Database Settings"
-msgstr "Настройки базы данных"
+msgstr "資料庫設定"
 
 msgid "Database is installed"
-msgstr "База данных установлена"
+msgstr "資料庫已被安裝"
 
 msgid "Date & Time"
-msgstr "Дата и Время"
+msgstr "日期語時間"
 
 msgid "Debug"
-msgstr "Отладка"
+msgstr "除錯"
 
 msgid "Delete Pool Disk"
-msgstr "Удалить пул дисков"
+msgstr "刪除集用磁碟"
 
 msgid "Delete Samba Share"
-msgstr ""
+msgstr "刪除 Samba 共享"
 
 msgid "Delete orphaned metadata"
-msgstr "Удалить осиротевшие метаданные"
+msgstr "刪除孤兒元資料"
 
 msgid ""
 "Disable to get more speed. This might break some files if any application "
 "changes your files while Greyhole tries to work on them."
-msgstr "Отключите, чтобы получить более высокую скорость. Это может нарушить некоторые файлы, если любое приложение изменяет ваши файлы, Greyhole пытается работать на них."
+msgstr "停用以取得更快速度。如果當 Geyhole 試著對檔案作業時，有任何應用程式改變了你的檔案，這可能會破壞掉某些檔案。"
 
 msgid "Disk Free space Cache time"
-msgstr " Свободное пространство Диска временный  кэш"
+msgstr "磁碟未用空間緩存時間"
 
 msgid "Disk Pool Management"
-msgstr "Управление дисковым пулом"
+msgstr "磁碟集用管理"
 
 msgid "Do you really want to remove the pool disk directory content?"
-msgstr "Вы действительно хотите удалить содержимое дискового пула ?"
+msgstr "您真的要移除集用磁碟目錄內容嗎？"
 
 msgid ""
 "Do you want to remove the content of the pool disk directory recursively? "
 "Note, the data will be permanently deleted then. Select 'No' to delete the "
 "pool disk directory only or 'Cancel' to abort."
-msgstr "Вы хотите удалить содержание дискового пула рекурсивно? Обратите внимание, что эти данные будут удалены без возможности восстановления. Выберите \"Нет\" для удаления только дискового пула или \"Отмена\" для отмены."
+msgstr "您要遞迴式地移除集用磁碟目錄的內容嗎？注意：資料將被永遠刪除。選擇 '否' 來只刪除集用磁碟目錄，或 '取消' 來中止。"
 
 msgid "Don't walk metadata store"
-msgstr ""
+msgstr "不要走查元資料儲存"
 
 msgid "Edit Pool Disk"
-msgstr "Редактировать дисковый пул"
+msgstr "編輯集用磁碟"
 
 msgid "Edit Samba Share"
-msgstr ""
+msgstr "編輯 Samba 共享"
 
 msgid "Edit ignored files"
-msgstr ""
+msgstr "編輯略過檔案"
 
 msgid "Email"
-msgstr "Email"
+msgstr "電子郵件"
 
 msgid "Email report"
-msgstr "Отчет E-mail"
+msgstr "電子郵件報告"
 
 msgid "Empty Trash"
-msgstr "Очистить корзину"
+msgstr "清空垃圾桶"
 
 msgid "Enable"
-msgstr "Включить"
+msgstr "啟用"
 
 msgid ""
 "Enable this to use modified files copies to help balance the available space"
 " in your storage pool drives."
-msgstr "Включить, использование модифицированных файлов, копированние, чтобы помочь сбалансировать доступное пространство в вашем дисковом пуле."
+msgstr "啟用此項則會應用變更過檔案複本來幫助平衡在你的儲存集用磁碟中的可用空間。"
 
 msgid "Error"
-msgstr "Ошибка"
+msgstr "錯誤"
 
 msgid "Event"
-msgstr "Событие"
+msgstr "試件"
 
 msgid "Extra options"
-msgstr "Дополнительные опции"
+msgstr "額外選項"
 
 msgid "File"
-msgstr "Файл"
+msgstr "檔案"
 
 msgid "Files Balance"
-msgstr "Балансировка файлов"
+msgstr "檔案平衡"
 
 msgid "Files Check"
-msgstr "Проверить файлы"
+msgstr "檔案檢查"
 
 msgid "Files copies"
-msgstr "Копии файлов"
+msgstr "檔案復本"
 
 msgid ""
 "Files/Folders that match the patterns below will be ignored by Greyhole."
-msgstr ""
+msgstr "符合以下型樣的檔案/檔案夾將會被 Greyhole 略過。"
 
 msgid "Filesystem"
-msgstr "Файловая система"
+msgstr "檔案系統"
 
 msgid "Find orphaned files"
-msgstr "Найти потерянные файлы"
+msgstr "尋找孤兒檔案"
 
 msgid "Folder"
-msgstr "Папка"
+msgstr "檔案夾"
 
 msgid "General settings"
-msgstr "Общие параметры"
+msgstr "一般設定"
 
 msgid "Going"
-msgstr ""
+msgstr "磁碟移除中"
 
 msgid "Gone"
-msgstr ""
+msgstr "磁碟已移除"
 
 msgid "Greyhole"
 msgstr "Greyhole"
 
 msgid "Greyhole - Balance"
-msgstr "Greyhole - Баланс"
+msgstr "Greyhole - 平衡"
 
 msgid "Greyhole - Empty Trash"
-msgstr "Greyhole - Очистить корзину"
+msgstr "Greyhole - 清空垃圾桶"
 
 msgid "Greyhole Information"
-msgstr ""
+msgstr "Greyhole 資訊"
 
 msgid "Greyhole Wiki"
-msgstr ""
+msgstr "Greyhole 為基"
 
 msgid "Home Page"
-msgstr "Домашняя страница"
+msgstr "首頁"
 
 msgid "Hostname"
-msgstr "Имя хоста"
+msgstr "主機名稱"
 
 msgid ""
 "How long should free disk space calculations be cached (in seconds). Use 0 "
 "to disable caching."
-msgstr ""
+msgstr "未用空間計算結果應被緩存多長的時間(以秒為單位)。使用 0 來停用緩存。"
 
 msgid "If checked, ignored object will be a folder instead of a file."
-msgstr ""
+msgstr "如果勾選，略過的物件將是檔案夾，而非檔案。"
 
 msgid "Ignore"
-msgstr ""
+msgstr "略過"
 
 msgid "Ignored Files"
-msgstr ""
+msgstr "略過檔案"
 
 msgid "Info"
-msgstr "Информация"
+msgstr "資訊"
 
 msgid "Information"
-msgstr "Информация"
+msgstr "資訊"
 
 msgid "Install DB"
-msgstr ""
+msgstr "安裝資料庫"
 
 msgid "Installing Greyhole database"
-msgstr "Установка базы данных Greyhole"
+msgstr "安裝 Greyhole 資料庫中"
 
 msgid "Label"
-msgstr "Метка"
+msgstr "標籤"
 
 msgid "Log Greyhole memory usage on each log line."
-msgstr ""
+msgstr "在每一行日誌上記錄 Greyhole 的記憶體使用。"
 
 msgid "Log Memory Usage"
-msgstr ""
+msgstr "記錄記憶體使用"
 
 msgid "Log level"
-msgstr ""
+msgstr "日誌層集"
 
 msgid "Make trash share writeable."
-msgstr ""
+msgstr "讓垃圾桶共享可寫入。"
 
 msgid "Min Free"
-msgstr ""
+msgstr "最小未用空間"
 
 msgid "Min Free (GiB)"
-msgstr ""
+msgstr "最小未用空間 (GiB)"
 
 msgid ""
 "Move deleted files to trash instead of deleting them. This is a global "
 "setting that can be overided by local option on each Greyhole share."
-msgstr ""
+msgstr "遷移被刪除檔案到垃圾桶，而非刪除它們。這是一項全站設定，可以在每一個 Greyhole 共享上以局部選項來蓋換掉。"
 
 msgid "MySQL root Password"
-msgstr ""
+msgstr "MySQL root 密碼"
 
 msgid "No"
-msgstr "Нет"
+msgstr "否"
 
 msgid "Number of Copies"
-msgstr "Количество копий"
+msgstr "複本數目"
 
 msgid "Password"
-msgstr "Пароль"
+msgstr "密碼"
 
 msgid "Path"
-msgstr "Путь"
+msgstr "路徑"
 
 msgid "Pool Disk"
-msgstr "Дисковый пул"
+msgstr "級用磁碟"
 
 msgid "Pool Management"
-msgstr "Управление пулом"
+msgstr "集用場管理"
 
 msgid "Pool Managment"
-msgstr ""
+msgstr "集用場管理"
 
 msgid "Pools"
-msgstr "Пулы"
+msgstr "集用場"
 
 msgid ""
 "Read ALL files in your storage pool, and check that file copies are "
 "identical. This will identify any problem you might have with your file-"
 "systems. NOTE: this can take a LONG time to complete, since it will read "
 "everything from all your drives!"
-msgstr "Читать все файлы в пуле устройств хранения данных, и убедиться, что копии файлов идентичны. Это позволит определить любые проблемы которые могут быть с файловой системой. ПРИМЕЧАНИЕ: это может занять много времени, чтобы закончить. Так как он будет читать все данные,со всех ваших дисков!"
+msgstr "讀取你儲存集用場內 全部的 檔案，檢查檔案複本是一模一樣的。這將能指認出在你的檔案系統上任何可能有的問題。注意：這可能花費 很久的 時間來完成，因為它將從你的磁碟上讀取所有的東西！"
 
 msgid "Replaced"
-msgstr "Заменено"
+msgstr "已被換掉"
 
 msgid "SMB Share"
-msgstr ""
+msgstr "SMB 共享"
 
 msgid "Samba Shares"
-msgstr ""
+msgstr "Samba 共享"
 
 msgid ""
 "Scan for files with no metadata in the storage pool drives. This will allow "
 "you to include existing files on a drive in your storage pool without having"
 " to copy them manually."
-msgstr "Сканирование файлов, не имеющих метаданных в пуле накопителей. Это позволит вам включить существующие файлы на диске в пул устройств хранения данных без необходимости копировать их вручную."
+msgstr "在儲存集用磁碟內掃描沒有元資料(metadata)的檔案。這將讓你含入磁碟上現存的檔案到你的儲存集用場內，而不需手動複製它們。"
 
 msgid "Select Number of Copies ..."
-msgstr "Выберите количество экземпляров ..."
+msgstr "選擇複本數目 ..."
 
 msgid "Select a path ..."
-msgstr "Выберите путь ..."
+msgstr "選擇一個路徑 ..."
 
 msgid "Select a pool disk ..."
-msgstr "Выберите дисковый пул ..."
+msgstr "選擇一個集用磁碟 ..."
 
 msgid "Select a volume ..."
-msgstr "Выберите том ..."
+msgstr "選擇一個磁碟 ..."
 
 msgid "Select an SMB Share ..."
-msgstr ""
+msgstr "選擇一個 SMB 共享 ..."
 
 msgid ""
 "Send an email when fsck completes, to report on what was checked, and any "
 "error that was found."
-msgstr "Отправить по электронной почте сообщение о завершении fsck, что было проверено, и любые ошибки, что были найдены."
+msgstr "當 fsck 完成後送一封電子郵件，報告檢查了些什麼，以及找到的任何錯誤。"
 
 msgid "Settings"
-msgstr "Настройки"
+msgstr "設定"
 
 msgid "Space"
-msgstr "Пространство"
+msgstr "空間"
 
 msgid ""
 "Speed up fsck by skipping the scan of the metadata store directories. "
 "Scanning the metadata stores is only required to re-create symbolic links "
 "that might be missing from your shared directories."
-msgstr "Ускорить fsck, пропустив проверку хранилища метаданных каталогов. Сканирование метаданных требуется только для воссоздания символических ссылок, которые могут быть недостающие от ваших общих каталогов."
+msgstr "藉由省略掃描元資料(metadata)儲存目錄來加速 fsck。只有要重新建立在你的共享目錄中遺失的符號鏈接時才需要做掃描元資料儲存。"
 
 msgid "Sticky files"
-msgstr "Липкие файлы"
+msgstr "黏固檔案"
 
 msgid ""
 "Sticky files are files that will always 'live' together in the storage pool."
 " This will allow you to read (and read-only!) those files by using the "
 "storage pool drives themselves, instead of using the mounted shares."
-msgstr "Липкие файлы представляют собой файлы, которые будут всегда \"живые\" вместе с пулом хранения. Это позволит вам читать (и только для чтения!) Эти файлы с помощью пула хранения приводит себя, вместо того чтобы использовать монтированные папки ."
+msgstr "黏固檔案是在儲存集用場內永遠 '住在' 一起的檔案。這將讓你經由使用儲存集用磁碟本身來讀取(以及唯讀)那些檔案，而不是使用掛載的共享。"
 
 msgid ""
 "Tell Greyhole that the missing drive at is gone for good. Greyhole will "
 "start replacing the missing file copies instantly."
-msgstr ""
+msgstr "告訴 Greyhole 不見的磁碟已經一去不復返了。Greyhole 將在瞬間開始取代遺失的檔案複本。"
 
 msgid ""
 "Tell Greyhole that the missing drive will return soon, and that it shouldn't"
 " re-create additional file copies to replace it."
-msgstr ""
+msgstr "告訴 Greyhole 不見的磁碟在不久將回來，它不應該重新建立額外的檔案複本來取代它。"
 
 msgid "Tell Greyhole that you replaced the drive."
-msgstr ""
+msgstr "告訴 Greyhole 你已經換掉該磁碟。"
 
 msgid ""
 "Tell Greyhole that you want to remove a drive. Greyhole will then make sure "
 "you don't loose any files, and that the correct number of file copies are "
 "created to replace the missing drive."
-msgstr ""
+msgstr "告訴 Greyhole 你要移除一個磁碟。Greyhole 則將確定你不失去任何檔案，並且正確數目的檔案複本會被建立來取代失去的磁碟。"
 
 msgid ""
 "This is how much free space you want to reserve on each drive. This is a "
 "soft limit that will be ignored if the necessary hard drives are below their"
 " minimum."
-msgstr ""
+msgstr "這是你在每個磁碟上要保留多少的未用空間。這是一項軟性極限，如果需要用到的硬碟落到此極限之下，則它會被忽略。"
 
 msgid ""
 "This is the number of copies of each file you want Greyhole to keep per "
 "Share. This is not the number of duplicates! 2 copies = 1 duplicate."
-msgstr ""
+msgstr "這是你要 Greyhole 在每個共享上保持每個檔案的複本之個數。這並不是複製的次數！2 個複本 = 1 次複製。"
 
 msgid "Trash"
-msgstr "Корзина"
+msgstr "垃圾桶"
 
 msgid "Trash Share Path"
-msgstr ""
+msgstr "垃圾桶共享路徑"
 
 msgid "Trash Share Volume"
-msgstr ""
+msgstr "垃圾桶共享磁碟"
 
 msgid "Trash Writeable"
-msgstr ""
+msgstr "垃圾桶可寫入"
 
 msgid "Trash deletes"
-msgstr ""
+msgstr "刪除至垃圾桶"
 
 msgid "Type"
-msgstr ""
+msgstr "型式"
 
 msgid "Use Default"
-msgstr "Использовать умолчания"
+msgstr "使用預設"
 
 msgid "Use Trash"
-msgstr ""
+msgstr "使用垃圾桶"
 
 msgid "Used only for installing Greyhole database and will not be saved."
-msgstr ""
+msgstr "只有在安裝 Greyhole 資料庫時使用，並不會被儲存起來。"
 
 msgid "Username"
-msgstr "Имя пользователя"
+msgstr "用戶名稱"
 
 msgid "Volume"
-msgstr "Том"
+msgstr "磁碟"
 
 msgid "Wait for"
-msgstr "Подождите"
+msgstr "等待"
 
 msgid "Warn"
-msgstr ""
+msgstr "警告"
 
 msgid ""
 "Warning: Changing your database connection properties may result in stopping"
 " Greyhole. Stop Greyhole daemon before any change. Make sure the values you "
 "are modifying match the MySQL greyhole database values before restarting "
 "Greyhole daemon."
-msgstr ""
+msgstr "警告：改變你的資料庫連接屬性可造成停止 Greyhole。在做任何改變之前，請先停止 Greyhole。在重新啟動 Greyhole 背景服務程序前，請先確定你想改變的值符合 MySQL greyhole 資料庫的值。"
 
 msgid ""
 "When fsck find metadata files with no file copies, delete those metadata "
 "files. If the file copies re-appear later, you'll need to run fsck with "
 "--find-orphaned-files to have them reappear in your shares."
-msgstr ""
+msgstr "當 fsck 找到沒有檔案複本的元資料(metadata)檔案，會刪除那些元資料檔案。若檔案複本之後又出現，你必須執行 fsck 加上  --find-orphaned-files 來讓它們重新出現於你的共享中。"
 
 msgid ""
 "Will receive email reports for daily fsck or when all drives are out of "
 "available space."
-msgstr ""
+msgstr "將收到每日 fsck 或所有磁碟都沒有可用空間的電子郵件報告。"
 
 msgid "Yes"
-msgstr "Да"
+msgstr "是"
 
 msgid ""
 "You can specify per-share trash preferences that will override the global "
 "trash preference."
-msgstr ""
+msgstr "您可以指定每個共享的垃圾桶偏好，它將會蓋換掉全站的垃圾桶偏好。"
 
 msgid "n/a"
-msgstr "н/д"
+msgstr "n/a"

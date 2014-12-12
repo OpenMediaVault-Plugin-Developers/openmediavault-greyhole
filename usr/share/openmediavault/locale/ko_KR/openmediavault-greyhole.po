@@ -1,0 +1,443 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Hyeonkyu Chu <hyeonkyu@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-greyhole\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-07-18 09:11-0500\n"
+"PO-Revision-Date: 2014-11-22 13:33+0000\n"
+"Last-Translator: Hyeonkyu Chu <hyeonkyu@gmail.com>\n"
+"Language-Team: Korean (Korea) (http://www.transifex.com/projects/p/openmediavault-greyhole/language/ko_KR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko_KR\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "%s (%s available)"
+msgstr "%s (%s 사용 가능)"
+
+msgid "Add Pool Disk"
+msgstr "Pool 디스크 추가"
+
+msgid "Add Samba Share"
+msgstr "SAMBA 서버 추가"
+
+msgid "Add ignored files"
+msgstr "무시할 파일 추가"
+
+msgid "Are you sure you want to install the Greyhole database?"
+msgstr "정말로 Greyhole 데이터베이스를 설치 하시겠습니까?"
+
+msgid "Balance modified"
+msgstr "균형 조절"
+
+msgid "Cancel"
+msgstr "취소"
+
+msgid "Cancel All Checks"
+msgstr "모든 선택 취소"
+
+msgid "Check for open Files"
+msgstr "열린 파일 확인"
+
+msgid "Checksums"
+msgstr "검증 값"
+
+msgid "Comment"
+msgstr "설명"
+
+msgid "Component"
+msgstr "구성 요소"
+
+msgid "Confirmation"
+msgstr "확인"
+
+msgid "Create Trash Share"
+msgstr "휴지통 공유 생성"
+
+msgid ""
+"Create a samba share called Greyhole Trash that allows browsing of files in "
+"trash."
+msgstr "휴지통의 파일 검색이 가능한, SAMBA 공유 '<b>Greyhole Trash</b>'를 만듭니다."
+
+msgid "Database Name"
+msgstr "데이터베이스 이름"
+
+msgid "Database Settings"
+msgstr "데이터베이스 설정"
+
+msgid "Database is installed"
+msgstr "데이터베이스가 설치되었습니다"
+
+msgid "Date & Time"
+msgstr "날짜 & 시간"
+
+msgid "Debug"
+msgstr "디버그"
+
+msgid "Delete Pool Disk"
+msgstr "Pool 디스크 지우기"
+
+msgid "Delete Samba Share"
+msgstr "SAMBA 공유 지우기"
+
+msgid "Delete orphaned metadata"
+msgstr "무효한 속성 지우기"
+
+msgid ""
+"Disable to get more speed. This might break some files if any application "
+"changes your files while Greyhole tries to work on them."
+msgstr "더 빠른 속도를 위해 비활성화 합니다. Greyhole이 작업을 시도하는 동안, 다른 응용 프로그램이 파일을 변경하는 경우, 일부 파일이 손상될 수 있습니다."
+
+msgid "Disk Free space Cache time"
+msgstr "디스크 여유 공간 캐시 시간"
+
+msgid "Disk Pool Management"
+msgstr "디스크 Pool 관리"
+
+msgid "Do you really want to remove the pool disk directory content?"
+msgstr "정말로 Pool 디스크 디렉터리 내용을 지우시겠습니까?"
+
+msgid ""
+"Do you want to remove the content of the pool disk directory recursively? "
+"Note, the data will be permanently deleted then. Select 'No' to delete the "
+"pool disk directory only or 'Cancel' to abort."
+msgstr "정말로 Pool 디스크 디렉터리 전체의 내용을 지우시겠습니까? 참고, 데이터는 영구적으로 삭제됩니다. 선택, '아니오': Pool 디스크 디렉터리만 삭제. '취소': 삭제."
+
+msgid "Don't walk metadata store"
+msgstr "속성 저장소 생략"
+
+msgid "Edit Pool Disk"
+msgstr "Pool 디스크 편집"
+
+msgid "Edit Samba Share"
+msgstr "SAMBA 공유 편집"
+
+msgid "Edit ignored files"
+msgstr "무시할 파일 편집"
+
+msgid "Email"
+msgstr "전자 우편"
+
+msgid "Email report"
+msgstr "전자 우편 보고서"
+
+msgid "Empty Trash"
+msgstr "휴지통 비우기"
+
+msgid "Enable"
+msgstr "활성화"
+
+msgid ""
+"Enable this to use modified files copies to help balance the available space"
+" in your storage pool drives."
+msgstr "저장소 Pool 드라이브에 여유 공간의 균형을 맞출 수정된 파일의 복사본을 사용하려면 활성화 합니다."
+
+msgid "Error"
+msgstr "오류"
+
+msgid "Event"
+msgstr "이벤트"
+
+msgid "Extra options"
+msgstr "추가 선택 사항"
+
+msgid "File"
+msgstr "파일"
+
+msgid "Files Balance"
+msgstr "파일 조정"
+
+msgid "Files Check"
+msgstr "파일 확인"
+
+msgid "Files copies"
+msgstr "파일 복사본"
+
+msgid ""
+"Files/Folders that match the patterns below will be ignored by Greyhole."
+msgstr "아래의 형식에 일치하는 파일/폴더는, Greyhole에 의해 무시됩니다."
+
+msgid "Filesystem"
+msgstr "파일 시스템"
+
+msgid "Find orphaned files"
+msgstr "무효한 파일 찾기"
+
+msgid "Folder"
+msgstr "폴더"
+
+msgid "General settings"
+msgstr "일반 설정"
+
+msgid "Going"
+msgstr "사라질"
+
+msgid "Gone"
+msgstr "사라진"
+
+msgid "Greyhole"
+msgstr "Greyhole"
+
+msgid "Greyhole - Balance"
+msgstr "Greyhole - 조정"
+
+msgid "Greyhole - Empty Trash"
+msgstr "Greyhole - 휴지통 비우기"
+
+msgid "Greyhole Information"
+msgstr "Greyhole 정보"
+
+msgid "Greyhole Wiki"
+msgstr "Greyhole 위키"
+
+msgid "Home Page"
+msgstr "홈페이지"
+
+msgid "Hostname"
+msgstr "호스트 이름"
+
+msgid ""
+"How long should free disk space calculations be cached (in seconds). Use 0 "
+"to disable caching."
+msgstr "디스크 여유 공간 계산의 캐시에 사용할 시간(초). 캐싱을 사용하지 않으려면 0을 사용합니다."
+
+msgid "If checked, ignored object will be a folder instead of a file."
+msgstr "선택하면, 무시할 객체는 파일 대신 폴더가 될 것입니다."
+
+msgid "Ignore"
+msgstr "무시"
+
+msgid "Ignored Files"
+msgstr "무시할 파일"
+
+msgid "Info"
+msgstr "정보"
+
+msgid "Information"
+msgstr "정보"
+
+msgid "Install DB"
+msgstr "DB 설치"
+
+msgid "Installing Greyhole database"
+msgstr "Greyhole 데이터베이스 설치"
+
+msgid "Label"
+msgstr "레이블"
+
+msgid "Log Greyhole memory usage on each log line."
+msgstr "각 기록 줄에 Greyhole 메모리 사용을 기록합니다."
+
+msgid "Log Memory Usage"
+msgstr "메모리 사용 기록"
+
+msgid "Log level"
+msgstr "기록 수준"
+
+msgid "Make trash share writeable."
+msgstr "휴지통 공유를 쓰기 가능하게 만듭니다."
+
+msgid "Min Free"
+msgstr "최소 여유 공간"
+
+msgid "Min Free (GiB)"
+msgstr "최소 여유 공간(GiB)"
+
+msgid ""
+"Move deleted files to trash instead of deleting them. This is a global "
+"setting that can be overided by local option on each Greyhole share."
+msgstr "삭제하는 대신 휴지통으로 이동합니다. 이 전역 설정은 각 Greyhole 공유의 지역 선택 사항으로 대체할 수 있습니다."
+
+msgid "MySQL root Password"
+msgstr "MySQL root 암호"
+
+msgid "No"
+msgstr "아니오"
+
+msgid "Number of Copies"
+msgstr "복사본 수"
+
+msgid "Password"
+msgstr "암호"
+
+msgid "Path"
+msgstr "경로"
+
+msgid "Pool Disk"
+msgstr "Pool 디스크"
+
+msgid "Pool Management"
+msgstr "Pool 관리"
+
+msgid "Pool Managment"
+msgstr "Pool 관리"
+
+msgid "Pools"
+msgstr "Pools"
+
+msgid ""
+"Read ALL files in your storage pool, and check that file copies are "
+"identical. This will identify any problem you might have with your file-"
+"systems. NOTE: this can take a LONG time to complete, since it will read "
+"everything from all your drives!"
+msgstr "저장소 Pool의 모든 파일을 읽고, 파일의 사본이 동일한지 확인합니다. 이것은 파일 시스템이 가질 수 있는 문제를 식별합니다. 참고: 모든 드라이브에서 모든 것을 읽기 때문에, 완료하는 데 시간이 오래 걸릴 수 있습니다!"
+
+msgid "Replaced"
+msgstr "교체된"
+
+msgid "SMB Share"
+msgstr "SMB 공유"
+
+msgid "Samba Shares"
+msgstr "SAMBA 공유"
+
+msgid ""
+"Scan for files with no metadata in the storage pool drives. This will allow "
+"you to include existing files on a drive in your storage pool without having"
+" to copy them manually."
+msgstr "저장소 Pool 드라이브에서 속성이 없는 파일을 검색합니다.<br/>This will allow you to include existing files on a drive in your storage pool without having to copy them manually."
+
+msgid "Select Number of Copies ..."
+msgstr "복사본의 수 선택 ..."
+
+msgid "Select a path ..."
+msgstr "경로 선택 ..."
+
+msgid "Select a pool disk ..."
+msgstr "Pool 디스크 선택 ..."
+
+msgid "Select a volume ..."
+msgstr "볼륨 선택 ..."
+
+msgid "Select an SMB Share ..."
+msgstr "SMB 공유 선택 ..."
+
+msgid ""
+"Send an email when fsck completes, to report on what was checked, and any "
+"error that was found."
+msgstr "fsck가 완료되었을 때, 발견된 오류를 전자우편으로 보냅니다."
+
+msgid "Settings"
+msgstr "설정"
+
+msgid "Space"
+msgstr "여유 공간"
+
+msgid ""
+"Speed up fsck by skipping the scan of the metadata store directories. "
+"Scanning the metadata stores is only required to re-create symbolic links "
+"that might be missing from your shared directories."
+msgstr "속성 저장소 디렉터리 검색을 생략하여 fsck 속도를 올립니다.<br/>Scanning the metadata stores is only required to re-create symbolic links that might be missing from your shared directories."
+
+msgid "Sticky files"
+msgstr "고정 파일"
+
+msgid ""
+"Sticky files are files that will always 'live' together in the storage pool."
+" This will allow you to read (and read-only!) those files by using the "
+"storage pool drives themselves, instead of using the mounted shares."
+msgstr "고정 파일은 저장소 Pool에 항상 'live'로 일관하는 파일입니다.<br/>This will allow you to read (and read-only!) those files by using the storage pool drives themselves, instead of using the mounted shares."
+
+msgid ""
+"Tell Greyhole that the missing drive at is gone for good. Greyhole will "
+"start replacing the missing file copies instantly."
+msgstr "Greyhole에게 누락된 드라이브가 완전히 사라졌다고 알려줍니다. Greyhole은 즉시 누락된 파일의 복사본을 대체하기 시작합니다."
+
+msgid ""
+"Tell Greyhole that the missing drive will return soon, and that it shouldn't"
+" re-create additional file copies to replace it."
+msgstr "Greyhole에게 누락된 드라이브가 곧 돌아올 것이라고 알려주며, 교체할 추가 파일의 복사본을 다시 만들지 않습니다."
+
+msgid "Tell Greyhole that you replaced the drive."
+msgstr "Greyhole에게 드라이브를 교체했다고 알려줍니다."
+
+msgid ""
+"Tell Greyhole that you want to remove a drive. Greyhole will then make sure "
+"you don't loose any files, and that the correct number of file copies are "
+"created to replace the missing drive."
+msgstr "Greyhole에게 드라이브를 제거하기 원한다고 알려줍니다. Greyhole은 파일을 잃지 않았다는 것을 당신에게서 확인하며, 누락된 드라이브를 교체하기 위해 파일 복사본의 정확한 수가 생성됩니다."
+
+msgid ""
+"This is how much free space you want to reserve on each drive. This is a "
+"soft limit that will be ignored if the necessary hard drives are below their"
+" minimum."
+msgstr "각 드라이브에 예약할 여유 공간.<br/>This is a soft limit that will be ignored if the necessary hard drives are below their minimum."
+
+msgid ""
+"This is the number of copies of each file you want Greyhole to keep per "
+"Share. This is not the number of duplicates! 2 copies = 1 duplicate."
+msgstr "이것은 Greyhole이 각 공유에서 유지하는 각 파일의 사본의 수입니다. 이것은 중복 번호가 아닙니다! 2 부 = 1 중복."
+
+msgid "Trash"
+msgstr "휴지통"
+
+msgid "Trash Share Path"
+msgstr "휴지통 공유 경로"
+
+msgid "Trash Share Volume"
+msgstr "휴지통 공유 볼륨"
+
+msgid "Trash Writeable"
+msgstr "휴지통 쓰기 가능"
+
+msgid "Trash deletes"
+msgstr "휴지통 삭제"
+
+msgid "Type"
+msgstr "유형"
+
+msgid "Use Default"
+msgstr "기본 사용"
+
+msgid "Use Trash"
+msgstr "휴지통 사용"
+
+msgid "Used only for installing Greyhole database and will not be saved."
+msgstr "Greyhole 데이터베이스를 설치할 때만 사용하고, 저장되지 않습니다."
+
+msgid "Username"
+msgstr "사용자 이름"
+
+msgid "Volume"
+msgstr "볼륨"
+
+msgid "Wait for"
+msgstr "대기"
+
+msgid "Warn"
+msgstr "경고"
+
+msgid ""
+"Warning: Changing your database connection properties may result in stopping"
+" Greyhole. Stop Greyhole daemon before any change. Make sure the values you "
+"are modifying match the MySQL greyhole database values before restarting "
+"Greyhole daemon."
+msgstr "경고: 데이터베이스 연결 속성을 변경하면 Greyhole이 중지 될 수 있습니다. 변경 전에 Greyhole 데몬을 중지합니다. Greyhole 데몬을 다시 시작하기 전에, 수정 중인 값이 MySQL의 greyhole 데이터베이스 값과 일치해야 합니다."
+
+msgid ""
+"When fsck find metadata files with no file copies, delete those metadata "
+"files. If the file copies re-appear later, you'll need to run fsck with "
+"--find-orphaned-files to have them reappear in your shares."
+msgstr "fsck가 복사본이 없는 파일에 대한 속성 파일을 찾았을 때, 그 속성 파일을 삭제합니다. 파일이 나중에 다시 나타나는 경우, 공유에서 재현된 파일에 대해 <b>fsck</b>를 <b>--find-orphaned-files</b>와 함께 실행할 필요가 있습니다."
+
+msgid ""
+"Will receive email reports for daily fsck or when all drives are out of "
+"available space."
+msgstr "매일의 fsck 또는 모든 드라이브의 사용 가능한 공간이 부족할 때, 전자 우편으로 보고서를 받게 됩니다."
+
+msgid "Yes"
+msgstr "예"
+
+msgid ""
+"You can specify per-share trash preferences that will override the global "
+"trash preference."
+msgstr "전역 휴지통 환경을 무시하고, 각 공유의 휴지통 환경을 지정할 수 있습니다."
+
+msgid "n/a"
+msgstr "n/a"

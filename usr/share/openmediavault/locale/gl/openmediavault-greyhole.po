@@ -1,0 +1,443 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2013-2014
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-greyhole\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-07-18 09:11-0500\n"
+"PO-Revision-Date: 2014-12-07 09:54+0000\n"
+"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
+"Language-Team: Galician (http://www.transifex.com/projects/p/openmediavault-greyhole/language/gl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: gl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "%s (%s available)"
+msgstr "%s (%s dispoñíbel)"
+
+msgid "Add Pool Disk"
+msgstr "Engadir unha agrupación de discos"
+
+msgid "Add Samba Share"
+msgstr "Engadir unha compartición samba"
+
+msgid "Add ignored files"
+msgstr "Engadir os ficheiros ignorados"
+
+msgid "Are you sure you want to install the Greyhole database?"
+msgstr "Confirma que quere instalar a base de datos de Greyhole?"
+
+msgid "Balance modified"
+msgstr "Balanceo modificado"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Cancel All Checks"
+msgstr "Cancelar todas as comprobacións"
+
+msgid "Check for open Files"
+msgstr "Comprobar se hai ficheiros abertos"
+
+msgid "Checksums"
+msgstr "Sumas de comprobación"
+
+msgid "Comment"
+msgstr "Comentario"
+
+msgid "Component"
+msgstr "Compoñentes"
+
+msgid "Confirmation"
+msgstr "Confirmación"
+
+msgid "Create Trash Share"
+msgstr "Crear un cesto do lixo compartido"
+
+msgid ""
+"Create a samba share called Greyhole Trash that allows browsing of files in "
+"trash."
+msgstr "Crear un compartido Samba Chamado «Lixo Greyhole», que permita acceder aos ficheiros borrados."
+
+msgid "Database Name"
+msgstr "Nome da base de datos"
+
+msgid "Database Settings"
+msgstr "Axustes da base de datos"
+
+msgid "Database is installed"
+msgstr "A base de datos está instalada"
+
+msgid "Date & Time"
+msgstr "Data e hora"
+
+msgid "Debug"
+msgstr "Depuración"
+
+msgid "Delete Pool Disk"
+msgstr "Eliminar agrupación de discos"
+
+msgid "Delete Samba Share"
+msgstr "Eliminar a compartición samba"
+
+msgid "Delete orphaned metadata"
+msgstr "Eliminar os metadatos orfos"
+
+msgid ""
+"Disable to get more speed. This might break some files if any application "
+"changes your files while Greyhole tries to work on them."
+msgstr "Desactivalo para obter máis velocidade. Pode estragar os ficheiros de algún aplicativo cambia o ficheiro mentres o Greyhole tenta traballar con el."
+
+msgid "Disk Free space Cache time"
+msgstr "Tempo na caché do  espazo libre no disco"
+
+msgid "Disk Pool Management"
+msgstr "Administrar a agrupación"
+
+msgid "Do you really want to remove the pool disk directory content?"
+msgstr "Confirma que quere retirar o contido na agrupación de discos?"
+
+msgid ""
+"Do you want to remove the content of the pool disk directory recursively? "
+"Note, the data will be permanently deleted then. Select 'No' to delete the "
+"pool disk directory only or 'Cancel' to abort."
+msgstr "Confirma que quere retirar o contido do directorio da agrupación de discos de xeito recursivo? Lembre que vai ser eliminado de xeito permanente? Prema «Non» para eliminar só o  directorio (sen recursividade) oo «Cancelar» para interromper a operación."
+
+msgid "Don't walk metadata store"
+msgstr "Non ter en conta o almacén de metadatos"
+
+msgid "Edit Pool Disk"
+msgstr "Editar a agrupación de discos"
+
+msgid "Edit Samba Share"
+msgstr "Editar a compartición samba"
+
+msgid "Edit ignored files"
+msgstr "Editar os ficheiros ignorados"
+
+msgid "Email"
+msgstr "Correo"
+
+msgid "Email report"
+msgstr "Informe do correo"
+
+msgid "Empty Trash"
+msgstr "Baleirar o lixo"
+
+msgid "Enable"
+msgstr "Activar"
+
+msgid ""
+"Enable this to use modified files copies to help balance the available space"
+" in your storage pool drives."
+msgstr "Active isto para usar as copias dos ficheiros modificados para axudar a balancear o espazo dispoñíbel na agrupación de unidades de almacenamento."
+
+msgid "Error"
+msgstr "Erro"
+
+msgid "Event"
+msgstr "Actividade"
+
+msgid "Extra options"
+msgstr "Opcións adicionais"
+
+msgid "File"
+msgstr "Ficheiro"
+
+msgid "Files Balance"
+msgstr "Balanceo de ficheiros"
+
+msgid "Files Check"
+msgstr "Ficheiros comprobados"
+
+msgid "Files copies"
+msgstr "Ficheiros copiados"
+
+msgid ""
+"Files/Folders that match the patterns below will be ignored by Greyhole."
+msgstr "Os ficheiros/cartafoles que coincidan cos patróns seguintes van seren ignorados por Greyhole."
+
+msgid "Filesystem"
+msgstr "Sistema de ficheiros"
+
+msgid "Find orphaned files"
+msgstr "Buscar ficheiros orfos"
+
+msgid "Folder"
+msgstr "Cartafol"
+
+msgid "General settings"
+msgstr "Axustes xerais"
+
+msgid "Going"
+msgstr "Saída"
+
+msgid "Gone"
+msgstr "Feito"
+
+msgid "Greyhole"
+msgstr "Greyhole"
+
+msgid "Greyhole - Balance"
+msgstr "Greyhole - Balance"
+
+msgid "Greyhole - Empty Trash"
+msgstr "Greyhole - Baleirar o lixo"
+
+msgid "Greyhole Information"
+msgstr "Información de Greyhole"
+
+msgid "Greyhole Wiki"
+msgstr "Wiki de Greyhole"
+
+msgid "Home Page"
+msgstr "Páxina de inicio"
+
+msgid "Hostname"
+msgstr "Nome da máquina"
+
+msgid ""
+"How long should free disk space calculations be cached (in seconds). Use 0 "
+"to disable caching."
+msgstr "Canto tempo (en segundos) debe gardarse na caché o calculo do espazo libre no disco. Use 0 para desactivar a caché."
+
+msgid "If checked, ignored object will be a folder instead of a file."
+msgstr "Se está marcado, o obxecto ignorado será un cartafol no canto dun ficheiro."
+
+msgid "Ignore"
+msgstr "Ignorar"
+
+msgid "Ignored Files"
+msgstr "Ficheiros ignorados"
+
+msgid "Info"
+msgstr "Info."
+
+msgid "Information"
+msgstr "Información"
+
+msgid "Install DB"
+msgstr "Instalar a BD"
+
+msgid "Installing Greyhole database"
+msgstr "Instalando a base de datos de Greyhole"
+
+msgid "Label"
+msgstr "Etiqueta"
+
+msgid "Log Greyhole memory usage on each log line."
+msgstr "Escribir o uso de memoria do Greyhole en cada liña do rexistro."
+
+msgid "Log Memory Usage"
+msgstr "Rexistrar o uso da memoria"
+
+msgid "Log level"
+msgstr "Nivel de rexistro"
+
+msgid "Make trash share writeable."
+msgstr "Facer que se poida escribir no cesto do lixo."
+
+msgid "Min Free"
+msgstr "Mín. libre"
+
+msgid "Min Free (GiB)"
+msgstr "Mín. libre (GiB)"
+
+msgid ""
+"Move deleted files to trash instead of deleting them. This is a global "
+"setting that can be overided by local option on each Greyhole share."
+msgstr "Mover os ficheiros eliminados ao lixo no canto de eliminalos. Este é un axuste global que pode modificado pola opción local en cada compartición do Greyhole."
+
+msgid "MySQL root Password"
+msgstr "Contrasinal de «root» de MySQL"
+
+msgid "No"
+msgstr "Non"
+
+msgid "Number of Copies"
+msgstr "Número de copias"
+
+msgid "Password"
+msgstr "Contrasinal"
+
+msgid "Path"
+msgstr "Ruta"
+
+msgid "Pool Disk"
+msgstr "Agrupación de discos"
+
+msgid "Pool Management"
+msgstr "Administración da agrupación"
+
+msgid "Pool Managment"
+msgstr "Administración da agrupación"
+
+msgid "Pools"
+msgstr "Agrupacións"
+
+msgid ""
+"Read ALL files in your storage pool, and check that file copies are "
+"identical. This will identify any problem you might have with your file-"
+"systems. NOTE: this can take a LONG time to complete, since it will read "
+"everything from all your drives!"
+msgstr "Lee TODOS os ficheiros na agrupación de de almacenamento, e comproba que as copias son idénticas. Isto permite identificar posíbeis problemas co sistema de ficheiros. NOTA: esta operación pode levarlle MOITO tempo, xa que debe ler todos os ficheiros de todas as unidades."
+
+msgid "Replaced"
+msgstr "Substituído"
+
+msgid "SMB Share"
+msgstr "Compartido por SMB"
+
+msgid "Samba Shares"
+msgstr "Comparticións samba"
+
+msgid ""
+"Scan for files with no metadata in the storage pool drives. This will allow "
+"you to include existing files on a drive in your storage pool without having"
+" to copy them manually."
+msgstr "Buscar ficheiros que non conteñan metadatos na agrupación de unidades. Isto permítelle incluír ficheiros existentes nun disco da agrupación de almacenamento sen ter que copialos manualmente."
+
+msgid "Select Number of Copies ..."
+msgstr "Seleccione o nº de copias ..."
+
+msgid "Select a path ..."
+msgstr "Seleccione unha ruta ..."
+
+msgid "Select a pool disk ..."
+msgstr "Seleccione unha agrupación de discos ..."
+
+msgid "Select a volume ..."
+msgstr "Seleccione un volume ..."
+
+msgid "Select an SMB Share ..."
+msgstr "Seleccione unha compartición por SMB ..."
+
+msgid ""
+"Send an email when fsck completes, to report on what was checked, and any "
+"error that was found."
+msgstr "Envía un correo cando remate a comprobación (fsck) cos erros atopados e os ficheiros revisados."
+
+msgid "Settings"
+msgstr "Axustes"
+
+msgid "Space"
+msgstr "Espazo"
+
+msgid ""
+"Speed up fsck by skipping the scan of the metadata store directories. "
+"Scanning the metadata stores is only required to re-create symbolic links "
+"that might be missing from your shared directories."
+msgstr "Acelera fsck omitindo a comprobación dos metadatos almacenados nos directorios. Comprobar os directorios só é necesario cando se quere volver crear as ligazóns simbólicas que poidan faltar nos directorios compartidos."
+
+msgid "Sticky files"
+msgstr "Ficheiros persistentes"
+
+msgid ""
+"Sticky files are files that will always 'live' together in the storage pool."
+" This will allow you to read (and read-only!) those files by using the "
+"storage pool drives themselves, instead of using the mounted shares."
+msgstr "Os ficheiros persistentes son ficheiros que estarán sempre «vivos» na agrupación de almacenamento, Isto permitiralle lelos (e só lelos) utilizando directamente a agrupación de unidades de almacenamento, no canto de ter que montar os compartidos. "
+
+msgid ""
+"Tell Greyhole that the missing drive at is gone for good. Greyhole will "
+"start replacing the missing file copies instantly."
+msgstr "Comunica a Greyhole que a unidade retirada non vai seren substituída. Greyhole comezará a substituír as copias desaparecidas inmediatamente."
+
+msgid ""
+"Tell Greyhole that the missing drive will return soon, and that it shouldn't"
+" re-create additional file copies to replace it."
+msgstr "Comunica a Greyhole que a unidade retirada recuperarase logo, e que non debe volver crear copias adicionais dos ficheiros para substituílas."
+
+msgid "Tell Greyhole that you replaced the drive."
+msgstr "Comunica a Greyhole que vostede xa substituíu a unidade."
+
+msgid ""
+"Tell Greyhole that you want to remove a drive. Greyhole will then make sure "
+"you don't loose any files, and that the correct number of file copies are "
+"created to replace the missing drive."
+msgstr "Comunica a Greyhole que vostede quere retirar a unidade. Greyhole asegurarase de que non se perde ningún ficheiro e vai ser creado o número correcto de copias para substituír as que hai na unidade retirada."
+
+msgid ""
+"This is how much free space you want to reserve on each drive. This is a "
+"soft limit that will be ignored if the necessary hard drives are below their"
+" minimum."
+msgstr "Este é o espazo libre que quere reservar en cada unidade. Este é un límite flexíbel que será omitido se os discos necesarios están por baixo do seu mínimo."
+
+msgid ""
+"This is the number of copies of each file you want Greyhole to keep per "
+"Share. This is not the number of duplicates! 2 copies = 1 duplicate."
+msgstr "Este é o número de copias de cada ficheiro que quere que o Greyhole manteña por compartido. Non é o numero de duplicados! 2 copias = 1 duplicado"
+
+msgid "Trash"
+msgstr "Lixo"
+
+msgid "Trash Share Path"
+msgstr "Ruta ao cesto do lixo compartido"
+
+msgid "Trash Share Volume"
+msgstr "Volume do cesto do lixo compartido"
+
+msgid "Trash Writeable"
+msgstr "Cesto do lixo escribíbel"
+
+msgid "Trash deletes"
+msgstr "Eliminar cara ao lixo"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Use Default"
+msgstr "Usar o predeterminado"
+
+msgid "Use Trash"
+msgstr "Usar o lixo"
+
+msgid "Used only for installing Greyhole database and will not be saved."
+msgstr "Usase só para instalar a base de datos do Greyhole e non se gardará."
+
+msgid "Username"
+msgstr "Nome de usuario"
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "Wait for"
+msgstr "Agardar por"
+
+msgid "Warn"
+msgstr "Atención"
+
+msgid ""
+"Warning: Changing your database connection properties may result in stopping"
+" Greyhole. Stop Greyhole daemon before any change. Make sure the values you "
+"are modifying match the MySQL greyhole database values before restarting "
+"Greyhole daemon."
+msgstr "Aviso: Cambiar as propiedades da conexión da base de datos, pode dar lugar a que o Greyhole se deteña. Pare o servizo (daemon) Greyhole antes de facer calquera cambio. Asegúrese de que os cambios realizados na base de datos do Greyhole son correctos antes de reiniciar o servizo Greyhole"
+
+msgid ""
+"When fsck find metadata files with no file copies, delete those metadata "
+"files. If the file copies re-appear later, you'll need to run fsck with "
+"--find-orphaned-files to have them reappear in your shares."
+msgstr "Cando fsck atopa ficheiros que non teñen copia, borra os metadatos. Se máis adiante volven a aparecer as copias, necesitará executar fsck coa opción --find-orphaned-files para poder recuperar os metadatos nos compartidos."
+
+msgid ""
+"Will receive email reports for daily fsck or when all drives are out of "
+"available space."
+msgstr "Permite recibir informes por correo dos fsck diarios ou cando as unidades non dispoñan de espazo."
+
+msgid "Yes"
+msgstr "Si"
+
+msgid ""
+"You can specify per-share trash preferences that will override the global "
+"trash preference."
+msgstr "Pode especificar as preferencias do lixo por compartido, esta opción ten maior prioridade que a opción global de preferencias do lixo."
+
+msgid "n/a"
+msgstr "n/d"

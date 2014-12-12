@@ -3,27 +3,25 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Alexander Savchenko, 2014
-# артур Мудрых <arturmon82@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-07-18 09:11-0500\n"
-"PO-Revision-Date: 2014-11-14 19:48+0000\n"
-"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
-"Language-Team: Russian (http://www.transifex.com/projects/p/openmediavault-greyhole/language/ru/)\n"
+"PO-Revision-Date: 2013-12-09 14:30+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Spanish (Colombia) (http://www.transifex.com/projects/p/openmediavault-greyhole/language/es_CO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: es_CO\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "%s (%s available)"
-msgstr "%s (%s доступно)"
+msgstr ""
 
 msgid "Add Pool Disk"
-msgstr "Добавить пул дисков"
+msgstr ""
 
 msgid "Add Samba Share"
 msgstr ""
@@ -32,31 +30,31 @@ msgid "Add ignored files"
 msgstr ""
 
 msgid "Are you sure you want to install the Greyhole database?"
-msgstr "Вы уверены, что хотите установить базу данных Greyhole?"
+msgstr ""
 
 msgid "Balance modified"
-msgstr "Баланс изменен"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Отмена"
+msgstr ""
 
 msgid "Cancel All Checks"
-msgstr "Отменить все проверки"
+msgstr ""
 
 msgid "Check for open Files"
-msgstr "Проверить открытые файлы"
+msgstr ""
 
 msgid "Checksums"
-msgstr "Контрольные суммы"
+msgstr ""
 
 msgid "Comment"
-msgstr "Комментарий"
+msgstr ""
 
 msgid "Component"
-msgstr "Компонент"
+msgstr ""
 
 msgid "Confirmation"
-msgstr "Подтверждение"
+msgstr ""
 
 msgid "Create Trash Share"
 msgstr ""
@@ -67,54 +65,54 @@ msgid ""
 msgstr ""
 
 msgid "Database Name"
-msgstr "Имя базы данных"
+msgstr ""
 
 msgid "Database Settings"
-msgstr "Настройки базы данных"
+msgstr ""
 
 msgid "Database is installed"
-msgstr "База данных установлена"
+msgstr ""
 
 msgid "Date & Time"
-msgstr "Дата и Время"
+msgstr ""
 
 msgid "Debug"
-msgstr "Отладка"
+msgstr ""
 
 msgid "Delete Pool Disk"
-msgstr "Удалить пул дисков"
+msgstr ""
 
 msgid "Delete Samba Share"
 msgstr ""
 
 msgid "Delete orphaned metadata"
-msgstr "Удалить осиротевшие метаданные"
+msgstr ""
 
 msgid ""
 "Disable to get more speed. This might break some files if any application "
 "changes your files while Greyhole tries to work on them."
-msgstr "Отключите, чтобы получить более высокую скорость. Это может нарушить некоторые файлы, если любое приложение изменяет ваши файлы, Greyhole пытается работать на них."
+msgstr ""
 
 msgid "Disk Free space Cache time"
-msgstr " Свободное пространство Диска временный  кэш"
+msgstr ""
 
 msgid "Disk Pool Management"
-msgstr "Управление дисковым пулом"
+msgstr ""
 
 msgid "Do you really want to remove the pool disk directory content?"
-msgstr "Вы действительно хотите удалить содержимое дискового пула ?"
+msgstr ""
 
 msgid ""
 "Do you want to remove the content of the pool disk directory recursively? "
 "Note, the data will be permanently deleted then. Select 'No' to delete the "
 "pool disk directory only or 'Cancel' to abort."
-msgstr "Вы хотите удалить содержание дискового пула рекурсивно? Обратите внимание, что эти данные будут удалены без возможности восстановления. Выберите \"Нет\" для удаления только дискового пула или \"Отмена\" для отмены."
+msgstr ""
 
 msgid "Don't walk metadata store"
 msgstr ""
 
 msgid "Edit Pool Disk"
-msgstr "Редактировать дисковый пул"
+msgstr ""
 
 msgid "Edit Samba Share"
 msgstr ""
@@ -123,58 +121,58 @@ msgid "Edit ignored files"
 msgstr ""
 
 msgid "Email"
-msgstr "Email"
+msgstr ""
 
 msgid "Email report"
-msgstr "Отчет E-mail"
+msgstr ""
 
 msgid "Empty Trash"
-msgstr "Очистить корзину"
+msgstr ""
 
 msgid "Enable"
-msgstr "Включить"
+msgstr ""
 
 msgid ""
 "Enable this to use modified files copies to help balance the available space"
 " in your storage pool drives."
-msgstr "Включить, использование модифицированных файлов, копированние, чтобы помочь сбалансировать доступное пространство в вашем дисковом пуле."
+msgstr ""
 
 msgid "Error"
-msgstr "Ошибка"
+msgstr ""
 
 msgid "Event"
-msgstr "Событие"
+msgstr ""
 
 msgid "Extra options"
-msgstr "Дополнительные опции"
+msgstr ""
 
 msgid "File"
-msgstr "Файл"
+msgstr ""
 
 msgid "Files Balance"
-msgstr "Балансировка файлов"
+msgstr ""
 
 msgid "Files Check"
-msgstr "Проверить файлы"
+msgstr ""
 
 msgid "Files copies"
-msgstr "Копии файлов"
+msgstr ""
 
 msgid ""
 "Files/Folders that match the patterns below will be ignored by Greyhole."
 msgstr ""
 
 msgid "Filesystem"
-msgstr "Файловая система"
+msgstr ""
 
 msgid "Find orphaned files"
-msgstr "Найти потерянные файлы"
+msgstr ""
 
 msgid "Folder"
-msgstr "Папка"
+msgstr ""
 
 msgid "General settings"
-msgstr "Общие параметры"
+msgstr ""
 
 msgid "Going"
 msgstr ""
@@ -183,13 +181,13 @@ msgid "Gone"
 msgstr ""
 
 msgid "Greyhole"
-msgstr "Greyhole"
+msgstr ""
 
 msgid "Greyhole - Balance"
-msgstr "Greyhole - Баланс"
+msgstr ""
 
 msgid "Greyhole - Empty Trash"
-msgstr "Greyhole - Очистить корзину"
+msgstr ""
 
 msgid "Greyhole Information"
 msgstr ""
@@ -198,10 +196,10 @@ msgid "Greyhole Wiki"
 msgstr ""
 
 msgid "Home Page"
-msgstr "Домашняя страница"
+msgstr ""
 
 msgid "Hostname"
-msgstr "Имя хоста"
+msgstr ""
 
 msgid ""
 "How long should free disk space calculations be cached (in seconds). Use 0 "
@@ -218,19 +216,19 @@ msgid "Ignored Files"
 msgstr ""
 
 msgid "Info"
-msgstr "Информация"
+msgstr ""
 
 msgid "Information"
-msgstr "Информация"
+msgstr ""
 
 msgid "Install DB"
 msgstr ""
 
 msgid "Installing Greyhole database"
-msgstr "Установка базы данных Greyhole"
+msgstr ""
 
 msgid "Label"
-msgstr "Метка"
+msgstr ""
 
 msgid "Log Greyhole memory usage on each log line."
 msgstr ""
@@ -259,38 +257,38 @@ msgid "MySQL root Password"
 msgstr ""
 
 msgid "No"
-msgstr "Нет"
+msgstr ""
 
 msgid "Number of Copies"
-msgstr "Количество копий"
+msgstr ""
 
 msgid "Password"
-msgstr "Пароль"
+msgstr ""
 
 msgid "Path"
-msgstr "Путь"
+msgstr ""
 
 msgid "Pool Disk"
-msgstr "Дисковый пул"
+msgstr ""
 
 msgid "Pool Management"
-msgstr "Управление пулом"
+msgstr ""
 
 msgid "Pool Managment"
 msgstr ""
 
 msgid "Pools"
-msgstr "Пулы"
+msgstr ""
 
 msgid ""
 "Read ALL files in your storage pool, and check that file copies are "
 "identical. This will identify any problem you might have with your file-"
 "systems. NOTE: this can take a LONG time to complete, since it will read "
 "everything from all your drives!"
-msgstr "Читать все файлы в пуле устройств хранения данных, и убедиться, что копии файлов идентичны. Это позволит определить любые проблемы которые могут быть с файловой системой. ПРИМЕЧАНИЕ: это может занять много времени, чтобы закончить. Так как он будет читать все данные,со всех ваших дисков!"
+msgstr ""
 
 msgid "Replaced"
-msgstr "Заменено"
+msgstr ""
 
 msgid "SMB Share"
 msgstr ""
@@ -302,19 +300,19 @@ msgid ""
 "Scan for files with no metadata in the storage pool drives. This will allow "
 "you to include existing files on a drive in your storage pool without having"
 " to copy them manually."
-msgstr "Сканирование файлов, не имеющих метаданных в пуле накопителей. Это позволит вам включить существующие файлы на диске в пул устройств хранения данных без необходимости копировать их вручную."
+msgstr ""
 
 msgid "Select Number of Copies ..."
-msgstr "Выберите количество экземпляров ..."
+msgstr ""
 
 msgid "Select a path ..."
-msgstr "Выберите путь ..."
+msgstr ""
 
 msgid "Select a pool disk ..."
-msgstr "Выберите дисковый пул ..."
+msgstr ""
 
 msgid "Select a volume ..."
-msgstr "Выберите том ..."
+msgstr ""
 
 msgid "Select an SMB Share ..."
 msgstr ""
@@ -322,28 +320,28 @@ msgstr ""
 msgid ""
 "Send an email when fsck completes, to report on what was checked, and any "
 "error that was found."
-msgstr "Отправить по электронной почте сообщение о завершении fsck, что было проверено, и любые ошибки, что были найдены."
+msgstr ""
 
 msgid "Settings"
-msgstr "Настройки"
+msgstr ""
 
 msgid "Space"
-msgstr "Пространство"
+msgstr ""
 
 msgid ""
 "Speed up fsck by skipping the scan of the metadata store directories. "
 "Scanning the metadata stores is only required to re-create symbolic links "
 "that might be missing from your shared directories."
-msgstr "Ускорить fsck, пропустив проверку хранилища метаданных каталогов. Сканирование метаданных требуется только для воссоздания символических ссылок, которые могут быть недостающие от ваших общих каталогов."
+msgstr ""
 
 msgid "Sticky files"
-msgstr "Липкие файлы"
+msgstr ""
 
 msgid ""
 "Sticky files are files that will always 'live' together in the storage pool."
 " This will allow you to read (and read-only!) those files by using the "
 "storage pool drives themselves, instead of using the mounted shares."
-msgstr "Липкие файлы представляют собой файлы, которые будут всегда \"живые\" вместе с пулом хранения. Это позволит вам читать (и только для чтения!) Эти файлы с помощью пула хранения приводит себя, вместо того чтобы использовать монтированные папки ."
+msgstr ""
 
 msgid ""
 "Tell Greyhole that the missing drive at is gone for good. Greyhole will "
@@ -376,7 +374,7 @@ msgid ""
 msgstr ""
 
 msgid "Trash"
-msgstr "Корзина"
+msgstr ""
 
 msgid "Trash Share Path"
 msgstr ""
@@ -394,7 +392,7 @@ msgid "Type"
 msgstr ""
 
 msgid "Use Default"
-msgstr "Использовать умолчания"
+msgstr ""
 
 msgid "Use Trash"
 msgstr ""
@@ -403,13 +401,13 @@ msgid "Used only for installing Greyhole database and will not be saved."
 msgstr ""
 
 msgid "Username"
-msgstr "Имя пользователя"
+msgstr ""
 
 msgid "Volume"
-msgstr "Том"
+msgstr ""
 
 msgid "Wait for"
-msgstr "Подождите"
+msgstr ""
 
 msgid "Warn"
 msgstr ""
@@ -433,7 +431,7 @@ msgid ""
 msgstr ""
 
 msgid "Yes"
-msgstr "Да"
+msgstr ""
 
 msgid ""
 "You can specify per-share trash preferences that will override the global "
@@ -441,4 +439,4 @@ msgid ""
 msgstr ""
 
 msgid "n/a"
-msgstr "н/д"
+msgstr ""

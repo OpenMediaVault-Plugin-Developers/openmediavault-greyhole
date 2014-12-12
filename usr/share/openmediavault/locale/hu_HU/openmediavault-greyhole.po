@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Stefan Thrane Overby <stoverby@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
@@ -11,433 +10,433 @@ msgstr ""
 "POT-Creation-Date: 2014-07-18 09:11-0500\n"
 "PO-Revision-Date: 2014-11-14 19:48+0000\n"
 "Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
-"Language-Team: Danish (http://www.transifex.com/projects/p/openmediavault-greyhole/language/da/)\n"
+"Language-Team: Hungarian (Hungary) (http://www.transifex.com/projects/p/openmediavault-greyhole/language/hu_HU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: da\n"
+"Language: hu_HU\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "%s (%s available)"
-msgstr "%s (%s tilgængelig)"
+msgstr ""
 
 msgid "Add Pool Disk"
-msgstr "Tilføj pool disk"
+msgstr ""
 
 msgid "Add Samba Share"
-msgstr "Tilføj Samba Mapper"
+msgstr ""
 
 msgid "Add ignored files"
-msgstr "Tilføj ignoreret filer "
+msgstr ""
 
 msgid "Are you sure you want to install the Greyhole database?"
-msgstr "Er du sikker på, at du vil installere Greyhole databasen?"
+msgstr ""
 
 msgid "Balance modified"
-msgstr "Balance modificeret"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Annuller"
+msgstr ""
 
 msgid "Cancel All Checks"
-msgstr "Annuller alle kontroller"
+msgstr ""
 
 msgid "Check for open Files"
-msgstr "Kontroller efter åbne filer"
+msgstr ""
 
 msgid "Checksums"
-msgstr "Checksum"
+msgstr ""
 
 msgid "Comment"
-msgstr "Kommentar"
+msgstr ""
 
 msgid "Component"
-msgstr "Komponent"
+msgstr ""
 
 msgid "Confirmation"
-msgstr "Bekræftelse"
+msgstr ""
 
 msgid "Create Trash Share"
-msgstr "Opret Papirkurv Deling"
+msgstr ""
 
 msgid ""
 "Create a samba share called Greyhole Trash that allows browsing of files in "
 "trash."
-msgstr "Opret en samba deling kaldet Greyhole Papirkurv der tillader at gennense filer i papirkurv."
+msgstr ""
 
 msgid "Database Name"
-msgstr "Database Navn"
+msgstr ""
 
 msgid "Database Settings"
-msgstr "Database Indstillinger"
+msgstr ""
 
 msgid "Database is installed"
-msgstr "Database er installeret"
+msgstr ""
 
 msgid "Date & Time"
-msgstr "Dato & Tid"
+msgstr ""
 
 msgid "Debug"
-msgstr "Debug"
+msgstr ""
 
 msgid "Delete Pool Disk"
-msgstr "Slet pool disk"
+msgstr ""
 
 msgid "Delete Samba Share"
-msgstr "Slet Samba Mappe"
+msgstr ""
 
 msgid "Delete orphaned metadata"
-msgstr "Slet forladt metadata"
+msgstr ""
 
 msgid ""
 "Disable to get more speed. This might break some files if any application "
 "changes your files while Greyhole tries to work on them."
-msgstr "Deaktiver for at, få mere hastighed. Men dette kan måske ødelægge nogle filer, hvis nogle programmer ændrer dine filer, mens Greyhole forsøger at arbejde på dem."
+msgstr ""
 
 msgid "Disk Free space Cache time"
-msgstr "Disk Friplads Cachetid"
+msgstr ""
 
 msgid "Disk Pool Management"
-msgstr "Disk Pool Håndtering"
+msgstr ""
 
 msgid "Do you really want to remove the pool disk directory content?"
-msgstr "Vil du virkelig fjerne pool disk biblioteks indholdet?"
+msgstr ""
 
 msgid ""
 "Do you want to remove the content of the pool disk directory recursively? "
 "Note, the data will be permanently deleted then. Select 'No' to delete the "
 "pool disk directory only or 'Cancel' to abort."
-msgstr "Ønsker du at fjerne indholdet af pool disk biblioteket rekursiv? Bemærk, derefter vil dataene blive permanent slettet. Vælg 'Nej' for kun at slette Pool disk biblioteket eller 'Annuller' for at afbryde."
+msgstr ""
 
 msgid "Don't walk metadata store"
-msgstr "Tilgå ikke metadata opbevaring "
+msgstr ""
 
 msgid "Edit Pool Disk"
-msgstr "Rediger pool disk"
+msgstr ""
 
 msgid "Edit Samba Share"
-msgstr "Rediger Samba Mappe"
+msgstr ""
 
 msgid "Edit ignored files"
-msgstr "Rediger ignoreret filer"
+msgstr ""
 
 msgid "Email"
-msgstr "Email"
+msgstr ""
 
 msgid "Email report"
-msgstr "Email rapport"
+msgstr ""
 
 msgid "Empty Trash"
-msgstr "Tøm papirkurv"
+msgstr ""
 
 msgid "Enable"
-msgstr "Aktiver"
+msgstr ""
 
 msgid ""
 "Enable this to use modified files copies to help balance the available space"
 " in your storage pool drives."
-msgstr "Aktiver dette for at bruge ændrede fil-kopier til at afbalancere den tilgængelige plads i dine opbevarings pool drev."
+msgstr ""
 
 msgid "Error"
-msgstr "Fejl"
+msgstr ""
 
 msgid "Event"
-msgstr "Begivenhed"
+msgstr ""
 
 msgid "Extra options"
-msgstr "Ekstra valgmuligheder"
+msgstr ""
 
 msgid "File"
-msgstr "Fil"
+msgstr ""
 
 msgid "Files Balance"
-msgstr "Fil balance"
+msgstr ""
 
 msgid "Files Check"
-msgstr "Fil kontrol"
+msgstr ""
 
 msgid "Files copies"
-msgstr "Fil-kopier"
+msgstr ""
 
 msgid ""
 "Files/Folders that match the patterns below will be ignored by Greyhole."
-msgstr "Filer/Mapper der har samme mønster som nedenunder vil blive ignoreret af Greyhole."
+msgstr ""
 
 msgid "Filesystem"
-msgstr "Filsystem"
+msgstr ""
 
 msgid "Find orphaned files"
-msgstr "Find forladte filer"
+msgstr ""
 
 msgid "Folder"
-msgstr "Mappe"
+msgstr ""
 
 msgid "General settings"
-msgstr "Generelle indstillinger"
+msgstr ""
 
 msgid "Going"
-msgstr "Kører"
+msgstr ""
 
 msgid "Gone"
-msgstr "Væk"
+msgstr ""
 
 msgid "Greyhole"
-msgstr "Greyhole"
+msgstr ""
 
 msgid "Greyhole - Balance"
-msgstr "Greyhole - Balance"
+msgstr ""
 
 msgid "Greyhole - Empty Trash"
-msgstr "Greyhole - Tøm Papirkurv"
+msgstr ""
 
 msgid "Greyhole Information"
-msgstr "Greyhole Oplysning"
+msgstr ""
 
 msgid "Greyhole Wiki"
-msgstr "Greyhole Wiki"
+msgstr ""
 
 msgid "Home Page"
-msgstr "Hjemmeside"
+msgstr ""
 
 msgid "Hostname"
-msgstr "Værtsnavn"
+msgstr ""
 
 msgid ""
 "How long should free disk space calculations be cached (in seconds). Use 0 "
 "to disable caching."
-msgstr "Hvor lang tid skal fri diskplads beregninger blive cached (i sekunder). Brug 0 for at deaktiver caching."
+msgstr ""
 
 msgid "If checked, ignored object will be a folder instead of a file."
-msgstr "Hvis markeret, vil ignoreret objekt blive en mappe i stedet for en fil."
+msgstr ""
 
 msgid "Ignore"
-msgstr "Ignorere"
+msgstr ""
 
 msgid "Ignored Files"
-msgstr "Ignoreret Filer"
+msgstr ""
 
 msgid "Info"
-msgstr "Oplysning"
+msgstr ""
 
 msgid "Information"
-msgstr "Oplysning"
+msgstr ""
 
 msgid "Install DB"
-msgstr "Installer DB"
+msgstr ""
 
 msgid "Installing Greyhole database"
-msgstr "Installer Greyhole database"
+msgstr ""
 
 msgid "Label"
-msgstr "Label"
+msgstr ""
 
 msgid "Log Greyhole memory usage on each log line."
-msgstr "Log Greyhole hukommelsesforbrug på hver log linie."
+msgstr ""
 
 msgid "Log Memory Usage"
-msgstr "Log Hukommelsesbrug"
+msgstr ""
 
 msgid "Log level"
-msgstr "Log niveau"
+msgstr ""
 
 msgid "Make trash share writeable."
-msgstr "Gør papirkurv deling skrivebar."
+msgstr ""
 
 msgid "Min Free"
-msgstr "Min Fri"
+msgstr ""
 
 msgid "Min Free (GiB)"
-msgstr "Min Fri (GiB)"
+msgstr ""
 
 msgid ""
 "Move deleted files to trash instead of deleting them. This is a global "
 "setting that can be overided by local option on each Greyhole share."
-msgstr "Flyt slettede filer til papirkurven, istedet for at slette dem. Dette er en global indstilling, der kan blive tilsidesat af en lokal mulighed på hver Greyhole mappe."
+msgstr ""
 
 msgid "MySQL root Password"
-msgstr "MySQL rod Adgangskode"
+msgstr ""
 
 msgid "No"
-msgstr "Nej"
+msgstr ""
 
 msgid "Number of Copies"
-msgstr "Antal af Kopier"
+msgstr ""
 
 msgid "Password"
-msgstr "Adgangskode"
+msgstr ""
 
 msgid "Path"
-msgstr "Sti"
+msgstr ""
 
 msgid "Pool Disk"
-msgstr "Pool disk"
+msgstr ""
 
 msgid "Pool Management"
-msgstr "Pool Håndtering"
+msgstr ""
 
 msgid "Pool Managment"
-msgstr "Pool Håndtering"
+msgstr ""
 
 msgid "Pools"
-msgstr "Pools"
+msgstr ""
 
 msgid ""
 "Read ALL files in your storage pool, and check that file copies are "
 "identical. This will identify any problem you might have with your file-"
 "systems. NOTE: this can take a LONG time to complete, since it will read "
 "everything from all your drives!"
-msgstr "Læs ALLE filer i dit opbevaring pool og kontroller, at fil-kopierne er identiske. Dette vil identificere ethvert problem, du kan have med dine fil-systemer. BEMÆRK: Dette kan tage lang tid at gennemføre, da det vil læse alt fra alle dine drev!"
+msgstr ""
 
 msgid "Replaced"
-msgstr "Erstattet"
+msgstr ""
 
 msgid "SMB Share"
-msgstr "SMB Mappe"
+msgstr ""
 
 msgid "Samba Shares"
-msgstr "Samba Mapper"
+msgstr ""
 
 msgid ""
 "Scan for files with no metadata in the storage pool drives. This will allow "
 "you to include existing files on a drive in your storage pool without having"
 " to copy them manually."
-msgstr "Scan efter filer uden metadata i opbevarings pool drev. Dette vil tillade dig at omfatte eksisterende filer på et drev i din opbevaring pool uden at skulle kopiere dem manuelt."
+msgstr ""
 
 msgid "Select Number of Copies ..."
-msgstr "Vælg antal af kopier ..."
+msgstr ""
 
 msgid "Select a path ..."
-msgstr "Vælg en sti ..."
+msgstr ""
 
 msgid "Select a pool disk ..."
-msgstr "Vælg en Pool Disk ..."
+msgstr ""
 
 msgid "Select a volume ..."
-msgstr "Vælg et drev ..."
+msgstr ""
 
 msgid "Select an SMB Share ..."
-msgstr "Vælg en SMB Mappe ..."
+msgstr ""
 
 msgid ""
 "Send an email when fsck completes, to report on what was checked, and any "
 "error that was found."
-msgstr "Send en email, når fsck er færdig, for at rapportere hvad der er blevet kontrolleret, og om der er fundet nogle fejl."
+msgstr ""
 
 msgid "Settings"
-msgstr "Indstillinger"
+msgstr ""
 
 msgid "Space"
-msgstr "Plads"
+msgstr ""
 
 msgid ""
 "Speed up fsck by skipping the scan of the metadata store directories. "
 "Scanning the metadata stores is only required to re-create symbolic links "
 "that might be missing from your shared directories."
-msgstr "Fremskynd fsck ved at springe scanning af metadata opbevarings biblioteker over. Scanning af metadata opbevaring er kun nødvendig for at genskabe symbolske links, der kan være manglende fra dine delte biblioteker."
+msgstr ""
 
 msgid "Sticky files"
-msgstr "Opslags filer"
+msgstr ""
 
 msgid ""
 "Sticky files are files that will always 'live' together in the storage pool."
 " This will allow you to read (and read-only!) those files by using the "
 "storage pool drives themselves, instead of using the mounted shares."
-msgstr "Opslags filer er filer, der altid vil 'leve' sammen i depotoplagringen. Dette vil tillade dig at læse (og kun læse!) disse filer kun ved hjælp af depotoplagrings drevene, i stedet for at bruge de monterede mapper."
+msgstr ""
 
 msgid ""
 "Tell Greyhole that the missing drive at is gone for good. Greyhole will "
 "start replacing the missing file copies instantly."
-msgstr "Fortæl Greyhole, at det manglede drev er væk for evigt. Greyholde vil med det samme starte med at erstatte de manglede fil kopier."
+msgstr ""
 
 msgid ""
 "Tell Greyhole that the missing drive will return soon, and that it shouldn't"
 " re-create additional file copies to replace it."
-msgstr "Fortæl Greyhole, at det mangelede drev snart vender tilbage og at den ikke bør genskabe yderligere fil-kopier til at erstatte det med."
+msgstr ""
 
 msgid "Tell Greyhole that you replaced the drive."
-msgstr "Fortæl Greyhole, at du har erstattet drevet."
+msgstr ""
 
 msgid ""
 "Tell Greyhole that you want to remove a drive. Greyhole will then make sure "
 "you don't loose any files, and that the correct number of file copies are "
 "created to replace the missing drive."
-msgstr "Fortæl Greyhole, at du vil fjerne et drev. Greyhole vil derefter sørge for at du ikke mister nogen filer, og at det korrekte antal fil-kopier er oprettet for at erstatte det manglende drev."
+msgstr ""
 
 msgid ""
 "This is how much free space you want to reserve on each drive. This is a "
 "soft limit that will be ignored if the necessary hard drives are below their"
 " minimum."
-msgstr "Dette er, hvor meget ledig plads, du ønsker at reservere på hvert drev. Dette er en blød grænse, der vil blive ignoreret, hvis de nødvendige harddiske er under deres minimum."
+msgstr ""
 
 msgid ""
 "This is the number of copies of each file you want Greyhole to keep per "
 "Share. This is not the number of duplicates! 2 copies = 1 duplicate."
-msgstr "Dette er antallet af kopier af hver fil, du vil have Greyhole at beholde per Mappe. Det er ikke antallet af dubletter! 2 kopier = 1 dublet."
+msgstr ""
 
 msgid "Trash"
-msgstr "Papirkurv"
+msgstr ""
 
 msgid "Trash Share Path"
-msgstr "Papirkurv Deling Sti"
+msgstr ""
 
 msgid "Trash Share Volume"
-msgstr "Papirkurv Deling Drev"
+msgstr ""
 
 msgid "Trash Writeable"
-msgstr "Papirkurv Skrivebar"
+msgstr ""
 
 msgid "Trash deletes"
-msgstr "Papirkurv slettes"
+msgstr ""
 
 msgid "Type"
-msgstr "Type"
+msgstr ""
 
 msgid "Use Default"
-msgstr "Brug Standard"
+msgstr ""
 
 msgid "Use Trash"
-msgstr "Brug papirkurv"
+msgstr ""
 
 msgid "Used only for installing Greyhole database and will not be saved."
-msgstr "Kun brugt til installation af Greyhole database og vil ikke blive gemt."
+msgstr ""
 
 msgid "Username"
-msgstr "Brug papirkurv"
+msgstr ""
 
 msgid "Volume"
-msgstr "Drev"
+msgstr ""
 
 msgid "Wait for"
-msgstr "Vent på"
+msgstr ""
 
 msgid "Warn"
-msgstr "Advar"
+msgstr ""
 
 msgid ""
 "Warning: Changing your database connection properties may result in stopping"
 " Greyhole. Stop Greyhole daemon before any change. Make sure the values you "
 "are modifying match the MySQL greyhole database values before restarting "
 "Greyhole daemon."
-msgstr "Advarsel: Ændring af din database forbindelses egenskaber kan resultere i stop af Greyhole. Stop Greyhole dæmon før eventuelle ændringer. Kontroller, at de værdier du ændrer, matcher din MySQL greyhole database, før du genstarter Greyhole dæmon."
+msgstr ""
 
 msgid ""
 "When fsck find metadata files with no file copies, delete those metadata "
 "files. If the file copies re-appear later, you'll need to run fsck with "
 "--find-orphaned-files to have them reappear in your shares."
-msgstr "Når fsck finder metadata filer uden fil-kopier, slettes disse metadata filer. Hvis fil-kopier dukker op igen, skal du køre fsck med --find-orphaned-files for at få dem til at dukke op igen i dine mapper."
+msgstr ""
 
 msgid ""
 "Will receive email reports for daily fsck or when all drives are out of "
 "available space."
-msgstr "Vil modtage daglige email rapporter af fsck, eller når alle drev er ude af tilgængelige plads."
+msgstr ""
 
 msgid "Yes"
-msgstr "Ja"
+msgstr ""
 
 msgid ""
 "You can specify per-share trash preferences that will override the global "
 "trash preference."
-msgstr "Du kan angive per-mappe papirkurvs egenskab, der vil tilsidesætte den globale papirkurvs egenskab."
+msgstr ""
 
 msgid "n/a"
-msgstr "n/a"
+msgstr ""
