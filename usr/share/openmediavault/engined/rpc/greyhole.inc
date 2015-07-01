@@ -1075,7 +1075,7 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
         file_put_contents($file, $params['root_pass']);
 
         // install database
-        $cmd = "/usr/local/bin/create_greyhole_db 2>&1";
+        $cmd = "/usr/sbin/create_greyhole_db 2>&1";
         if(0 !== $this->exec($cmd, $output))
             throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
 

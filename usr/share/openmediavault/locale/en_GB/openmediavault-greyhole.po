@@ -3,440 +3,441 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Andi Chandler <andi@gowling.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-greyhole\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-07-01 14:30-0500\n"
-"PO-Revision-Date: 2014-11-14 19:48+0000\n"
-"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
-"Language-Team: Acoli (http://www.transifex.com/projects/p/openmediavault-greyhole/language/ach/)\n"
+"PO-Revision-Date: 2015-04-30 15:17+0000\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>\n"
+"Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/openmediavault-greyhole/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ach\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "%s (%s available)"
-msgstr ""
+msgstr "%s (%s available)"
 
 msgid "Add Pool Disk"
-msgstr ""
+msgstr "Add Pool Disk"
 
 msgid "Add Samba Share"
-msgstr ""
+msgstr "Add Samba Share"
 
 msgid "Add ignored files"
-msgstr ""
+msgstr "Add ignored files"
 
 msgid "Are you sure you want to install the Greyhole database?"
-msgstr ""
+msgstr "Are you sure you want to install the Greyhole database?"
 
 msgid "Balance modified"
-msgstr ""
+msgstr "Balance modified"
 
 msgid "Cancel"
-msgstr ""
+msgstr "Cancel"
 
 msgid "Cancel All Checks"
-msgstr ""
+msgstr "Cancel All Checks"
 
 msgid "Check for open Files"
-msgstr ""
+msgstr "Check for open Files"
 
 msgid "Checksums"
-msgstr ""
+msgstr "Checksums"
 
 msgid "Comment"
-msgstr ""
+msgstr "Comment"
 
 msgid "Component"
-msgstr ""
+msgstr "Component"
 
 msgid "Confirmation"
-msgstr ""
+msgstr "Confirmation"
 
 msgid "Create Trash Share"
-msgstr ""
+msgstr "Create Rubbish Bin Share"
 
 msgid ""
 "Create a samba share called Greyhole Trash that allows browsing of files in "
 "trash."
-msgstr ""
+msgstr "Create a Samba share called Greyhole Rubbish Bin that allows browsing of deleted files."
 
 msgid "Database Name"
-msgstr ""
+msgstr "Database Name"
 
 msgid "Database Settings"
-msgstr ""
+msgstr "Database Settings"
 
 msgid "Database is installed"
-msgstr ""
+msgstr "Database is installed"
 
 msgid "Date & Time"
-msgstr ""
+msgstr "Date & Time"
 
 msgid "Debug"
-msgstr ""
+msgstr "Debug"
 
 msgid "Delete Pool Disk"
-msgstr ""
+msgstr "Delete Pool Disk"
 
 msgid "Delete Samba Share"
-msgstr ""
+msgstr "Delete Samba Share"
 
 msgid "Delete orphaned metadata"
-msgstr ""
+msgstr "Delete orphaned metadata"
 
 msgid ""
 "Disable to get more speed. This might break some files if any application "
 "changes your files while Greyhole tries to work on them."
-msgstr ""
+msgstr "Disable to get more speed. This might break some files if any application changes your files while Greyhole tries to work on them."
 
 msgid "Disk Free space Cache time"
-msgstr ""
+msgstr "Disk Free space Cache time"
 
 msgid "Disk Pool Management"
-msgstr ""
+msgstr "Disk Pool Management"
 
 msgid "Do you really want to remove the pool disk directory content?"
-msgstr ""
+msgstr "Do you really want to remove the pool disk directory content?"
 
 msgid ""
 "Do you want to remove the content of the pool disk directory recursively? "
 "Note, the data will be permanently deleted then. Select 'No' to delete the "
 "pool disk directory only or 'Cancel' to abort."
-msgstr ""
+msgstr "Do you want to remove the content of the pool disk directory recursively? Note, the data will be permanently deleted then. Select 'No' to delete the pool disk directory only or 'Cancel' to abort."
 
 msgid "Don't walk metadata store"
-msgstr ""
+msgstr "Don't walk metadata store"
 
 msgid "Edit Pool Disk"
-msgstr ""
+msgstr "Edit Pool Disk"
 
 msgid "Edit Samba Share"
-msgstr ""
+msgstr "Edit Samba Share"
 
 msgid "Edit ignored files"
-msgstr ""
+msgstr "Edit ignored files"
 
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 msgid "Email report"
-msgstr ""
+msgstr "Email report"
 
 msgid "Empty Trash"
-msgstr ""
+msgstr "Empty Rubbish Bin"
 
 msgid "Enable"
-msgstr ""
+msgstr "Enable"
 
 msgid ""
 "Enable this to use modified files copies to help balance the available space"
 " in your storage pool drives."
-msgstr ""
+msgstr "Enable this to use modified files copies to help balance the available space in your storage pool drives."
 
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 msgid "Event"
-msgstr ""
+msgstr "Event"
 
 msgid "Extra options"
-msgstr ""
+msgstr "Extra options"
 
 msgid "File"
-msgstr ""
+msgstr "File"
 
 msgid "Files Balance"
-msgstr ""
+msgstr "Files Balance"
 
 msgid "Files Check"
-msgstr ""
+msgstr "Files Check"
 
 msgid "Files copies"
-msgstr ""
+msgstr "Files copies"
 
 msgid ""
 "Files/Folders that match the patterns below will be ignored by Greyhole."
-msgstr ""
+msgstr "Files/Folders that match the patterns below will be ignored by Greyhole."
 
 msgid "Filesystem"
-msgstr ""
+msgstr "Filesystem"
 
 msgid "Find orphaned files"
-msgstr ""
+msgstr "Find orphaned files"
 
 msgid "Folder"
-msgstr ""
+msgstr "Folder"
 
 msgid "General settings"
-msgstr ""
+msgstr "General settings"
 
 msgid "Going"
-msgstr ""
+msgstr "Going"
 
 msgid "Gone"
-msgstr ""
+msgstr "Gone"
 
 msgid "Greyhole"
-msgstr ""
+msgstr "Greyhole"
 
 msgid "Greyhole - Balance"
-msgstr ""
+msgstr "Greyhole - Balance"
 
 msgid "Greyhole - Empty Trash"
-msgstr ""
+msgstr "Greyhole - Empty Rubbish Bin"
 
 msgid "Greyhole Information"
-msgstr ""
+msgstr "Greyhole Information"
 
 msgid "Greyhole Wiki"
-msgstr ""
+msgstr "Greyhole Wiki"
 
 msgid "Home Page"
-msgstr ""
+msgstr "Home Page"
 
 msgid "Hostname"
-msgstr ""
+msgstr "Hostname"
 
 msgid ""
 "How long should free disk space calculations be cached (in seconds). Use 0 "
 "to disable caching."
-msgstr ""
+msgstr "How long should free disk space calculations be cached (in seconds). Use 0 to disable caching."
 
 msgid "If checked, ignored object will be a folder instead of a file."
-msgstr ""
+msgstr "If checked, ignored object will be a folder instead of a file."
 
 msgid "Ignore"
-msgstr ""
+msgstr "Ignore"
 
 msgid "Ignored Files"
-msgstr ""
+msgstr "Ignored Files"
 
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
 msgid "Information"
-msgstr ""
+msgstr "Information"
 
 msgid "Install DB"
-msgstr ""
+msgstr "Install DB"
 
 msgid "Installing Greyhole database"
-msgstr ""
+msgstr "Installing Greyhole database"
 
 msgid "Label"
-msgstr ""
+msgstr "Label"
 
 msgid "Log Greyhole memory usage on each log line."
-msgstr ""
+msgstr "Log Greyhole memory usage on each log line."
 
 msgid "Log Memory Usage"
-msgstr ""
+msgstr "Log Memory Usage"
 
 msgid "Log level"
-msgstr ""
+msgstr "Log level"
 
 msgid "Make trash share writeable."
-msgstr ""
+msgstr "Make Rubbish Bin share writeable."
 
 msgid "Min Free"
-msgstr ""
+msgstr "Min Free"
 
 msgid "Min Free (GiB)"
-msgstr ""
+msgstr "Min Free (GiB)"
 
 msgid ""
 "Move deleted files to trash instead of deleting them. This is a global "
 "setting that can be overided by local option on each Greyhole share."
-msgstr ""
+msgstr "Move deleted files to Rubbish Bin instead of deleting them. This is a global setting that can be overided by local option on each Greyhole share."
 
 msgid "MySQL root Password"
-msgstr ""
+msgstr "MySQL root Password"
 
 msgid "No"
-msgstr ""
+msgstr "No"
 
 msgid "Number of Copies"
-msgstr ""
+msgstr "Number of Copies"
 
 msgid "Password"
-msgstr ""
+msgstr "Password"
 
 msgid "Path"
-msgstr ""
+msgstr "Path"
 
 msgid "Pool Disk"
-msgstr ""
+msgstr "Pool Disk"
 
 msgid "Pool Management"
-msgstr ""
+msgstr "Pool Management"
 
 msgid "Pool Managment"
-msgstr ""
+msgstr "Pool Managment"
 
 msgid "Pools"
-msgstr ""
+msgstr "Pools"
 
 msgid ""
 "Read ALL files in your storage pool, and check that file copies are "
 "identical. This will identify any problem you might have with your file-"
 "systems. NOTE: this can take a LONG time to complete, since it will read "
 "everything from all your drives!"
-msgstr ""
+msgstr "Read ALL files in your storage pool, and check that file copies are identical. This will identify any problem you might have with your file-systems. NOTE: this can take a LONG time to complete, since it will read everything from all your drives!"
 
 msgid "Replaced"
-msgstr ""
+msgstr "Replaced"
 
 msgid "SMB Share"
-msgstr ""
+msgstr "SMB Share"
 
 msgid "Samba Shares"
-msgstr ""
+msgstr "Samba Shares"
 
 msgid ""
 "Scan for files with no metadata in the storage pool drives. This will allow "
 "you to include existing files on a drive in your storage pool without having"
 " to copy them manually."
-msgstr ""
+msgstr "Scan for files with no metadata in the storage pool drives. This will allow you to include existing files on a drive in your storage pool without having to copy them manually."
 
 msgid "Select Number of Copies ..."
-msgstr ""
+msgstr "Select Number of Copies ..."
 
 msgid "Select a path ..."
-msgstr ""
+msgstr "Select a path ..."
 
 msgid "Select a pool disk ..."
-msgstr ""
+msgstr "Select a pool disk ..."
 
 msgid "Select a volume ..."
-msgstr ""
+msgstr "Select a volume ..."
 
 msgid "Select an SMB Share ..."
-msgstr ""
+msgstr "Select an SMB Share ..."
 
 msgid ""
 "Send an email when fsck completes, to report on what was checked, and any "
 "error that was found."
-msgstr ""
+msgstr "Send an email when fsck completes, to report on what was checked, and any error that was found."
 
 msgid "Settings"
-msgstr ""
+msgstr "Settings"
 
 msgid "Space"
-msgstr ""
+msgstr "Space"
 
 msgid ""
 "Speed up fsck by skipping the scan of the metadata store directories. "
 "Scanning the metadata stores is only required to re-create symbolic links "
 "that might be missing from your shared directories."
-msgstr ""
+msgstr "Speed up fsck by skipping the scan of the metadata store directories. Scanning the metadata stores is only required to re-create symbolic links that might be missing from your shared directories."
 
 msgid "Sticky files"
-msgstr ""
+msgstr "Sticky files"
 
 msgid ""
 "Sticky files are files that will always 'live' together in the storage pool."
 " This will allow you to read (and read-only!) those files by using the "
 "storage pool drives themselves, instead of using the mounted shares."
-msgstr ""
+msgstr "Sticky files are files that will always 'live' together in the storage pool. This will allow you to read (and read-only!) those files by using the storage pool drives themselves, instead of using the mounted shares."
 
 msgid ""
 "Tell Greyhole that the missing drive at is gone for good. Greyhole will "
 "start replacing the missing file copies instantly."
-msgstr ""
+msgstr "Tell Greyhole that the missing drive at is gone for good. Greyhole will start replacing the missing file copies instantly."
 
 msgid ""
 "Tell Greyhole that the missing drive will return soon, and that it shouldn't"
 " re-create additional file copies to replace it."
-msgstr ""
+msgstr "Tell Greyhole that the missing drive will return soon, and that it shouldn't re-create additional file copies to replace it."
 
 msgid "Tell Greyhole that you replaced the drive."
-msgstr ""
+msgstr "Tell Greyhole that you replaced the drive."
 
 msgid ""
 "Tell Greyhole that you want to remove a drive. Greyhole will then make sure "
 "you don't loose any files, and that the correct number of file copies are "
 "created to replace the missing drive."
-msgstr ""
+msgstr "Tell Greyhole that you want to remove a drive. Greyhole will then make sure you don't loose any files, and that the correct number of file copies are created to replace the missing drive."
 
 msgid ""
 "This is how much free space you want to reserve on each drive. This is a "
 "soft limit that will be ignored if the necessary hard drives are below their"
 " minimum."
-msgstr ""
+msgstr "This is how much free space you want to reserve on each drive. This is a soft limit that will be ignored if the necessary hard drives are below their minimum."
 
 msgid ""
 "This is the number of copies of each file you want Greyhole to keep per "
 "Share. This is not the number of duplicates! 2 copies = 1 duplicate."
-msgstr ""
+msgstr "This is the number of copies of each file you want Greyhole to keep per Share. This is not the number of duplicates! 2 copies = 1 duplicate."
 
 msgid "Trash"
-msgstr ""
+msgstr "Rubbish Bin"
 
 msgid "Trash Share Path"
-msgstr ""
+msgstr "Rubbish Bin Share Path"
 
 msgid "Trash Share Volume"
-msgstr ""
+msgstr "Rubbish Bin Share Volume"
 
 msgid "Trash Writeable"
-msgstr ""
+msgstr "Rubbish Bin Writeable"
 
 msgid "Trash deletes"
-msgstr ""
+msgstr "Delete to Rubbish Bin"
 
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 msgid "Use Default"
-msgstr ""
+msgstr "Use Default"
 
 msgid "Use Trash"
-msgstr ""
+msgstr "Use Rubbish Bin"
 
 msgid "Used only for installing Greyhole database and will not be saved."
-msgstr ""
+msgstr "Used only for installing Greyhole database and will not be saved."
 
 msgid "Username"
-msgstr ""
+msgstr "Username"
 
 msgid "Volume"
-msgstr ""
+msgstr "Volume"
 
 msgid "Wait for"
-msgstr ""
+msgstr "Wait for"
 
 msgid "Warn"
-msgstr ""
+msgstr "Warn"
 
 msgid ""
 "Warning: Changing your database connection properties may result in stopping"
 " Greyhole. Stop Greyhole daemon before any change. Make sure the values you "
 "are modifying match the MySQL greyhole database values before restarting "
 "Greyhole daemon."
-msgstr ""
+msgstr "Warning: Changing your database connection properties may result in stopping Greyhole. Stop Greyhole daemon before any change. Make sure the values you are modifying match the MySQL greyhole database values before restarting Greyhole daemon."
 
 msgid ""
 "When fsck find metadata files with no file copies, delete those metadata "
 "files. If the file copies re-appear later, you'll need to run fsck with "
 "--find-orphaned-files to have them reappear in your shares."
-msgstr ""
+msgstr "When fsck find metadata files with no file copies, delete those metadata files. If the file copies re-appear later, you'll need to run fsck with --find-orphaned-files to have them reappear in your shares."
 
 msgid ""
 "Will receive email reports for daily fsck or when all drives are out of "
 "available space."
-msgstr ""
+msgstr "Will receive email reports for daily fsck or when all drives are out of available space."
 
 msgid "Yes"
-msgstr ""
+msgstr "Yes"
 
 msgid ""
 "You can specify per-share trash preferences that will override the global "
 "trash preference."
-msgstr ""
+msgstr "You can specify per-share rubbish bin preferences that will override the global rubbish bin preference."
 
 msgid "n/a"
-msgstr ""
+msgstr "n/a"

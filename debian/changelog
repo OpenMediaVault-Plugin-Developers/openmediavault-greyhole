@@ -1,6 +1,7 @@
 openmediavault-greyhole (2.0) UNRELEASED; urgency=low
 
   * Update for OMV 2.x
+  * Update locales
 
  -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Wed, 01 Jul 2015 14:27:59 -0500
 
