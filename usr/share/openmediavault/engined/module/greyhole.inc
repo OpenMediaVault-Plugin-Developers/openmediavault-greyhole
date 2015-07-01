@@ -4,7 +4,7 @@
  * @license    http://www.gnu.org/licenses/gpl.html GPL Version 3
  * @author     Stephane Bocquet <stephane_bocquet@hotmail.com>
  * @copyright  Copyright (c) 2011 Ian Moore
- * @copyright  Copyright (c) 2013-2014 OpenMediaVault Plugin Developers
+ * @copyright  Copyright (c) 2013-2015 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -125,4 +125,3 @@ OMVLogFile::registerType("greyhole", array(
         "event"     => 3
     )
 ));
-?>

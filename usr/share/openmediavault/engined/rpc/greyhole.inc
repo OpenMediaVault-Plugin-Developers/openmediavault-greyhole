@@ -6,7 +6,7 @@
  * @author     Marcel Beck <marcel.beck@mbeck.org>
  * @copyright  Copyright (c) 2011-2012 Stephane Bocquet
  * @copyright  Copyright (c) 2011-2012 Marcel Beck
- * @copyright  Copyright (c) 2013-2014 OpenMediaVault Plugin Developers
+ * @copyright  Copyright (c) 2013-2015 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1089,5 +1089,3 @@ class OMVRpcServiceGreyhole extends OMVRpcServiceAbstract {
 // Register the RPC service.
 $rpcServiceMgr = &OMVRpcServiceMgr::getInstance();
 $rpcServiceMgr->registerService(new OMVRpcServiceGreyhole());
-
-?>

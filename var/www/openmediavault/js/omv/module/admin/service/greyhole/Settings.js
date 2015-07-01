@@ -5,7 +5,7 @@
  * @author Marcel Beck <marcel.beck@mbeck.org>
  * @copyright Copyright (c) 2011 Stephane Bocquet
  * @copyright Copyright (c) 2011 Marcel Beck
- * @copyright Copyright (c) 2013-2014 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2013-2015 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
@@ -112,11 +112,12 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
                 labelSeparator : ""
             },
             items    : [{
-                xtype  : "text",
-                name   : "db_message",
-                text   : _("Database is installed"),
-                hidden : true,
-                margin : "0 0 5 0"
+                xtype    : "textfield",
+                name     : "db_message",
+                value    : _("Database is installed"),
+                readOnly : true,
+                hidden   : true,
+                margin   : "0 0 5 0"
             },{
                 xtype      : "textfield",
                 name       : "db_host",
