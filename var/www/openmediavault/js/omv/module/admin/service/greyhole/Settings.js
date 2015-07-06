@@ -112,12 +112,13 @@ Ext.define("OMV.module.admin.service.greyhole.Settings", {
                 labelSeparator : ""
             },
             items    : [{
-                xtype    : "textfield",
-                name     : "db_message",
-                value    : _("Database is installed"),
-                readOnly : true,
-                hidden   : true,
-                margin   : "0 0 5 0"
+                xtype       : "textfield",
+                name        : "db_message",
+                value       : _("Database is installed"),
+                readOnly    : true,
+                hidden      : true,
+                submitValue : false,
+                margin      : "0 0 5 0"
             },{
                 xtype      : "textfield",
                 name       : "db_host",
