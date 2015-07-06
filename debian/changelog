@@ -1,8 +1,8 @@
-openmediavault-greyhole (2.1) UNRELEASED; urgency=low
+openmediavault-greyhole (2.1) stable; urgency=low
 
   * Fix installation issue
 
- -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 06 Jul 2015 09:08:58 -0500
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 06 Jul 2015 12:51:04 -0500
 
 openmediavault-greyhole (2.0) stable; urgency=low
 
