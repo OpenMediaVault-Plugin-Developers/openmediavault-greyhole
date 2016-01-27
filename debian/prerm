@@ -5,7 +5,7 @@
 # @author    Stéphane Bocquet <stephane_bocquet@hotmail.com>
 # @copyright Copyright (c) 2011 Marcel Beck
 # @copyright Copyright (c) 2011 Stéphane Bocquet
-# @copyright Copyright (c) 2014-2015 OpenMediaVault Plugin Developers
+# @copyright Copyright (c) 2014-2016 OpenMediaVault Plugin Developers
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ set -e
 case "$1" in
     purge|remove|failed-upgrade|abort-install|abort-upgrade|disappear)
         # Stop service
-        invoke-rc.d --quiet greyhole stop &>/dev/null
+        deb-systemd-invoke stop greyhole.service >/dev/null || true
     ;;
 
     upgrade)

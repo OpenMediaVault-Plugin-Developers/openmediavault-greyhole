@@ -5,7 +5,7 @@
 # @author    Marcel Beck <marcel.beck@mbeck.org>
 # @copyright Copyright (c) 2011 Stephane Bocquet
 # @copyright Copyright (c) 2011-2012 Marcel Beck
-# @copyright Copyright (c) 2014 OpenMediaVault Plugin Developers
+# @copyright Copyright (c) 2014-2016 OpenMediaVault Plugin Developers
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,8 +25,10 @@ set -e
 . /etc/default/openmediavault
 . /usr/share/openmediavault/scripts/helper-functions
 
+XPATH="/config/services/greyhole"
+
 # Only if enabled
-if [ "$(omv_config_get "//services/greyhole/enable")" != "1" ]; then
+if [ "$(omv_config_get "${XPATH}/enable")" != "1" ]; then
     exit 0
 fi
 
@@ -34,15 +36,15 @@ OMV_SAMBA_CONFIG=${OMV_SAMBA_CONFIG:-"/etc/samba/smb.conf"}
 
 echo "#======================= Greyhole Shares =======================" >> ${OMV_SAMBA_CONFIG}
 
-index=$(omv_config_get_count "//services/greyhole/smb_shares/share")
+index=$(omv_config_get_count "${XPATH}/smb_shares/share")
 while [ ${index} -gt 0 ]
 do
     # Get the shared folder reference and path
-    smb_share_ref=$(omv_config_get "//services/greyhole/smb_shares/share[position()=${index}]/smbref")
+    smb_share_ref=$(omv_config_get "${XPATH}/smb_shares/share[position()=${index}]/smbref")
     smb_share_name=$(omv_config_get "//services/smb/shares/share[uuid='${smb_share_ref}']/name")
 
     if [ ! -z "${smb_share_name}" ]; then
-        xmlstarlet sel -t -m "//services/greyhole/smb_shares/share[position()=${index}]" \
+        xmlstarlet sel -t -m "${XPATH}/smb_shares/share[position()=${index}]" \
           -o "[${smb_share_name}]" -n \
           -o "dfree command = /usr/bin/greyhole-dfree" -n \
           -o "vfs objects = greyhole" -n \
@@ -52,11 +54,11 @@ do
     index=$(( ${index} - 1 ))
 done
 
-if [ "$(omv_config_get "//services/greyhole/trash_share")" != "0" ]; then
+if [ "$(omv_config_get "${XPATH}/trash_share")" != "0" ]; then
 
-    trashsharepath=$(omv_config_get "//services/greyhole/trash_share_path")
+    trashsharepath=$(omv_config_get "${XPATH}/trash_share_path")
 
-    if [ "$(omv_config_get "//services/greyhole/trash_write")" != "0" ]; then
+    if [ "$(omv_config_get "${XPATH}/trash_write")" != "0" ]; then
         trashwrite="@users"
     else
         trashwrite=""

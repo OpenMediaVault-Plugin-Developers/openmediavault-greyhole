@@ -1,3 +1,9 @@
+openmediavault-greyhole (3.0) stable; urgency=low
+
+  * Update for OMV 3.x
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Wed, 27 Jan 2016 12:18:04 -0600
+
 openmediavault-greyhole (2.1) stable; urgency=low
 
   * Fix installation issue

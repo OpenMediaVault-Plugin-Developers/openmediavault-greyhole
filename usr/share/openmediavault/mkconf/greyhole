@@ -5,7 +5,7 @@
 # @author    Marcel Beck <marcel.beck@mbeck.org>
 # @copyright Copyright (c) 2011 Stephane Bocquet
 # @copyright Copyright (c) 2012 Marcel Beck
-# @copyright Copyright (c) 2014-2015 OpenMediaVault Plugin Developers
+# @copyright Copyright (c) 2014-2016 OpenMediaVault Plugin Developers
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,35 +27,36 @@ set -e
 
 GREYHOLE_EXTENSIONSDIR=${GREYHOLE_EXTENSIONSDIR:-"${OMV_MKCONF_SCRIPTS_DIR}/greyhole.d"}
 GREYHOLE_CONFIG="/etc/greyhole.conf"
-GREYHOLE_INIT="greyhole"
+
+SERVICE_XPATH_NAME="greyhole"
+SERVICE_XPATH="/config/services/${SERVICE_XPATH_NAME"
 
 # Enable/disable service
-if [ "$(omv_config_get "//services/greyhole/enable")" != "1" ]; then
+if [ "$(omv_config_get "${SERVICE_XPATH}/enable")" != "1" ]; then
     echo "# Stop/Disable Greyhole disabled"
-    invoke-rc.d ${GREYHOLE_INIT} stop 1>/dev/null 2>&1 || true
-    update-rc.d ${GREYHOLE_INIT} disable
+    deb-systemd-invoke stop ${SERVICE_XPATH_NAME}.service >/dev/null || true
+    deb-systemd-helper disable ${SERVICE_XPATH_NAME}.service >/dev/null || true
     exit 0
 fi
 
-
-pool_disk_count=$(omv_config_get_count "//services/greyhole/pool_disks/disk")
+pool_disk_count=$(omv_config_get_count "${SERVICE_XPATH}/pool_disks/disk")
 if [ ${pool_disk_count} -eq 0 ]; then
     echo "# Stop/Disable Greyhole: No Pool Disks"
-    invoke-rc.d ${GREYHOLE_INIT} stop 1>/dev/null 2>&1 || true
-    update-rc.d ${GREYHOLE_INIT} disable
+    deb-systemd-invoke stop ${SERVICE_XPATH_NAME}.service >/dev/null || true
+    deb-systemd-helper disable ${SERVICE_XPATH_NAME}.service >/dev/null || true
     exit 0
 fi
 
-# smb_share_count=$(omv_config_get_count "//services/greyhole/smb_shares/share")
+# smb_share_count=$(omv_config_get_count "${SERVICE_XPATH}/smb_shares/share")
 # if [ ${smb_share_count} -eq 0 ]; then
 #   echo "# Stop/Disable Greyhole: No SMB Shares"
-#   invoke-rc.d ${GREYHOLE_INIT} stop 1>/dev/null 2>&1 || true
-#   update-rc.d ${GREYHOLE_INIT} disable
+#   deb-systemd-invoke stop ${SERVICE_XPATH_NAME}.service >/dev/null || true
+#   deb-systemd-helper disable ${SERVICE_XPATH_NAME}.service >/dev/null || true
 #   exit 0
 # fi
 
 echo "# Stop Greyhole"
-invoke-rc.d ${GREYHOLE_INIT} stop 1>/dev/null 2>&1 || true
+deb-systemd-invoke stop ${SERVICE_XPATH_NAME}.service >/dev/null || true
 
 cat /dev/null > ${GREYHOLE_CONFIG}
 run-parts ${GREYHOLE_EXTENSIONSDIR}
@@ -63,5 +64,5 @@ run-parts ${GREYHOLE_EXTENSIONSDIR}
 omv-mkconf samba
 
 echo "# Start/Enable Greyhole"
-update-rc.d ${GREYHOLE_INIT} enable
-service ${GREYHOLE_INIT} start
+deb-systemd-helper enable ${SERVICE_XPATH_NAME}.service >/dev/null || true
+deb-systemd-invoke start ${SERVICE_XPATH_NAME}.service >/dev/null || true

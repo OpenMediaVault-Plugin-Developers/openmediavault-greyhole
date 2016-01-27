@@ -5,7 +5,7 @@
 # @author    Marcel Beck <marcel.beck@mbeck.org>
 # @copyright Copyright (c) 2011 Stephane Bocquet
 # @copyright Copyright (c) 2011-2012 Marcel Beck
-# @copyright Copyright (c) 2014-2015 OpenMediaVault Plugin Developers
+# @copyright Copyright (c) 2014-2016 OpenMediaVault Plugin Developers
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,8 +25,10 @@ set -e
 . /etc/default/openmediavault
 . /usr/share/openmediavault/scripts/helper-functions
 
+XPATH="/config/services/greyhole"
+
 # Only if enabled
-if [ "$(omv_config_get "//services/greyhole/enable")" != "1" ]; then
+if [ "$(omv_config_get "${XPATH}/enable")" != "1" ]; then
     exit 0
 fi
 
@@ -49,10 +51,10 @@ ignored_files = Thumb.db
 
 EOF
 
-index=$(omv_config_get_count "//services/greyhole/ignores/ignore")
+index=$(omv_config_get_count "${XPATH}/ignores/ignore")
 while [ ${index} -gt 0 ]
 do
-    xmlstarlet sel -t -m "//services/greyhole/ignores/ignore[position()=${index}]" \
+    xmlstarlet sel -t -m "${XPATH}/ignores/ignore[position()=${index}]" \
       -i "folder[. = '0']" -v "concat('ignored_files = ', ignore)" -b \
       -i "folder[. = '1']" -v "concat('ignored_folders = ', ignore)" -b \
       ${OMV_CONFIG_FILE} | xmlstarlet unesc >> ${GREYHOLE_CONFIG}

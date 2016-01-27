@@ -5,7 +5,7 @@
 # @author    Stéphane Bocquet <stephane_bocquet@hotmail.com>
 # @copyright Copyright (c) 2011 Marcel Beck
 # @copyright Copyright (c) 2011 Stéphane Bocquet
-# @copyright Copyright (c) 2014-2015 OpenMediaVault Plugin Developers
+# @copyright Copyright (c) 2014-2016 OpenMediaVault Plugin Developers
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,55 +25,52 @@ set -e
 . /etc/default/openmediavault
 . /usr/share/openmediavault/scripts/helper-functions
 
+SERVICE_XPATH_NAME="greyhole"
+SERVICE_XPATH="/config/services/${SERVICE_XPATH_NAME}"
+
 case "$1" in
     configure)
-    if [ -z "$2" ]; then
-        echo "Updating init script links and actions"
-        invoke-rc.d --force greyhole stop &>/dev/null
-        update-rc.d greyhole disable &>/dev/null
-    fi
+        if [ -z "$2" ]; then
+            echo "Updating init script links and actions"
+            deb-systemd-invoke stop ${SERVICE_XPATH_NAME}.service >/dev/null || true
+            deb-systemd-helper disable ${SERVICE_XPATH_NAME}.service >/dev/null || true
+        fi
 
-    # Check for XML config
-    if ! omv_config_exists "/config/services/greyhole"; then
+        # Check for XML config
+        if ! omv_config_exists "${SERVICE_XPATH}"; then
+            echo "Initialize configuration"
+            omv_config_add_element "/config/services" "${SERVICE_XPATH_NAME}"
+            omv_config_add_element "${SERVICE_XPATH}" "enable" "0"
+            omv_config_add_element "${SERVICE_XPATH}" "email_to" "root"
+            omv_config_add_element "${SERVICE_XPATH}" "log_level" "INFO"
+            omv_config_add_element "${SERVICE_XPATH}" "greyhole_log_file" "/var/log/greyhole.log"
+            omv_config_add_element "${SERVICE_XPATH}" "delete_moves_to_trash" "1"
+            omv_config_add_element "${SERVICE_XPATH}" "balance_modified_files" "0"
+            omv_config_add_element "${SERVICE_XPATH}" "df_cache_time" "15"
+            omv_config_add_element "${SERVICE_XPATH}" "log_memory_usage" "0"
+            omv_config_add_element "${SERVICE_XPATH}" "check_for_open_files" "1"
+            omv_config_add_element "${SERVICE_XPATH}" "pool_disks" ""
+            omv_config_add_element "${SERVICE_XPATH}" "smb_shares" ""
+            omv_config_add_element "${SERVICE_XPATH}" "trash_share" ""
+            omv_config_add_element "${SERVICE_XPATH}" "trash_share_ref" ""
+            omv_config_add_element "${SERVICE_XPATH}" "trash_share_path" ""
+            omv_config_add_element "${SERVICE_XPATH}" "trash_write" ""
+            omv_config_add_element "${SERVICE_XPATH}" "extraoptions" ""
+            omv_config_add_element "${SERVICE_XPATH}" "db_engine" "mysql"
+            omv_config_add_element "${SERVICE_XPATH}" "db_host" "localhost"
+            omv_config_add_element "${SERVICE_XPATH}" "db_user" "greyhole"
+            omv_config_add_element "${SERVICE_XPATH}" "db_pass" "openmediavault"
+            omv_config_add_element "${SERVICE_XPATH}" "db_name" "greyhole"
+            omv_config_add_element "${SERVICE_XPATH}" "smb_mount_enable" "0"
+            omv_config_add_element "${SERVICE_XPATH}" "smb_mount_username" ""
+            omv_config_add_element "${SERVICE_XPATH}" "smb_mount_password" ""
+            omv_config_add_element "${SERVICE_XPATH}" "ignores" ""
+        fi
 
-        echo "Creating Initial Configuration"
-        object="<enable>0</enable>"
-        object="${object}<email_to>root</email_to>"
-        object="${object}<log_level>INFO</log_level>"
-        object="${object}<greyhole_log_file>/var/log/greyhole.log</greyhole_log_file>"
-        object="${object}<delete_moves_to_trash>1</delete_moves_to_trash>"
-        object="${object}<balance_modified_files>0</balance_modified_files>"
-        object="${object}<df_cache_time>15</df_cache_time>"
-        object="${object}<log_memory_usage>0</log_memory_usage>"
-        object="${object}<check_for_open_files>1</check_for_open_files>"
-        object="${object}<pool_disks></pool_disks>"
-        object="${object}<smb_shares></smb_shares>"
-        object="${object}<trash_share></trash_share>"
-        object="${object}<trash_share_ref></trash_share_ref>"
-        object="${object}<trash_share_path></trash_share_path>"
-        object="${object}<trash_write></trash_write>"
-        object="${object}<extraoptions></extraoptions>"
-        object="${object}<db_engine>mysql</db_engine>"
-        object="${object}<db_host>localhost</db_host>"
-        object="${object}<db_user>greyhole</db_user>"
-        object="${object}<db_pass>openmediavault</db_pass>"
-        object="${object}<db_name>greyhole</db_name>"
-        object="${object}<smb_mount_enable>0</smb_mount_enable>"
-        object="${object}<smb_mount_username></smb_mount_username>"
-        object="${object}<smb_mount_password></smb_mount_password>"
+        #deb-systemd-helper enable mountsmb_locally.service
 
-        omv_config_add_element "/config/services" "greyhole" "${object}" true
-    fi
-
-    if ! omv_config_exists "/config/services/greyhole/ignores"; then
-        omv_config_add_element "/config/services/greyhole" "ignores" "${object}" true
-    fi
-
-    #update-rc.d mountsmb_locally defaults
-
-    dpkg-trigger update-fixperms
-    dpkg-trigger update-locale
-
+        dpkg-trigger update-fixperms
+        dpkg-trigger update-locale
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
