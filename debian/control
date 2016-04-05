@@ -10,7 +10,7 @@ Package: openmediavault-greyhole
 Architecture: all
 Depends: cifs-utils,
          greyhole (>= 0.9.63),
-         openmediavault (>= 3.0.6),
+         openmediavault (= 3.0.13),
          openmediavault-mysql (>= 3.0.1),
          ${misc:Depends}
 Priority: optional
